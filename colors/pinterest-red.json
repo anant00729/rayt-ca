@@ -1,0 +1,10 @@
+{
+  "name": "Pinterest Red",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#333333",
+    "accent": "#E60023",
+    "muted": "#c9545b",
+    "border": "#a8a8a8"
+  }
+}

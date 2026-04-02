@@ -1,0 +1,10 @@
+{
+  "name": "Sapphire Deep",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#0f1b3d",
+    "accent": "#0f52ba",
+    "muted": "#5a7ec0",
+    "border": "#ababab"
+  }
+}

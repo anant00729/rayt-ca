@@ -1,0 +1,10 @@
+{
+  "name": "Honey Mustard",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#44390e",
+    "accent": "#c9a227",
+    "muted": "#bda95e",
+    "border": "#9e9e9e"
+  }
+}

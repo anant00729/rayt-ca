@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { THEMES } from '../App';
 
 const COLUMNS = [
   {
@@ -82,9 +83,40 @@ const Bottom = styled.div`
   border-top: 1px solid var(--color-border);
   font-size: 0.8rem;
   color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
-export default function Footer() {
+const ThemeSelect = styled.select`
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-secondary);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-accent);
+  }
+
+  option {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+  }
+`;
+
+export default function Footer({ theme, onThemeChange }) {
   return (
     <Wrapper>
       <Inner>
@@ -101,7 +133,17 @@ export default function Footer() {
             </Column>
           ))}
         </Grid>
-        <Bottom>© 2026 RayT. All rights reserved.</Bottom>
+        <Bottom>
+          <span>© 2026 RayT. All rights reserved.</span>
+          <ThemeSelect
+            value={theme.name}
+            onChange={e => onThemeChange(THEMES.find(t => t.name === e.target.value))}
+          >
+            {THEMES.map(t => (
+              <option key={t.name} value={t.name}>{t.name}</option>
+            ))}
+          </ThemeSelect>
+        </Bottom>
       </Inner>
     </Wrapper>
   );

@@ -1,0 +1,10 @@
+{
+  "name": "Pastel Aurora",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#d17b88",
+    "accent": "#75f4f4",
+    "muted": "#b8b3e9",
+    "border": "#d999b9"
+  }
+}

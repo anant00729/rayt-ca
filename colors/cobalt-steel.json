@@ -1,0 +1,10 @@
+{
+  "name": "Cobalt Steel",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1a2744",
+    "accent": "#0047ab",
+    "muted": "#5578b5",
+    "border": "#9e9e9e"
+  }
+}

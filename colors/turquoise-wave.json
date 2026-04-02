@@ -1,0 +1,10 @@
+{
+  "name": "Turquoise Wave",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1a3a3a",
+    "accent": "#40e0d0",
+    "muted": "#7ecfc4",
+    "border": "#b0b0b0"
+  }
+}

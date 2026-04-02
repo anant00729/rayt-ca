@@ -1,0 +1,10 @@
+{
+  "name": "Lyft Rose",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#352035",
+    "accent": "#FF00BF",
+    "muted": "#e870ca",
+    "border": "#b0b0b0"
+  }
+}

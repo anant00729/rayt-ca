@@ -1,0 +1,10 @@
+{
+  "name": "Fuchsia Pop",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2d1630",
+    "accent": "#d946ef",
+    "muted": "#e08ce8",
+    "border": "#ababab"
+  }
+}

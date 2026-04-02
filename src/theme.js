@@ -1,2 +1,2 @@
-import theme from '../colors/lavender-blush.json';
+import theme from '../colors/costal.json';
 export default theme;

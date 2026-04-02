@@ -1,0 +1,10 @@
+{
+  "name": "HubSpot Amber",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#33475b",
+    "accent": "#FF7A59",
+    "muted": "#f5a589",
+    "border": "#b8b8b8"
+  }
+}

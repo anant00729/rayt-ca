@@ -1,0 +1,10 @@
+{
+  "name": "Canva Teal",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#0d2137",
+    "accent": "#00C4CC",
+    "muted": "#5db8bd",
+    "border": "#a5a5a5"
+  }
+}

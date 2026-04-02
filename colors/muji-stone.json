@@ -1,0 +1,10 @@
+{
+  "name": "Muji Stone",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#333333",
+    "accent": "#7a7a6e",
+    "muted": "#a8a898",
+    "border": "#c8c8c0"
+  }
+}

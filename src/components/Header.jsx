@@ -35,7 +35,7 @@ const Container = styled.div`
 const Logo = styled(Link)`
   font-family: 'Changa One', sans-serif;
   font-size: 1.5rem;
-  color: var(--color-secondary);
+  color: var(--color-accent);
   text-decoration: none;
   letter-spacing: 0.02em;
 `;

@@ -1,0 +1,10 @@
+{
+  "name": "Cherry Blossom",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#4a2c2a",
+    "accent": "#c4484e",
+    "muted": "#d4868a",
+    "border": "#bfbfbf"
+  }
+}

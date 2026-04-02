@@ -1,0 +1,10 @@
+{
+  "name": "Peach Horizon",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#4a3728",
+    "accent": "#f4845f",
+    "muted": "#f7b39a",
+    "border": "#c0c0c0"
+  }
+}

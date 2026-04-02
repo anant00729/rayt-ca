@@ -1,0 +1,10 @@
+{
+  "name": "Dribbble Pink",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2c2c2c",
+    "accent": "#ea4c89",
+    "muted": "#f08cb4",
+    "border": "#a0a0a0"
+  }
+}

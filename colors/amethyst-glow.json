@@ -1,0 +1,10 @@
+{
+  "name": "Amethyst Glow",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2e1a47",
+    "accent": "#7b4bb1",
+    "muted": "#a682c9",
+    "border": "#b5b5b5"
+  }
+}

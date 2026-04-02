@@ -1,0 +1,10 @@
+{
+  "name": "Iris Bloom",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2b1d42",
+    "accent": "#5b3a8c",
+    "muted": "#8a6db5",
+    "border": "#a8a8a8"
+  }
+}

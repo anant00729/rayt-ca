@@ -1,0 +1,10 @@
+{
+  "name": "Saffron Glow",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#3d2e0f",
+    "accent": "#d4a017",
+    "muted": "#c8b560",
+    "border": "#b0b0b0"
+  }
+}

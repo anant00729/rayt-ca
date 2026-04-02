@@ -1,0 +1,10 @@
+{
+  "name": "Twitch Violet",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1f1f23",
+    "accent": "#9146FF",
+    "muted": "#b48aee",
+    "border": "#a0a0a0"
+  }
+}

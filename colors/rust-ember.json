@@ -1,0 +1,10 @@
+{
+  "name": "Rust Ember",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#3b1f1f",
+    "accent": "#a93226",
+    "muted": "#c0736e",
+    "border": "#aaaaaa"
+  }
+}

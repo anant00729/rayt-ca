@@ -1,0 +1,10 @@
+{
+  "name": "Twitter Sky",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#14171a",
+    "accent": "#1DA1F2",
+    "muted": "#71c1f5",
+    "border": "#aaaaaa"
+  }
+}

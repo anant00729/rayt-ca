@@ -1,0 +1,10 @@
+{
+  "name": "Facebook Blue",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1c1e21",
+    "accent": "#1877F2",
+    "muted": "#6da2e0",
+    "border": "#a8a8a8"
+  }
+}

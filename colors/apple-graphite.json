@@ -1,0 +1,10 @@
+{
+  "name": "Apple Graphite",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1d1d1f",
+    "accent": "#555555",
+    "muted": "#86868b",
+    "border": "#d2d2d7"
+  }
+}

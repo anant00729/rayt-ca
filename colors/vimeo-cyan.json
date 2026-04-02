@@ -1,0 +1,10 @@
+{
+  "name": "Vimeo Cyan",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1a2e3b",
+    "accent": "#1ab7ea",
+    "muted": "#6ec4db",
+    "border": "#b0b0b0"
+  }
+}

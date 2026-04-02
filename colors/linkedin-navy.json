@@ -1,0 +1,10 @@
+{
+  "name": "LinkedIn Navy",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#283e4a",
+    "accent": "#0A66C2",
+    "muted": "#5a94c5",
+    "border": "#b5b5b5"
+  }
+}

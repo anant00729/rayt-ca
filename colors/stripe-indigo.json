@@ -1,0 +1,10 @@
+{
+  "name": "Stripe Indigo",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#32325d",
+    "accent": "#635BFF",
+    "muted": "#9590f0",
+    "border": "#a0a0a0"
+  }
+}

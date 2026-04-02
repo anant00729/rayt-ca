@@ -1,0 +1,10 @@
+{
+  "name": "Airbnb Coral",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#484848",
+    "accent": "#FF5A5F",
+    "muted": "#fc8e8e",
+    "border": "#b0b0b0"
+  }
+}

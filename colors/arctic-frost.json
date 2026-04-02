@@ -1,0 +1,10 @@
+{
+  "name": "Arctic Frost",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1c3144",
+    "accent": "#5da9c2",
+    "muted": "#8fc1d4",
+    "border": "#c0c0c0"
+  }
+}

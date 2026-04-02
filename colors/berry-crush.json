@@ -1,0 +1,10 @@
+{
+  "name": "Berry Crush",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2c1338",
+    "accent": "#8e3a59",
+    "muted": "#b5728b",
+    "border": "#b8b8b8"
+  }
+}

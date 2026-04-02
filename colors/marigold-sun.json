@@ -1,0 +1,10 @@
+{
+  "name": "Marigold Sun",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#4a3f1b",
+    "accent": "#e6a400",
+    "muted": "#d1b85c",
+    "border": "#ababab"
+  }
+}

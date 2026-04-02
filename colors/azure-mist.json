@@ -1,0 +1,10 @@
+{
+  "name": "Azure Mist",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#1e3a5f",
+    "accent": "#4a90d9",
+    "muted": "#89b4e2",
+    "border": "#c0c0c0"
+  }
+}

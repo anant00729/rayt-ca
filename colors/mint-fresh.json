@@ -1,0 +1,10 @@
+{
+  "name": "Mint Fresh",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2a3d35",
+    "accent": "#3eb489",
+    "muted": "#7dcaaa",
+    "border": "#b5b5b5"
+  }
+}

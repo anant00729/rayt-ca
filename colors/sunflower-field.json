@@ -1,0 +1,10 @@
+{
+  "name": "Sunflower Field",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#2e2a1b",
+    "accent": "#f0c808",
+    "muted": "#d4be5e",
+    "border": "#b5b5b5"
+  }
+}

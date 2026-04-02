@@ -1,0 +1,10 @@
+{
+  "name": "Coastal Sage",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#476a6f",
+    "accent": "#519e8a",
+    "muted": "#7eb09b",
+    "border": "#c5c9a4"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Blush Petal",
+  "colors": {
+    "primary": "#ffffff",
+    "secondary": "#3d2b2e",
+    "accent": "#e8838a",
+    "muted": "#f0aeb3",
+    "border": "#c0c0c0"
+  }
+}
