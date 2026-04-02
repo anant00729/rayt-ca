@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import AnnouncementBar from './components/AnnouncementBar';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import FeaturesSection from './components/FeaturesSection';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+
+import Home from './pages/Home';
+import Product from './pages/Product';
+import Widgets from './pages/Widgets';
+import Customers from './pages/Customers';
+import Pricing from './pages/Pricing';
+import Resources from './pages/Resources';
 
 // Existing themes
 import baltic from '../colors/baltic.json';
@@ -124,33 +127,20 @@ const ThemeVars = createGlobalStyle`
   }
 `;
 
-const Page = styled.div`
-  min-height: 100vh;
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      var(--color-border),
-      var(--color-border) 1px,
-      transparent 1px,
-      transparent 8px
-    ),
-    var(--color-primary);
-  background-attachment: fixed;
-`;
-
 export default function App() {
   const [theme, setTheme] = useState(facebookBlue);
 
   return (
     <>
       <ThemeVars $colors={theme.colors} />
-      <Page>
-        <AnnouncementBar />
-        <Header />
-        <HeroSection />
-        <FeaturesSection />
-        <Footer theme={theme} onThemeChange={setTheme} />
-      </Page>
+      <Routes>
+        <Route path="/" element={<Home theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/product" element={<Product theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/widgets" element={<Widgets theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/customers" element={<Customers theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />
+      </Routes>
     </>
   );
 }
