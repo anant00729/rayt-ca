@@ -12,7 +12,7 @@ const ThemeVars = createGlobalStyle`
     --color-secondary: ${theme.colors.secondary};
     --color-accent: ${theme.colors.accent};
     --color-muted: ${theme.colors.muted};
-    --color-border: ${theme.colors.border};
+    --color-border: ${theme.colors.border}80;
   }
 `;
 
