@@ -22,18 +22,24 @@ const FEATURES = [
 ];
 
 const Wrapper = styled.section`
-  border-top: 1px solid var(--color-border);
-  background: var(--color-primary);
+  align-items: center;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  margin: 0 auto;
+  background: transparent;
 `;
 
 const Row = styled.div`
-  max-width: 1350px;
-  margin: 0 auto;
   padding: 4rem 1.5rem;
   display: grid;
   grid-template-columns: 1fr 2.5fr;
   gap: 3rem;
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary);
+  max-width: 1350px;
+  margin: 0 auto;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
