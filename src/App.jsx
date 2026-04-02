@@ -139,7 +139,7 @@ const Page = styled.div`
 `;
 
 export default function App() {
-  const [theme, setTheme] = useState(costal);
+  const [theme, setTheme] = useState(twitterSky);
 
   return (
     <>
