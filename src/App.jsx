@@ -1,25 +1,46 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import theme from './theme';
+import AnnouncementBar from './components/AnnouncementBar';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import FeaturesSection from './components/FeaturesSection';
+import Footer from './components/Footer';
 
-const Page = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0a0a0a;
+const ThemeVars = createGlobalStyle`
+  :root {
+    --color-primary: ${theme.colors.primary};
+    --color-secondary: ${theme.colors.secondary};
+    --color-accent: ${theme.colors.accent};
+    --color-muted: ${theme.colors.muted};
+    --color-border: ${theme.colors.border};
+  }
 `;
 
-const Headline = styled.h1`
-  color: #f5f5f5;
-  font-family: sans-serif;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
+const Page = styled.div`
+  min-height: 100vh;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--color-border),
+      var(--color-border) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    var(--color-primary);
+  background-attachment: fixed;
 `;
 
 export default function App() {
   return (
-    <Page>
-      <Headline>Building something good!</Headline>
-    </Page>
+    <>
+      <ThemeVars />
+      <Page>
+        <AnnouncementBar />
+        <Header />
+        <HeroSection />
+        <FeaturesSection />
+        <Footer />
+      </Page>
+    </>
   );
 }
