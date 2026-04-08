@@ -52,11 +52,103 @@ export const Logo = styled(Link)`
 export const Nav = styled.nav`
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
 
   @media (max-width: 1024px) {
     display: none;
   }
+`;
+
+export const NavItem = styled.div`
+  position: relative;
+`;
+
+export const DropdownTrigger = styled.button`
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+`;
+
+export const DropdownArrow = styled.span`
+  font-size: 0.65rem;
+  transition: transform 0.2s;
+  transform: ${({ $open }) => $open ? 'rotate(180deg)' : 'rotate(0)'};
+`;
+
+export const Dropdown = styled.div`
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 340px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  opacity: ${({ $open }) => $open ? 1 : 0};
+  visibility: ${({ $open }) => $open ? 'visible' : 'hidden'};
+  transform: translateX(-50%) translateY(${({ $open }) => $open ? '0' : '-8px'});
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  z-index: 200;
+`;
+
+export const DropdownItem = styled(Link)`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-border) 30%, transparent);
+  }
+`;
+
+export const DropdownIcon = styled.span`
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color-border) 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-accent);
+`;
+
+export const DropdownText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+`;
+
+export const DropdownTitle = styled.span`
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+`;
+
+export const DropdownDesc = styled.span`
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.4;
 `;
 
 export const NavLink = styled(Link)`
@@ -150,10 +242,69 @@ export const MobileNavLink = styled(Link)`
   padding: 0.75rem 0;
   border-bottom: 1px solid color-mix(in srgb, var(--color-border) 25%, transparent);
   transition: color 0.2s;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
 
   &:hover {
     color: var(--color-accent);
   }
+`;
+
+export const MobileDropdownItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 25%, transparent);
+`;
+
+export const MobileDropItem = styled(Link)`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0.5rem;
+  text-decoration: none;
+  transition: background 0.15s;
+  border-radius: 6px;
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-border) 20%, transparent);
+  }
+`;
+
+export const MobileDropIcon = styled.span`
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color-border) 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-accent);
+`;
+
+export const MobileDropText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+`;
+
+export const MobileDropTitle = styled.span`
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+`;
+
+export const MobileDropDesc = styled.span`
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  line-height: 1.35;
 `;
 
 export const MobileCTA = styled.a`

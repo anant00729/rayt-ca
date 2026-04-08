@@ -4,6 +4,9 @@ import { createGlobalStyle } from 'styled-components';
 
 import Home from './pages/Home';
 import Product from './pages/Product';
+import ProductReviews from './pages/ProductReviews';
+import CustomerReferrals from './pages/CustomerReferrals';
+import AIConvert from './pages/AIConvert';
 import Widgets from './pages/Widgets';
 import Customers from './pages/Customers';
 import Pricing from './pages/Pricing';
@@ -136,6 +139,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home theme={theme} onThemeChange={setTheme} />} />
         <Route path="/product" element={<Product theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/product-reviews" element={<ProductReviews theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/customer-referrals" element={<CustomerReferrals theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/ai" element={<AIConvert theme={theme} onThemeChange={setTheme} />} />
         <Route path="/widgets" element={<Widgets theme={theme} onThemeChange={setTheme} />} />
         <Route path="/customers" element={<Customers theme={theme} onThemeChange={setTheme} />} />
         <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
