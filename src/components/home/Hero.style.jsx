@@ -36,7 +36,7 @@ export const HeroGrid = styled.div`
   gap: 3rem;
   align-items: center;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
@@ -47,6 +47,10 @@ export const HeroLeft = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+
+  @media (max-width: 1050px) {
+    align-items: center;
+  }
 `;
 
 export const HeroEyebrow = styled.span`
@@ -72,7 +76,7 @@ export const HeroEyebrow = styled.span`
     animation: ${twinkle} 2.4s ease-in-out infinite;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     align-self: center;
   }
 `;
@@ -94,7 +98,7 @@ export const HeroSubtitle = styled.p`
   margin: 0;
   max-width: 540px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     margin: 0 auto;
   }
 `;
@@ -105,7 +109,7 @@ export const CtaRow = styled.div`
   gap: 0.9rem;
   margin-top: 0.4rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1050px) {
     justify-content: center;
   }
 `;
@@ -176,6 +180,10 @@ export const Collage = styled.div`
     min-height: 360px;
     max-width: 440px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 1050px) {
+    display: none;
   }
 `;
 
