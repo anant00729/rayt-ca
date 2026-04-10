@@ -2,7 +2,7 @@ import { HeadlineSplit } from '../text/Highlights';
 import {
   HeroWrap, HeroGrid, HeroLeft, HeroEyebrow, HeroHeadline, HeroSubtitle,
   CtaRow, PrimaryCta, SecondaryCta, TrustLine,
-  Collage, CollageCardA, CollageCardB, CollageCardC, CollageOrb, CollageStar,
+  Collage, CollageImg3, CollageImg4, CollageImg6, CollageOrb, CollageStar,
 } from './Hero.style';
 
 export default function Hero({ data }) {
@@ -24,15 +24,9 @@ export default function Hero({ data }) {
 
         <Collage aria-hidden>
           <CollageOrb />
-          <CollageCardA>
-            <img src="/widgets/widget-reviews-grid.svg" alt="" />
-          </CollageCardA>
-          <CollageCardB>
-            <img src="/widgets/widget-star-rating-badge.svg" alt="" />
-          </CollageCardB>
-          <CollageCardC>
-            <img src="/widgets/widget-ai-summary.svg" alt="" />
-          </CollageCardC>
+<CollageImg3><img src="/hero/hero_3.png" alt="" /></CollageImg3>
+          <CollageImg4><img src="/hero/hero_4.png" alt="" /></CollageImg4>
+          <CollageImg6><img src="/hero/hero_6.png" alt="" /></CollageImg6>
           <CollageStar>✦</CollageStar>
         </Collage>
       </HeroGrid>

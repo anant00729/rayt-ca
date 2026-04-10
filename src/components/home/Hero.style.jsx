@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { tokens } from '../../styles/tokens';
-import { levitating, hanging, bouncing, rolling, twinkle, shimmerBg } from '../../styles/animations';
+import { levitating, bouncing, rolling, twinkle, shimmerBg } from '../../styles/animations';
 
 export const HeroWrap = styled.section`
   position: relative;
@@ -185,46 +185,62 @@ const FloatCard = styled.div`
   border-radius: ${tokens.radius};
   box-shadow: ${tokens.shadowMd};
   border: 1px solid ${tokens.border};
-  padding: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0.5rem;
+  overflow: hidden;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    border-radius: calc(${tokens.radius} - 0.5rem);
   }
 `;
 
-export const CollageCardA = styled(FloatCard)`
-  top: 4%;
-  left: 6%;
-  width: 58%;
-  aspect-ratio: 4 / 3;
-  animation: ${levitating} 5s ease-in-out infinite;
-  z-index: 2;
-`;
 
-export const CollageCardB = styled(FloatCard)`
-  top: 28%;
-  right: 2%;
-  width: 48%;
-  aspect-ratio: 1 / 1;
-  background: ${tokens.mint50};
-  animation: ${hanging} 4.2s ease-in-out infinite;
-  transform-origin: top center;
-  z-index: 3;
-`;
-
-export const CollageCardC = styled(FloatCard)`
-  bottom: 6%;
-  left: 12%;
-  width: 50%;
-  aspect-ratio: 5 / 3;
-  background: ${tokens.sky50};
-  animation: ${bouncing} 3.2s cubic-bezier(.28,.84,.42,1) infinite;
+export const CollageImg3 = styled(FloatCard)`
+  top: 0%;
+  left: 2%;
+  width: 36%;
+  aspect-ratio: 428 / 832;
+  animation: ${bouncing} 3.8s cubic-bezier(.28,.84,.42,1) infinite;
   z-index: 4;
+
+  @media (max-width: 900px) {
+    top: 4%;
+    left: 2%;
+    width: 28%;
+  }
+`;
+
+export const CollageImg4 = styled(FloatCard)`
+  top: 14%;
+  left: 34%;
+  width: 52%;
+  aspect-ratio: 844 / 284;
+  animation: ${levitating} 6s ease-in-out infinite;
+  z-index: 5;
+
+  @media (max-width: 900px) {
+    top: 10%;
+    left: 28%;
+    width: 55%;
+  }
+`;
+
+export const CollageImg6 = styled(FloatCard)`
+  bottom: 14%;
+  left: 43%;
+  width: 60%;
+  aspect-ratio: 1126 / 818;
+  animation: ${rolling} 7s ease-in-out infinite;
+  z-index: 3;
+
+  @media (max-width: 900px) {
+    bottom: 8%;
+    left: 30%;
+    width: 52%;
+  }
 `;
 
 export const CollageOrb = styled.div`
