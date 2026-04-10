@@ -1,0 +1,857 @@
+{
+  "homePalette": {
+    "ink900": "#0E1B2B",
+    "ink700": "#1B2A3A",
+    "ink500": "#4B5E75",
+    "ink300": "#8FA2B8",
+    "paper": "#FBFDFF",
+    "paper2": "#F2F7FC",
+    "sky50": "#EAF4FD",
+    "sky100": "#DCEBF7",
+    "sky200": "#BCD8F0",
+    "sky500": "#5A9BE0",
+    "sky700": "#2E6FB0",
+    "mint50": "#EAF8F1",
+    "mint100": "#D6F0E4",
+    "mint500": "#52C9A0",
+    "lilac50": "#F3F1FC",
+    "lilac100": "#E8E4FB",
+    "lilacDeep": "#4937A5",
+    "sun50": "#FFF8E1",
+    "deepNavy": "#142a44",
+    "white": "#ffffff",
+    "border": "rgba(14, 27, 43, 0.08)",
+    "borderStrong": "rgba(14, 27, 43, 0.14)",
+    "shadowSm": "0 1px 2px rgba(14,27,43,0.04), 0 2px 8px rgba(14,27,43,0.04)",
+    "shadowMd": "0 6px 24px rgba(18,52,88,0.08)",
+    "shadowLg": "0 24px 60px rgba(18,52,88,0.12)",
+    "shadowGlow": "0 10px 30px rgba(90,155,224,0.18)",
+    "shadowSky": "0 14px 36px rgba(46,111,176,0.28)",
+    "shadowLilac": "0 20px 40px rgba(73,55,165,0.18)",
+    "radius": "18px",
+    "radiusSm": "10px",
+    "radiusLg": "28px",
+    "radiusPill": "999px"
+  },
+  "accentMap": {
+    "sky": {
+      "bg": "#EAF4FD",
+      "tint": "#DCEBF7",
+      "edge": "#BCD8F0",
+      "ink": "#2E6FB0"
+    },
+    "mint": {
+      "bg": "#EAF8F1",
+      "tint": "#D6F0E4",
+      "edge": "#B4E3CC",
+      "ink": "#147A55"
+    },
+    "lilac": {
+      "bg": "#F3F1FC",
+      "tint": "#E8E4FB",
+      "edge": "#D3CCF5",
+      "ink": "#4937A5"
+    },
+    "sun": {
+      "bg": "#FFF8E1",
+      "tint": "#FFE9A8",
+      "edge": "#F6D980",
+      "ink": "#7A5A10"
+    }
+  },
+  "themes": [
+    {
+      "name": "Baltic",
+      "colors": {
+        "secondary": "#586994",
+        "muted": "#7d869c",
+        "border": "#a2abab",
+        "accent": "#b4c4ae",
+        "primary": "#e5e8b6"
+      },
+      "category": "classic",
+      "description": "Muted sage and dusty olive — grounded and serene",
+      "isDark": false
+    },
+    {
+      "name": "Coastal Sage",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#476a6f",
+        "accent": "#519e8a",
+        "muted": "#7eb09b",
+        "border": "#c5c9a4"
+      },
+      "category": "classic",
+      "description": "Warm teal and coastal sage — calm and refreshing",
+      "isDark": false
+    },
+    {
+      "name": "Lavender Blush",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2e2c2f",
+        "accent": "#729b79",
+        "muted": "#475b63",
+        "border": "#bacdb0"
+      },
+      "category": "classic",
+      "description": "Muted green and charcoal — soft and understated",
+      "isDark": false
+    },
+    {
+      "name": "Midnight Violet",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1d1128",
+        "accent": "#5941a9",
+        "muted": "#514f59",
+        "border": "#6d72c3"
+      },
+      "category": "classic",
+      "description": "Deep violet and lavender — moody and elegant",
+      "isDark": false
+    },
+    {
+      "name": "Pastel Aurora",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#d17b88",
+        "accent": "#75f4f4",
+        "muted": "#b8b3e9",
+        "border": "#d999b9"
+      },
+      "category": "classic",
+      "description": "Peachy coral and aqua — playful and airy",
+      "isDark": false
+    },
+    {
+      "name": "Airbnb Coral",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#484848",
+        "accent": "#FF5A5F",
+        "muted": "#fc8e8e",
+        "border": "#b0b0b0"
+      },
+      "category": "reds",
+      "description": "Warm coral energy — welcoming and bold",
+      "isDark": false
+    },
+    {
+      "name": "Pinterest Red",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#333333",
+        "accent": "#E60023",
+        "muted": "#c9545b",
+        "border": "#a8a8a8"
+      },
+      "category": "reds",
+      "description": "High-contrast red — decisive and action-oriented",
+      "isDark": false
+    },
+    {
+      "name": "YouTube Crimson",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#282828",
+        "accent": "#FF0000",
+        "muted": "#cc3d3d",
+        "border": "#909090"
+      },
+      "category": "reds",
+      "description": "Bright crimson — attention-grabbing and vibrant",
+      "isDark": false
+    },
+    {
+      "name": "Cherry Blossom",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#4a2c2a",
+        "accent": "#c4484e",
+        "muted": "#d4868a",
+        "border": "#bfbfbf"
+      },
+      "category": "reds",
+      "description": "Dusty rose red — romantic and refined",
+      "isDark": false
+    },
+    {
+      "name": "Rust Ember",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3b1f1f",
+        "accent": "#a93226",
+        "muted": "#c0736e",
+        "border": "#aaaaaa"
+      },
+      "category": "reds",
+      "description": "Deep rust — earthy, warm, and grounded",
+      "isDark": false
+    },
+    {
+      "name": "Wine Velvet",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2c1320",
+        "accent": "#722f37",
+        "muted": "#9e6b73",
+        "border": "#b5b5b5"
+      },
+      "category": "reds",
+      "description": "Dark wine — rich, luxurious, and mature",
+      "isDark": false
+    },
+    {
+      "name": "SoundCloud Orange",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#333333",
+        "accent": "#FF5500",
+        "muted": "#e08c5a",
+        "border": "#a0a0a0"
+      },
+      "category": "oranges",
+      "description": "Electric orange — high-energy and expressive",
+      "isDark": false
+    },
+    {
+      "name": "HubSpot Amber",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#33475b",
+        "accent": "#FF7A59",
+        "muted": "#f5a589",
+        "border": "#b8b8b8"
+      },
+      "category": "oranges",
+      "description": "Warm amber — friendly and approachable",
+      "isDark": false
+    },
+    {
+      "name": "Tangerine Dream",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3d2c1e",
+        "accent": "#e8742a",
+        "muted": "#d4a373",
+        "border": "#b0b0b0"
+      },
+      "category": "oranges",
+      "description": "Bright tangerine — cheerful and optimistic",
+      "isDark": false
+    },
+    {
+      "name": "Burnt Sienna",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3c2415",
+        "accent": "#cc5803",
+        "muted": "#b58463",
+        "border": "#a5a5a5"
+      },
+      "category": "oranges",
+      "description": "Deep sienna — artisan and authentic",
+      "isDark": false
+    },
+    {
+      "name": "Peach Horizon",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#4a3728",
+        "accent": "#f4845f",
+        "muted": "#f7b39a",
+        "border": "#c0c0c0"
+      },
+      "category": "oranges",
+      "description": "Soft peach — gentle and inviting",
+      "isDark": false
+    },
+    {
+      "name": "Bumble Gold",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#363636",
+        "accent": "#FFC629",
+        "muted": "#e0b84a",
+        "border": "#a8a8a8"
+      },
+      "category": "yellows",
+      "description": "Vivid gold on white — confident and sunny",
+      "isDark": false
+    },
+    {
+      "name": "Saffron Glow",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3d2e0f",
+        "accent": "#d4a017",
+        "muted": "#c8b560",
+        "border": "#b0b0b0"
+      },
+      "category": "yellows",
+      "description": "Warm saffron — cultural, rich, and warm",
+      "isDark": false
+    },
+    {
+      "name": "Honey Mustard",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#44390e",
+        "accent": "#c9a227",
+        "muted": "#bda95e",
+        "border": "#9e9e9e"
+      },
+      "category": "yellows",
+      "description": "Earthy mustard — retro and characterful",
+      "isDark": false
+    },
+    {
+      "name": "Sunflower Field",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2e2a1b",
+        "accent": "#f0c808",
+        "muted": "#d4be5e",
+        "border": "#b5b5b5"
+      },
+      "category": "yellows",
+      "description": "Bright yellow — joyful and energetic",
+      "isDark": false
+    },
+    {
+      "name": "Marigold Sun",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#4a3f1b",
+        "accent": "#e6a400",
+        "muted": "#d1b85c",
+        "border": "#ababab"
+      },
+      "category": "yellows",
+      "description": "Deep marigold — festive and luminous",
+      "isDark": false
+    },
+    {
+      "name": "Spotify Green",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#191414",
+        "accent": "#1DB954",
+        "muted": "#5cb97a",
+        "border": "#a0a0a0"
+      },
+      "category": "greens",
+      "description": "Iconic bright green — modern and dynamic",
+      "isDark": false
+    },
+    {
+      "name": "Shopify Emerald",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#212b36",
+        "accent": "#008060",
+        "muted": "#4daf8e",
+        "border": "#b0b0b0"
+      },
+      "category": "greens",
+      "description": "Deep emerald — trustworthy and commercial",
+      "isDark": false
+    },
+    {
+      "name": "WhatsApp Jade",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#303030",
+        "accent": "#25D366",
+        "muted": "#6dc98e",
+        "border": "#a8a8a8"
+      },
+      "category": "greens",
+      "description": "Fresh jade green — clear and communicative",
+      "isDark": false
+    },
+    {
+      "name": "Forest Moss",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1b2e1b",
+        "accent": "#2d6a4f",
+        "muted": "#74a88d",
+        "border": "#9e9e9e"
+      },
+      "category": "greens",
+      "description": "Dark forest green — organic and grounded",
+      "isDark": false
+    },
+    {
+      "name": "Sage Garden",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2f3e2f",
+        "accent": "#6b8f71",
+        "muted": "#a3b899",
+        "border": "#b8b8b8"
+      },
+      "category": "greens",
+      "description": "Muted sage — calm, natural, and restful",
+      "isDark": false
+    },
+    {
+      "name": "Mint Fresh",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2a3d35",
+        "accent": "#3eb489",
+        "muted": "#7dcaaa",
+        "border": "#b5b5b5"
+      },
+      "category": "greens",
+      "description": "Bright mint — clean, fresh, and digital",
+      "isDark": false
+    },
+    {
+      "name": "Canva Teal",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#0d2137",
+        "accent": "#00C4CC",
+        "muted": "#5db8bd",
+        "border": "#a5a5a5"
+      },
+      "category": "teals",
+      "description": "Electric teal — creative and expressive",
+      "isDark": false
+    },
+    {
+      "name": "Vimeo Cyan",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1a2e3b",
+        "accent": "#1ab7ea",
+        "muted": "#6ec4db",
+        "border": "#b0b0b0"
+      },
+      "category": "teals",
+      "description": "Bright cyan — open and visionary",
+      "isDark": false
+    },
+    {
+      "name": "Arctic Frost",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1c3144",
+        "accent": "#5da9c2",
+        "muted": "#8fc1d4",
+        "border": "#c0c0c0"
+      },
+      "category": "teals",
+      "description": "Cool arctic teal — crisp and precise",
+      "isDark": false
+    },
+    {
+      "name": "Deep Lagoon",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#0d2b3e",
+        "accent": "#008b8b",
+        "muted": "#4da8a8",
+        "border": "#a0a0a0"
+      },
+      "category": "teals",
+      "description": "Dark teal — deep, focused, and immersive",
+      "isDark": false
+    },
+    {
+      "name": "Turquoise Wave",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1a3a3a",
+        "accent": "#40e0d0",
+        "muted": "#7ecfc4",
+        "border": "#b0b0b0"
+      },
+      "category": "teals",
+      "description": "Vibrant turquoise — fluid and energetic",
+      "isDark": false
+    },
+    {
+      "name": "Facebook Blue",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1c1e21",
+        "accent": "#1877F2",
+        "muted": "#6da2e0",
+        "border": "#a8a8a8"
+      },
+      "category": "blues",
+      "description": "Classic blue — familiar and trustworthy",
+      "isDark": false
+    },
+    {
+      "name": "Twitter Sky",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#14171a",
+        "accent": "#1DA1F2",
+        "muted": "#71c1f5",
+        "border": "#aaaaaa"
+      },
+      "category": "blues",
+      "description": "Bright sky blue — open and conversational",
+      "isDark": false
+    },
+    {
+      "name": "LinkedIn Navy",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#283e4a",
+        "accent": "#0A66C2",
+        "muted": "#5a94c5",
+        "border": "#b5b5b5"
+      },
+      "category": "blues",
+      "description": "Professional navy — credible and corporate",
+      "isDark": false
+    },
+    {
+      "name": "Stripe Indigo",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#32325d",
+        "accent": "#635BFF",
+        "muted": "#9590f0",
+        "border": "#a0a0a0"
+      },
+      "category": "blues",
+      "description": "Electric indigo — technical and modern",
+      "isDark": false
+    },
+    {
+      "name": "Cobalt Steel",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1a2744",
+        "accent": "#0047ab",
+        "muted": "#5578b5",
+        "border": "#9e9e9e"
+      },
+      "category": "blues",
+      "description": "Deep cobalt — strong and dependable",
+      "isDark": false
+    },
+    {
+      "name": "Azure Mist",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1e3a5f",
+        "accent": "#4a90d9",
+        "muted": "#89b4e2",
+        "border": "#c0c0c0"
+      },
+      "category": "blues",
+      "description": "Soft azure — approachable and light",
+      "isDark": false
+    },
+    {
+      "name": "Sapphire Deep",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#0f1b3d",
+        "accent": "#0f52ba",
+        "muted": "#5a7ec0",
+        "border": "#ababab"
+      },
+      "category": "blues",
+      "description": "Deep sapphire — elegant and authoritative",
+      "isDark": false
+    },
+    {
+      "name": "Powder Blue",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2c3e50",
+        "accent": "#5dade2",
+        "muted": "#93c9e8",
+        "border": "#b8b8b8"
+      },
+      "category": "blues",
+      "description": "Pale powder blue — gentle and airy",
+      "isDark": false
+    },
+    {
+      "name": "Twitch Violet",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1f1f23",
+        "accent": "#9146FF",
+        "muted": "#b48aee",
+        "border": "#a0a0a0"
+      },
+      "category": "indigos",
+      "description": "Vivid violet — playful and youthful",
+      "isDark": false
+    },
+    {
+      "name": "Yahoo Plum",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2d1a4e",
+        "accent": "#6001D2",
+        "muted": "#9054d4",
+        "border": "#b0b0b0"
+      },
+      "category": "indigos",
+      "description": "Deep purple — bold and retro",
+      "isDark": false
+    },
+    {
+      "name": "Amethyst Glow",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2e1a47",
+        "accent": "#7b4bb1",
+        "muted": "#a682c9",
+        "border": "#b5b5b5"
+      },
+      "category": "indigos",
+      "description": "Soft amethyst — mystical and refined",
+      "isDark": false
+    },
+    {
+      "name": "Iris Bloom",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2b1d42",
+        "accent": "#5b3a8c",
+        "muted": "#8a6db5",
+        "border": "#a8a8a8"
+      },
+      "category": "indigos",
+      "description": "Muted purple — floral and sophisticated",
+      "isDark": false
+    },
+    {
+      "name": "Electric Violet",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1a1033",
+        "accent": "#8b5cf6",
+        "muted": "#b198f0",
+        "border": "#9e9e9e"
+      },
+      "category": "indigos",
+      "description": "Bright violet — futuristic and expressive",
+      "isDark": false
+    },
+    {
+      "name": "Figma Magenta",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#333333",
+        "accent": "#A259FF",
+        "muted": "#c090f0",
+        "border": "#a5a5a5"
+      },
+      "category": "purples",
+      "description": "Vivid magenta — creative and modern",
+      "isDark": false
+    },
+    {
+      "name": "Notion Mauve",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#37352f",
+        "accent": "#9b59b6",
+        "muted": "#b98bcf",
+        "border": "#c0c0c0"
+      },
+      "category": "purples",
+      "description": "Muted mauve — thoughtful and minimal",
+      "isDark": false
+    },
+    {
+      "name": "Orchid Dusk",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3a1f3d",
+        "accent": "#c850c0",
+        "muted": "#d88fd3",
+        "border": "#b0b0b0"
+      },
+      "category": "purples",
+      "description": "Deep orchid — dramatic and sensual",
+      "isDark": false
+    },
+    {
+      "name": "Fuchsia Pop",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2d1630",
+        "accent": "#d946ef",
+        "muted": "#e08ce8",
+        "border": "#ababab"
+      },
+      "category": "purples",
+      "description": "Electric fuchsia — bold and expressive",
+      "isDark": false
+    },
+    {
+      "name": "Berry Crush",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2c1338",
+        "accent": "#8e3a59",
+        "muted": "#b5728b",
+        "border": "#b8b8b8"
+      },
+      "category": "purples",
+      "description": "Dark berry — rich and intense",
+      "isDark": false
+    },
+    {
+      "name": "Dribbble Pink",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2c2c2c",
+        "accent": "#ea4c89",
+        "muted": "#f08cb4",
+        "border": "#a0a0a0"
+      },
+      "category": "pinks",
+      "description": "Hot pink — playful and creative",
+      "isDark": false
+    },
+    {
+      "name": "Lyft Rose",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#352035",
+        "accent": "#FF00BF",
+        "muted": "#e870ca",
+        "border": "#b0b0b0"
+      },
+      "category": "pinks",
+      "description": "Neon rose — bold and electric",
+      "isDark": false
+    },
+    {
+      "name": "Blush Petal",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3d2b2e",
+        "accent": "#e8838a",
+        "muted": "#f0aeb3",
+        "border": "#c0c0c0"
+      },
+      "category": "pinks",
+      "description": "Soft blush pink — tender and romantic",
+      "isDark": false
+    },
+    {
+      "name": "Flamingo Kiss",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#4a2a35",
+        "accent": "#f78da7",
+        "muted": "#f4b3c3",
+        "border": "#b5b5b5"
+      },
+      "category": "pinks",
+      "description": "Warm flamingo — exotic and fun",
+      "isDark": false
+    },
+    {
+      "name": "Cotton Candy",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3d2838",
+        "accent": "#ffb6c1",
+        "muted": "#e8a0ab",
+        "border": "#aaaaaa"
+      },
+      "category": "pinks",
+      "description": "Pastel pink — sweet and dreamy",
+      "isDark": false
+    },
+    {
+      "name": "Apple Graphite",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#1d1d1f",
+        "accent": "#555555",
+        "muted": "#86868b",
+        "border": "#d2d2d7"
+      },
+      "category": "neutrals",
+      "description": "Pure graphite — sophisticated and minimal",
+      "isDark": false
+    },
+    {
+      "name": "Aesop Clay",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2e2a25",
+        "accent": "#8b7355",
+        "muted": "#b5a48a",
+        "border": "#c5c0b8"
+      },
+      "category": "neutrals",
+      "description": "Warm clay — artisan and tactile",
+      "isDark": false
+    },
+    {
+      "name": "Muji Stone",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#333333",
+        "accent": "#7a7a6e",
+        "muted": "#a8a898",
+        "border": "#c8c8c0"
+      },
+      "category": "neutrals",
+      "description": "Cool stone — restrained and precise",
+      "isDark": false
+    },
+    {
+      "name": "Warm Charcoal",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#2d2d2d",
+        "accent": "#4a4a4a",
+        "muted": "#757575",
+        "border": "#b0b0b0"
+      },
+      "category": "neutrals",
+      "description": "Warm charcoal — comfortable and neutral",
+      "isDark": false
+    },
+    {
+      "name": "Driftwood",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3b342c",
+        "accent": "#8d7b68",
+        "muted": "#b8a99a",
+        "border": "#bfb9b0"
+      },
+      "category": "neutrals",
+      "description": "Weathered driftwood — organic and calm",
+      "isDark": false
+    },
+    {
+      "name": "Sandstone",
+      "colors": {
+        "primary": "#ffffff",
+        "secondary": "#3a2f27",
+        "accent": "#c4a77d",
+        "muted": "#d4c4a8",
+        "border": "#c0b8a8"
+      },
+      "category": "neutrals",
+      "description": "Sandy stone — natural and warm",
+      "isDark": false
+    }
+  ]
+}

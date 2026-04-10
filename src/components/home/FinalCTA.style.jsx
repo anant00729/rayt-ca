@@ -12,8 +12,8 @@ export const Banner = styled.div`
   position: relative;
   background:
     radial-gradient(60% 80% at 20% 30%, ${tokens.sky700} 0%, transparent 60%),
-    radial-gradient(60% 80% at 80% 70%, #4937A5 0%, transparent 60%),
-    linear-gradient(135deg, ${tokens.ink900}, #142a44);
+    radial-gradient(60% 80% at 80% 70%, ${tokens.lilacDeep} 0%, transparent 60%),
+    linear-gradient(135deg, ${tokens.ink900}, ${tokens.deepNavy});
   background-size: 200% 200%;
   color: #fff;
   border-radius: ${tokens.radiusLg};

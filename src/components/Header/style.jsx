@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { tokens } from '../../styles/tokens';
+import { shimmerBg } from '../../styles/animations';
 
 export const spinWithDelay = keyframes`
   0%  { transform: rotate(0deg); }
@@ -14,20 +16,22 @@ export const HeaderBar = styled.header`
   box-shadow: 0 1px 0 color-mix(in srgb, white 8%, transparent), 0 4px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
   z-index: 100;
 
-  ${({ $floating, $announcementVisible }) => $floating ? `
+  ${({ $floating, $announcementVisible, $hidden, $hideDistance }) => $floating ? `
     position: fixed;
-    top: ${$announcementVisible ? '56px' : '16px'};
+    top: ${$announcementVisible ? '85px' : '16px'};
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(${$hidden ? `calc(-${$hideDistance} - 32px)` : '0'});
     width: calc(100% - 48px);
     max-width: 1300px;
     border-radius: 6px;
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-    transition: top 0.3s ease;
+    transition: top 0.3s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   ` : `
     position: sticky;
     top: 0;
     border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    transform: translateY(${$hidden ? `-${$hideDistance}` : '0'});
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   `}
 `;
 
@@ -53,16 +57,34 @@ export const StarIcon = styled.svg`
 `;
 
 export const Logo = styled(Link)`
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
   font-size: 1.5rem;
-  color: var(--color-accent);
+  letter-spacing: -0.02em;
   text-decoration: none;
-  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   gap: 0.4rem;
+
+  /* sky → mint gradient clip — same as "unstoppable" in the hero */
+  background: linear-gradient(
+    100deg,
+    ${tokens.sky700} 0%,
+    ${tokens.sky500} 30%,
+    ${tokens.mint500} 70%,
+    ${tokens.sky700} 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: ${shimmerBg} 7s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background-position: 30% 50%;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -84,7 +106,7 @@ export const DropdownTrigger = styled.button`
   background: none;
   border: none;
   color: var(--color-secondary);
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -99,9 +121,11 @@ export const DropdownTrigger = styled.button`
   }
 `;
 
-export const DropdownArrow = styled.span`
-  font-size: 0.65rem;
-  transition: transform 0.2s;
+export const DropdownArrow = styled.svg`
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
   transform: ${({ $open }) => $open ? 'rotate(180deg)' : 'rotate(0)'};
 `;
 
@@ -170,7 +194,7 @@ export const DropdownDesc = styled.span`
 export const NavLink = styled(Link)`
   color: var(--color-secondary);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 500;
   transition: color 0.2s;
 

@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
-import { tokens } from '../../styles/tokens';
+import { tokens, accentMap } from '../../styles/tokens';
 import { drawLine, twinkle, shimmerBg } from '../../styles/animations';
 
 /* Headline word that paints itself with a sky→mint gradient. */
@@ -140,7 +140,7 @@ export const Chip = styled.span`
 
 export const MintChip = styled(Chip)`
   background: ${tokens.mint50};
-  color: #147A55;
+  color: ${accentMap.mint.ink};
   border-color: ${tokens.mint100};
 `;
 

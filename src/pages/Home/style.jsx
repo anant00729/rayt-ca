@@ -31,7 +31,7 @@ export const AnnouncementText = styled.span`
 
 export const AnnouncementCTA = styled.a`
   background: ${tokens.mint500};
-  color: #0E1B2B;
+  color: ${tokens.ink900};
   padding: 0.38rem 1rem;
   border-radius: ${tokens.radiusPill};
   text-decoration: none;

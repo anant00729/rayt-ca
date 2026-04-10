@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { tokens } from '../../styles/tokens';
+import { tokens, accentMap } from '../../styles/tokens';
 import { levitating } from '../../styles/animations';
 
 export const Wrap = styled.section`
@@ -132,7 +132,7 @@ export const Perk = styled.li`
     height: 26px;
     border-radius: 50%;
     background: ${tokens.mint100};
-    color: #147A55;
+    color: ${accentMap.mint.ink};
     font-weight: 900;
     flex-shrink: 0;
   }

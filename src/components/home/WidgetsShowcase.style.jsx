@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { tokens, accentMap } from '../../styles/tokens';
-import { animationCss } from '../../styles/animations';
 
 export const ShowcaseWrap = styled.section`
   background: linear-gradient(180deg, ${tokens.paper} 0%, ${tokens.sky50} 50%, ${tokens.paper} 100%);
@@ -103,7 +102,6 @@ export const WidgetPreview = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
   overflow: hidden;
 
   &::after {
@@ -120,11 +118,6 @@ export const WidgetPreview = styled.div`
     max-height: 88%;
     display: block;
     z-index: 1;
-    ${({ $animation }) => animationCss($animation)}
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    img { animation: none !important; }
   }
 `;
 
