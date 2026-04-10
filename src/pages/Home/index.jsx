@@ -22,6 +22,19 @@ import {
 export default function Home({ theme, onThemeChange }) {
   const [showAnnouncement, setShowAnnouncement] = useState(false);
   const cardRefs = useRef([]);
+  const headerRef = useRef(null);
+
+  // Remove sticky from StackingHeader once first card hits its sticking point.
+  useEffect(() => {
+    const handleScroll = () => {
+      const firstCard = cardRefs.current[0];
+      if (!firstCard || !headerRef.current) return;
+      const stacking = firstCard.getBoundingClientRect().top <= 140;
+      headerRef.current.style.position = stacking ? 'relative' : 'sticky';
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Scale animation on stacking cards via IntersectionObserver (retained behaviour).
   useEffect(() => {
@@ -84,7 +97,7 @@ export default function Home({ theme, onThemeChange }) {
 
       {/* Stacking cards (retained, restyled with cool palette) — just above footer */}
       <StackingWrapper>
-        <StackingHeader>
+        <StackingHeader ref={headerRef}>
           <StackingEyebrow>{content.stacking.eyebrow}</StackingEyebrow>
           <StackingHeadline>{content.stacking.headline}</StackingHeadline>
           <StackingSubtitle>{content.stacking.subtitle}</StackingSubtitle>

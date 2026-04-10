@@ -50,8 +50,8 @@ export const Container = styled.div`
 `;
 
 export const StarIcon = styled.svg`
-  width: 2rem;
-  height: 2rem;
+  width: 1.6rem;
+  height: 1.6rem;
   flex-shrink: 0;
   animation: ${spinWithDelay} 5s linear infinite;
 `;
@@ -59,7 +59,7 @@ export const StarIcon = styled.svg`
 export const Logo = styled(Link)`
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   letter-spacing: -0.02em;
   text-decoration: none;
   display: flex;
@@ -70,8 +70,8 @@ export const Logo = styled(Link)`
   background: linear-gradient(
     100deg,
     ${tokens.sky700} 0%,
-    ${tokens.sky500} 30%,
-    ${tokens.mint500} 70%,
+    ${tokens.sky500} 60%,
+    ${tokens.mint500} 40%,
     ${tokens.sky700} 100%
   );
   background-size: 200% 200%;
