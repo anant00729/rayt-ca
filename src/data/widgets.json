@@ -1,0 +1,232 @@
+[
+  {
+    "slug": "reviews-list",
+    "name": "Reviews List",
+    "tagline": "Classic, scrollable, unstoppable.",
+    "description": "A tidy stack of every review shoppers can skim in seconds and trust in less.",
+    "image": "/widgets/widget-reviews-list.svg",
+    "category": "Review Display",
+    "animation": "levitating",
+    "accent": "sky"
+  },
+  {
+    "slug": "reviews-compact",
+    "name": "Reviews Compact",
+    "tagline": "Big trust, tiny footprint.",
+    "description": "Pack dozens of glowing reviews into a minimal block that never steals the spotlight from your product.",
+    "image": "/widgets/widget-reviews-compact.svg",
+    "category": "Review Display",
+    "animation": "levitating",
+    "accent": "mint"
+  },
+  {
+    "slug": "reviews-grid",
+    "name": "Reviews Grid",
+    "tagline": "A wall of love.",
+    "description": "Show off photos, videos and five-star moments in a staggered grid that feels alive.",
+    "image": "/widgets/widget-reviews-grid.svg",
+    "category": "Review Display",
+    "animation": "levitating",
+    "accent": "sky"
+  },
+  {
+    "slug": "review-snippets",
+    "name": "Review Snippets",
+    "tagline": "Proof where it counts.",
+    "description": "Drop bite-sized reviews beside the Add to Cart button — the exact moment trust turns into a sale.",
+    "image": "/widgets/widget-review-snippets.svg",
+    "category": "Review Display",
+    "animation": "levitating",
+    "accent": "mint"
+  },
+  {
+    "slug": "ai-summary",
+    "name": "AI Reviews Summary",
+    "tagline": "The whole story, instantly.",
+    "description": "An AI-written recap of every review, so shoppers get the verdict without scrolling for ten minutes.",
+    "image": "/widgets/widget-ai-summary.svg",
+    "category": "AI",
+    "animation": "levitating",
+    "accent": "lilac"
+  },
+  {
+    "slug": "cards-carousel",
+    "name": "Cards Carousel",
+    "tagline": "Swipeable social proof.",
+    "description": "A smooth, touch-friendly carousel of review cards that keeps attention longer than a static grid ever could.",
+    "image": "/widgets/widget-cards-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "sky"
+  },
+  {
+    "slug": "classic-carousel",
+    "name": "Classic Carousel",
+    "tagline": "The crowd favourite.",
+    "description": "Your best reviews looping on autopilot — the tried-and-true slider every storefront asks for.",
+    "image": "/widgets/widget-classic-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "mint"
+  },
+  {
+    "slug": "dynamic-carousel",
+    "name": "Dynamic Carousel",
+    "tagline": "One reel to rule them all.",
+    "description": "Video, image and text reviews rolling side by side in a single, scroll-stopping reel.",
+    "image": "/widgets/widget-dynamic-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "lilac"
+  },
+  {
+    "slug": "gallery-carousel",
+    "name": "Gallery Carousel",
+    "tagline": "Your store's highlight reel.",
+    "description": "A vibrant, visual-first gallery that puts your best photo and video reviews front and centre.",
+    "image": "/widgets/widget-gallery-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "sky"
+  },
+  {
+    "slug": "slide-deck-carousel",
+    "name": "Slide Deck Carousel",
+    "tagline": "Every review, a headline.",
+    "description": "A stylish card-deck carousel that mixes visual and written reviews with magazine-level polish.",
+    "image": "/widgets/widget-slide-deck-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "mint"
+  },
+  {
+    "slug": "testimonials-carousel",
+    "name": "Testimonials Carousel",
+    "tagline": "Quotes that close the deal.",
+    "description": "A rotating wall of customer quotes — the closest thing to a personal referral on your storefront.",
+    "image": "/widgets/widget-testimonials-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "sky"
+  },
+  {
+    "slug": "videos-carousel",
+    "name": "Videos Carousel",
+    "tagline": "Unboxing energy, on loop.",
+    "description": "Turn customer videos into a scrollable showreel that shoppers actually stop to watch.",
+    "image": "/widgets/widget-videos-carousel.svg",
+    "category": "Carousel",
+    "animation": "rolling",
+    "accent": "lilac"
+  },
+  {
+    "slug": "star-rating-badge",
+    "name": "Star Rating Badge",
+    "tagline": "Five stars, zero clutter.",
+    "description": "A crisp star badge that shows your average rating anywhere — collections, PDPs, even the footer.",
+    "image": "/widgets/widget-star-rating-badge.svg",
+    "category": "Badge",
+    "animation": "bouncing",
+    "accent": "sun"
+  },
+  {
+    "slug": "medals",
+    "name": "rayt.ca Medals",
+    "tagline": "Bragging rights, baked in.",
+    "description": "Unlock trust medals — Top 10%, Verified, Gold — and wear them proudly next to your reviews.",
+    "image": "/widgets/widget-medals.svg",
+    "category": "Badge",
+    "animation": "bouncing",
+    "accent": "sun"
+  },
+  {
+    "slug": "verified-counter",
+    "name": "Verified Reviews Counter",
+    "tagline": "Receipts, on display.",
+    "description": "Show the live count of verified reviews so every visitor sees the proof the moment they land.",
+    "image": "/widgets/widget-verified-counter.svg",
+    "category": "Badge",
+    "animation": "bouncing",
+    "accent": "mint"
+  },
+  {
+    "slug": "all-reviews-counter",
+    "name": "All Reviews Counter",
+    "tagline": "Numbers that do the talking.",
+    "description": "A clean counter of every published review and their average score — social proof in a glance.",
+    "image": "/widgets/widget-all-reviews-counter.svg",
+    "category": "Badge",
+    "animation": "bouncing",
+    "accent": "sky"
+  },
+  {
+    "slug": "popup-reviews",
+    "name": "Pop-up Reviews",
+    "tagline": "Surprise, they love you.",
+    "description": "A gentle pop-up that spotlights your best reviews at the perfect scroll-depth — trust exactly when it's needed.",
+    "image": "/widgets/widget-popup-reviews.svg",
+    "category": "Overlay",
+    "animation": "hanging",
+    "accent": "lilac"
+  },
+  {
+    "slug": "floating-tab",
+    "name": "Floating Reviews Tab",
+    "tagline": "Always one tap away.",
+    "description": "A dockable side tab that keeps every review and an invite to leave one just a thumb's reach away.",
+    "image": "/widgets/widget-floating-tab.svg",
+    "category": "Overlay",
+    "animation": "hanging",
+    "accent": "sky"
+  },
+  {
+    "slug": "qa",
+    "name": "Questions & Answers",
+    "tagline": "Doubts, handled.",
+    "description": "Let shoppers ask anything — and give your team, and your community, a beautiful place to answer.",
+    "image": "/widgets/widget-qa.svg",
+    "category": "Overlay",
+    "animation": "hanging",
+    "accent": "mint"
+  },
+  {
+    "slug": "happy-customers",
+    "name": "Happy Customers",
+    "tagline": "An SEO goldmine.",
+    "description": "A dedicated reviews page that boosts your search rankings while it showcases every fan you've earned.",
+    "image": "/widgets/widget-happy-customers.svg",
+    "category": "Page",
+    "animation": "spaceElevate",
+    "accent": "mint"
+  },
+  {
+    "slug": "ugc",
+    "name": "UGC Instagram Shopping",
+    "tagline": "Your feed, shoppable.",
+    "description": "Pull the best user-generated content from Instagram into a shoppable grid that turns scrollers into buyers.",
+    "image": "/widgets/widget-ugc.svg",
+    "category": "Page",
+    "animation": "spaceElevate",
+    "accent": "lilac"
+  },
+  {
+    "slug": "customer-accounts",
+    "name": "Customer Accounts",
+    "tagline": "Reviews on the inside.",
+    "description": "Let customers write, manage and revisit reviews directly from their account and order pages.",
+    "image": "/widgets/widget-customer-accounts.svg",
+    "category": "Page",
+    "animation": "spaceElevate",
+    "accent": "sky"
+  },
+  {
+    "slug": "write-review",
+    "name": "Write a Review",
+    "tagline": "Frictionless feedback.",
+    "description": "A mobile-first review form designed to turn gratitude into submissions in under thirty seconds.",
+    "image": "/widgets/widget-write-review.svg",
+    "category": "Form",
+    "animation": "spaceElevate",
+    "accent": "mint"
+  }
+]

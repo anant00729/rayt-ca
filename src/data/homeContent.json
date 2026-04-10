@@ -1,99 +1,203 @@
 {
   "announcement": {
-    "text": "Your reviews, now supercharged with AI. Discover six new features driving more conversions.",
-    "ctaText": "Explore AI features",
+    "text": "New: AI Review Summaries are live — turn every review into a sales pitch.",
+    "ctaText": "See what's new",
     "ctaHref": "/ai"
   },
   "hero": {
-    "badge": "Built for Shopify",
-    "headline": "Brilliant Reviews That Make You Stand Out",
-    "subtitle": "It's time to go beyond words.",
-    "ctaText": "Start free"
+    "eyebrow": "The review app your storefront deserves",
+    "headline": {
+      "before": "Turn happy shoppers into",
+      "highlight": "unstoppable",
+      "after": "social proof."
+    },
+    "subtitle": "Collect, curate and display reviews that actually sell. Beautiful widgets, gentle automation, zero chaos.",
+    "ctaPrimary": "Start free — no card needed",
+    "ctaSecondary": "See every widget",
+    "trustLine": "Built for Shopify · Fast by default · Light on the eyes"
   },
-  "stackingSection": {
-    "headline": "Visual reviews sell better",
-    "subtitle": "Join 130,000+ brands building trust with the strongest form of social proof.",
+  "trust": {
+    "items": [
+      { "value": "23+", "label": "Plug-and-play widgets" },
+      { "value": "4.9", "label": "Merchant rating" },
+      { "value": "1-click", "label": "Install on Shopify" },
+      { "value": "24/7", "label": "Real human support" }
+    ]
+  },
+  "valueGrid": {
+    "eyebrow": "Everything you need",
+    "headline": {
+      "before": "All the muscle,",
+      "highlight": "none",
+      "after": "of the price tag."
+    },
+    "subtitle": "Every feature a growing store needs to build trust — bundled, polished, and shipped with taste.",
+    "ctaText": "Compare plans",
+    "ctaHref": "/pricing",
+    "cells": [
+      {
+        "icon": "📸",
+        "title": "Photos & Videos",
+        "description": "Collect three times more visual reviews with prompts that feel like a friendly nudge, not a nag."
+      },
+      {
+        "icon": "📱",
+        "title": "Mobile-First Forms",
+        "description": "Nine out of ten shoppers review on phones. Our forms feel native on every one of them."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Automated Moderation",
+        "description": "Spam, profanity and trolls get filtered before they ever touch your storefront."
+      },
+      {
+        "icon": "🎨",
+        "title": "Custom Questions",
+        "description": "Ask about fit, colour, fragrance — anything — and display the answers as gorgeous attributes."
+      },
+      {
+        "icon": "💬",
+        "title": "Review Replies",
+        "description": "Turn every response into a public love letter that future shoppers will absolutely read."
+      },
+      {
+        "icon": "✍️",
+        "title": "Customer Edits",
+        "description": "When you fix an issue, let customers update their rating in one tap — and watch your score rise."
+      },
+      {
+        "icon": "🏬",
+        "title": "Multi-Store Sync",
+        "description": "Run several storefronts? Share a single pool of reviews across all of them, effortlessly."
+      },
+      {
+        "icon": "📈",
+        "title": "Powerful Analytics",
+        "description": "Know exactly which widgets convert, which questions land, and which reviews drive the most revenue."
+      },
+      {
+        "icon": "🔌",
+        "title": "Developer API",
+        "description": "A clean REST API and webhooks for the teams who want to go absolutely wild with custom experiences."
+      }
+    ]
+  },
+  "widgetsShowcase": {
+    "eyebrow": "23 widgets, one happy storefront",
+    "headline": {
+      "before": "Drop-in magic for",
+      "highlight": "every",
+      "after": "corner of your store."
+    },
+    "subtitle": "Pick any widget, click install, and watch your trust score climb. Every card below is real — hover, poke, enjoy."
+  },
+  "howItWorks": {
+    "eyebrow": "Three small steps",
+    "headline": {
+      "before": "Up and running in",
+      "highlight": "minutes",
+      "after": "— not weekends."
+    },
+    "steps": [
+      {
+        "number": "01",
+        "title": "Install in one click",
+        "description": "Add rayt.ca to Shopify, pick a theme, and every widget is ready to drop into your storefront."
+      },
+      {
+        "number": "02",
+        "title": "Collect on autopilot",
+        "description": "Perfectly timed, gentle review requests land in inboxes the moment your customers are happiest."
+      },
+      {
+        "number": "03",
+        "title": "Watch conversions climb",
+        "description": "Display your best reviews where it matters most and let social proof do the selling for you."
+      }
+    ]
+  },
+  "pricingTeaser": {
+    "eyebrow": "Honest pricing",
+    "headline": {
+      "before": "Start free.",
+      "highlight": "Forever free",
+      "after": " for small stores."
+    },
+    "description": "Every plan includes all 23 widgets, unlimited moderation, and real humans to help. You only pay when you grow.",
+    "ctaText": "See every plan",
+    "ctaHref": "/pricing",
+    "perks": [
+      "All widgets on every plan",
+      "Unlimited review collection",
+      "No per-seat fees, ever"
+    ]
+  },
+  "contactSubscribe": {
+    "contact": {
+      "eyebrow": "Questions?",
+      "headline": "A real human, on the other side.",
+      "body": "Pre-sales, onboarding, strategy or just a friendly hello — we reply, fast.",
+      "ctaText": "Talk to us",
+      "ctaHref": "/contact"
+    },
+    "subscribe": {
+      "headline": "rayt.ca keeps getting better. Stay in the loop.",
+      "body": "One monthly note with product drops, new widgets and clever tricks from the team. Unsubscribe any time.",
+      "placeholder": "you@example.com",
+      "ctaText": "Subscribe"
+    }
+  },
+  "finalCta": {
+    "eyebrow": "It's go time",
+    "headline": {
+      "before": "Your next great review is",
+      "highlight": "one install",
+      "after": " away."
+    },
+    "subtitle": "Install free, collect your first reviews today, and watch your store feel a little more alive by tomorrow.",
+    "ctaPrimary": "Start free",
+    "ctaSecondary": "See pricing"
+  },
+  "stacking": {
+    "eyebrow": "Visual reviews sell better",
+    "headline": "Five reasons shoppers believe what they see.",
+    "subtitle": "The strongest form of social proof isn't words — it's photos, videos and faces.",
     "cards": [
       {
         "id": "collect",
-        "title": "Gather more photos and videos",
-        "description": "RayT streamlines every step of your review collection with perfectly timed requests and proven incentives, maximizing visual review submissions.",
+        "title": "Gather photos, videos and stories shoppers trust.",
+        "description": "rayt.ca streamlines every step of review collection with perfectly timed requests and gentle incentives that multiply your visual submissions.",
         "ctaText": "Start free",
-        "colorKey": "salmon"
+        "colorKey": "sky"
       },
       {
         "id": "display",
-        "title": "Display reviews with flair",
-        "description": "From storefront to checkout, RayT widgets blend seamlessly with your brand and stand out where it matters. Make every review a natural part of your store.",
-        "ctaText": "Start free",
-        "colorKey": "darkGreen"
+        "title": "Show off reviews without ever leaving the brand.",
+        "description": "From the PDP to the checkout, our widgets feel like they've always belonged — because they were built to.",
+        "ctaText": "Explore widgets",
+        "colorKey": "mint"
       },
       {
         "id": "ai",
-        "title": "Supercharge your reviews with AI",
-        "description": "Automatically prioritize your best reviews, spotlight the most persuasive phrases, translate for global shoppers, and turn every review into more revenue.",
-        "ctaText": "Start free",
-        "colorKey": "purple"
+        "title": "Let AI spotlight the phrases that actually sell.",
+        "description": "Automatically surface your best lines, translate for global shoppers, and summarize everything into one irresistible verdict.",
+        "ctaText": "See AI features",
+        "colorKey": "lilac"
       },
       {
         "id": "share",
-        "title": "Amplify the love",
-        "description": "Maximize every happy customer interaction with our built-in conversion tools, including referrals, upsells, and smart discounts.",
+        "title": "Turn every five-star moment into another sale.",
+        "description": "Built-in referrals, upsells and smart discounts make sure every happy customer becomes your next three.",
         "ctaText": "Start free",
-        "colorKey": "salmon"
+        "colorKey": "sky"
       },
       {
         "id": "sell",
-        "title": "Sell more, everywhere, all at once",
-        "description": "Showcase your glowing reviews on leading channels and take your social proof with you, everywhere you go.",
+        "title": "Take your social proof everywhere you sell.",
+        "description": "Syndicate your reviews to search, shopping feeds and your most important channels, automatically.",
         "ctaText": "Start free",
-        "colorKey": "darkGreen"
+        "colorKey": "mint"
       }
     ]
-  },
-  "success": {
-    "badge": "BOOTSTRAPPED SINCE 2016",
-    "headline": "Obsessed with your success",
-    "subtitle": "Helping merchants grow isn't just our mission — it's our origin story.",
-    "cards": [
-      {
-        "title": "Designed for merchants",
-        "description": "Easy setup, seamless integrations, real results. RayT is simple, powerful, and built to work the way you do."
-      },
-      {
-        "title": "Built for results",
-        "description": "Every interaction, from automatic emails to beautiful widgets, is optimized to turn browsers into buyers."
-      },
-      {
-        "title": "Here for you, always",
-        "description": "From world-class support to product education, our team is here around the clock to help you grow and learn."
-      }
-    ]
-  },
-  "brands": {
-    "headline": "Serving 130K+ brands from 180+ countries worldwide",
-    "logos": ["KIM", "Arduino", "Urban Dictionary", "BlendJet", "Miami Heat", "Rudy", "Zumba", "New Era"]
-  },
-  "caseStudies": {
-    "headline": "Discover how brands grow with RayT",
-    "items": [
-      {
-        "title": "Knit in a Box: Increasing conversions through happy customers",
-        "ctaText": "Learn more"
-      },
-      {
-        "title": "How we helped BlendJet grow sales by $7.5M",
-        "ctaText": "Learn more",
-        "badge": "MERCHANT SPOTLIGHT"
-      },
-      {
-        "title": "How Volant went from $0 to $2M in 1 year using social proof",
-        "ctaText": "Learn more"
-      }
-    ]
-  },
-  "finalCta": {
-    "headline": "It's time to go beyond words.",
-    "ctaText": "Start free"
   }
 }

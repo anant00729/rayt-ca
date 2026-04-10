@@ -2,35 +2,35 @@ import { useState, useEffect, useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import content from '../../data/homeContent.json';
+
+import Hero from '../../components/home/Hero';
+import TrustStrip from '../../components/home/TrustStrip';
+import ValueGrid from '../../components/home/ValueGrid';
+import WidgetsShowcase from '../../components/home/WidgetsShowcase';
+import HowItWorks from '../../components/home/HowItWorks';
+import PricingTeaser from '../../components/home/PricingTeaser';
+import ContactSubscribe from '../../components/home/ContactSubscribe';
+import FinalCTA from '../../components/home/FinalCTA';
+
 import {
   Page,
   AnnouncementWrapper, AnnouncementText, AnnouncementCTA, DismissButton,
-  HeroSection, HeroHeadline, HeroSubtitle, HeroCTA,
-  StackingWrapper, StackingHeadline, CardsContainer,
-  StackingCard, CardText, CardCTA, CardImagePlaceholder, StackingBottomSpacer,
-  SuccessSection, SuccessBadge, SuccessHeadline, SuccessSubtitle,
-  SuccessGrid, SuccessCard, SuccessCardImage, SuccessCardTitle, SuccessCardDesc,
-  CaseStudiesSection, CaseStudiesHeadline, CaseStudiesGrid,
-  CaseCard, CaseCardImage, CaseCardBadge, CaseCardBody, CaseCardTitle, CaseCardLink,
-  FinalCTABanner, FinalCTAHeadline, FinalCTAButton,
+  StackingWrapper, StackingHeader, StackingEyebrow, StackingHeadline, StackingSubtitle,
+  CardsContainer, StackingCard, CardText, CardCTA, CardImagePlaceholder, StackingBottomSpacer,
 } from './style';
 
 export default function Home({ theme, onThemeChange }) {
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const cardRefs = useRef([]);
 
-  // Snap + scale animation on stacking cards via IntersectionObserver
+  // Scale animation on stacking cards via IntersectionObserver (retained behaviour).
   useEffect(() => {
     const observers = [];
     cardRefs.current.forEach((el) => {
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
-            el.style.transform = 'scale(1)';
-          } else {
-            el.style.transform = 'scale(0.97)';
-          }
+          el.style.transform = entry.isIntersecting ? 'scale(1)' : 'scale(0.97)';
         },
         { threshold: 0.35 }
       );
@@ -59,23 +59,39 @@ export default function Home({ theme, onThemeChange }) {
       <Header floating announcementVisible={showAnnouncement} />
 
       {/* Hero */}
-      <HeroSection>
-        <HeroHeadline>{content.hero.headline}</HeroHeadline>
-        <HeroSubtitle>{content.hero.subtitle}</HeroSubtitle>
-        <HeroCTA href="https://google.com" target="_blank" rel="noopener noreferrer">
-          {content.hero.ctaText}
-        </HeroCTA>
-      </HeroSection>
+      <Hero data={content.hero} />
 
-      {/* Stacking Feature Cards */}
+      {/* Trust strip */}
+      <TrustStrip data={content.trust} />
+
+      {/* Value features grid (9 cells) */}
+      <ValueGrid data={content.valueGrid} />
+
+      {/* Widgets showcase — all 23 widgets with per-card animation */}
+      <WidgetsShowcase data={content.widgetsShowcase} />
+
+      {/* How it works */}
+      <HowItWorks data={content.howItWorks} />
+
+      {/* Pricing teaser */}
+      <PricingTeaser data={content.pricingTeaser} />
+
+      {/* Contact + Subscribe */}
+      <ContactSubscribe data={content.contactSubscribe} />
+
+      {/* Final CTA */}
+      <FinalCTA data={content.finalCta} />
+
+      {/* Stacking cards (retained, restyled with cool palette) — just above footer */}
       <StackingWrapper>
-        <StackingHeadline>
-          <h2>{content.stackingSection.headline}</h2>
-          <p>{content.stackingSection.subtitle}</p>
-        </StackingHeadline>
+        <StackingHeader>
+          <StackingEyebrow>{content.stacking.eyebrow}</StackingEyebrow>
+          <StackingHeadline>{content.stacking.headline}</StackingHeadline>
+          <StackingSubtitle>{content.stacking.subtitle}</StackingSubtitle>
+        </StackingHeader>
 
         <CardsContainer>
-          {content.stackingSection.cards.map((card, i) => (
+          {content.stacking.cards.map((card, i) => (
             <StackingCard
               key={card.id}
               $index={i}
@@ -85,9 +101,7 @@ export default function Home({ theme, onThemeChange }) {
               <CardText>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
-                <CardCTA href="https://google.com" target="_blank" rel="noopener noreferrer">
-                  {card.ctaText} →
-                </CardCTA>
+                <CardCTA href="/pricing">{card.ctaText} →</CardCTA>
               </CardText>
               <CardImagePlaceholder $colorKey={card.colorKey} />
             </StackingCard>
@@ -96,50 +110,6 @@ export default function Home({ theme, onThemeChange }) {
 
         <StackingBottomSpacer />
       </StackingWrapper>
-
-      {/* Obsessed with your success */}
-      <SuccessSection>
-        <SuccessBadge>{content.success.badge}</SuccessBadge>
-        <SuccessHeadline>{content.success.headline}</SuccessHeadline>
-        <SuccessSubtitle>{content.success.subtitle}</SuccessSubtitle>
-        <SuccessGrid>
-          {content.success.cards.map((card) => (
-            <SuccessCard key={card.title}>
-              <SuccessCardImage />
-              <SuccessCardTitle>{card.title}</SuccessCardTitle>
-              <SuccessCardDesc>{card.description}</SuccessCardDesc>
-            </SuccessCard>
-          ))}
-        </SuccessGrid>
-      </SuccessSection>
-
-      {/* Case Studies */}
-      <CaseStudiesSection>
-        <CaseStudiesHeadline>{content.caseStudies.headline}</CaseStudiesHeadline>
-        <CaseStudiesGrid>
-          {content.caseStudies.items.map((item) => (
-            <CaseCard key={item.title}>
-              <CaseCardImage>
-                {item.badge && <CaseCardBadge>{item.badge}</CaseCardBadge>}
-              </CaseCardImage>
-              <CaseCardBody>
-                <CaseCardTitle>{item.title}</CaseCardTitle>
-                <CaseCardLink href="#">
-                  {item.ctaText} &rsaquo;
-                </CaseCardLink>
-              </CaseCardBody>
-            </CaseCard>
-          ))}
-        </CaseStudiesGrid>
-      </CaseStudiesSection>
-
-      {/* Final CTA */}
-      <FinalCTABanner>
-        <FinalCTAHeadline>{content.finalCta.headline}</FinalCTAHeadline>
-        <FinalCTAButton href="https://google.com" target="_blank" rel="noopener noreferrer">
-          {content.finalCta.ctaText}
-        </FinalCTAButton>
-      </FinalCTABanner>
 
       <Footer theme={theme} onThemeChange={onThemeChange} />
     </Page>
