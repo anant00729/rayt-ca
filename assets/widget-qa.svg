@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#7dcf8c"/>
+  <!-- Diagonal hatching -->
+  <line x1="-240" y1="0" x2="0" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-226" y1="0" x2="14" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-212" y1="0" x2="28" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-198" y1="0" x2="42" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-184" y1="0" x2="56" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-170" y1="0" x2="70" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-156" y1="0" x2="84" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-142" y1="0" x2="98" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-128" y1="0" x2="112" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-114" y1="0" x2="126" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-100" y1="0" x2="140" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-86" y1="0" x2="154" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-72" y1="0" x2="168" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-58" y1="0" x2="182" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-44" y1="0" x2="196" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-30" y1="0" x2="210" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-16" y1="0" x2="224" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-2" y1="0" x2="238" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="12" y1="0" x2="252" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="26" y1="0" x2="266" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="40" y1="0" x2="280" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="54" y1="0" x2="294" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="68" y1="0" x2="308" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="82" y1="0" x2="322" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="96" y1="0" x2="336" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="110" y1="0" x2="350" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="124" y1="0" x2="364" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="138" y1="0" x2="378" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="152" y1="0" x2="392" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <!-- White card -->
+  <rect x="40" y="20" width="320" height="200" rx="12" fill="#fff" opacity="0.95"/>
+  <!-- Section title -->
+  <text x="200" y="46" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#1a2e4a" text-anchor="middle">Questions &amp; Answers</text>
+  <!-- Question 1: avatar + Q label + text lines -->
+  <circle cx="68" cy="74" r="12" fill="#d8e8f0"/>
+  <text x="68" y="78" font-family="system-ui,sans-serif" font-size="9" fill="#6aaed6" text-anchor="middle" font-weight="700">Q</text>
+  <rect x="88" y="66" width="180" height="8" rx="4" fill="#e8e8e8"/>
+  <rect x="88" y="79" width="150" height="8" rx="4" fill="#e8e8e8"/>
+  <!-- Answer bubble -->
+  <rect x="68" y="100" width="268" height="52" rx="8" fill="#edfaee"/>
+  <text x="82" y="116" font-family="system-ui,sans-serif" font-size="9" fill="#7dcf8c" font-weight="700">A</text>
+  <rect x="96" y="108" width="220" height="7" rx="3" fill="#c8e8c8"/>
+  <rect x="96" y="120" width="200" height="7" rx="3" fill="#c8e8c8"/>
+  <rect x="96" y="132" width="160" height="7" rx="3" fill="#c8e8c8"/>
+  <!-- Question 2 -->
+  <circle cx="68" cy="174" r="12" fill="#d8e8f0"/>
+  <text x="68" y="178" font-family="system-ui,sans-serif" font-size="9" fill="#6aaed6" text-anchor="middle" font-weight="700">Q</text>
+  <rect x="88" y="166" width="190" height="8" rx="4" fill="#e8e8e8"/>
+  <rect x="88" y="179" width="160" height="8" rx="4" fill="#e8e8e8"/>
+  <!-- Divider -->
+  <line x1="60" y1="162" x2="340" y2="162" stroke="#eeeeee" stroke-width="1"/>
+</svg>

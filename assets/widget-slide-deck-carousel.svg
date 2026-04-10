@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <!-- Warm salmon/pink background -->
+  <rect width="400" height="240" fill="#e8b4a0"/>
+  <!-- Diagonal hatching -->
+  <line x1="-240" y1="0" x2="0" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-226" y1="0" x2="14" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-212" y1="0" x2="28" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-198" y1="0" x2="42" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-184" y1="0" x2="56" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-170" y1="0" x2="70" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-156" y1="0" x2="84" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-142" y1="0" x2="98" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-128" y1="0" x2="112" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-114" y1="0" x2="126" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-100" y1="0" x2="140" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-86" y1="0" x2="154" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-72" y1="0" x2="168" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-58" y1="0" x2="182" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-44" y1="0" x2="196" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-30" y1="0" x2="210" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-16" y1="0" x2="224" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-2" y1="0" x2="238" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="12" y1="0" x2="252" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="26" y1="0" x2="266" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="40" y1="0" x2="280" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="54" y1="0" x2="294" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="68" y1="0" x2="308" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="82" y1="0" x2="322" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="96" y1="0" x2="336" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="110" y1="0" x2="350" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="124" y1="0" x2="364" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="138" y1="0" x2="378" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="152" y1="0" x2="392" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+
+  <!-- Outer white container -->
+  <rect x="18" y="8" width="364" height="216" rx="14" fill="#f4f8f2" opacity="0.95"/>
+
+  <defs>
+    <!-- Clip for outer container bounds -->
+    <clipPath id="sdc-outer"><rect x="18" y="8" width="364" height="216" rx="14"/></clipPath>
+    <!-- Card image clips (round top corners only) -->
+    <clipPath id="sdc-img1"><rect x="28"  y="18" width="66" height="95" rx="10"/></clipPath>
+    <clipPath id="sdc-img2"><rect x="100" y="18" width="66" height="95" rx="10"/></clipPath>
+    <clipPath id="sdc-img3"><rect x="172" y="18" width="66" height="95" rx="10"/></clipPath>
+    <clipPath id="sdc-img4"><rect x="244" y="18" width="66" height="95" rx="10"/></clipPath>
+    <clipPath id="sdc-img5"><rect x="316" y="18" width="66" height="95" rx="10"/></clipPath>
+    <!-- Drop shadow filter for cards -->
+    <filter id="sdc-shadow" x="-4%" y="-2%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- ============ CARD 1: x=28 — green lake/fishing photo ============ -->
+  <rect x="28" y="18" width="66" height="180" rx="10" fill="#fff" filter="url(#sdc-shadow)" clip-path="url(#sdc-outer)"/>
+  <!-- Image area (nature green tones) -->
+  <rect x="28" y="18" width="66" height="90" fill="#6a9a68" clip-path="url(#sdc-img1)"/>
+  <rect x="28" y="18" width="66" height="40" fill="#88b486" clip-path="url(#sdc-img1)"/>
+  <!-- Water reflection -->
+  <rect x="28" y="78" width="66" height="30" fill="#5c8a5a" clip-path="url(#sdc-img1)"/>
+  <!-- Person silhouette hint -->
+  <circle cx="61" cy="52" r="7" fill="#4a7a48" opacity="0.6" clip-path="url(#sdc-img1)"/>
+  <rect x="55" y="58" width="12" height="20" rx="3" fill="#4a7a48" opacity="0.5" clip-path="url(#sdc-img1)"/>
+  <!-- Play button -->
+  <circle cx="61" cy="60" r="9" fill="#fff" opacity="0.9" clip-path="url(#sdc-img1)"/>
+  <polygon points="59,55 59,65 66,60" fill="#333" opacity="0.75" clip-path="url(#sdc-img1)"/>
+  <!-- Star rating bar (dark green strip overlapping image bottom) -->
+  <rect x="35" y="102" width="52" height="14" rx="7" fill="#2d5a3d"/>
+  <text x="61" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#4caf50" text-anchor="middle" font-weight="bold">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <!-- Reviewer name -->
+  <text x="61" y="130" font-family="system-ui,sans-serif" font-size="7" fill="#222" text-anchor="middle" font-weight="600">Ken Y.</text>
+  <!-- Verified badge -->
+  <circle cx="80" cy="127.5" r="3.5" fill="#1da1f2"/>
+  <text x="80" y="130" font-family="system-ui,sans-serif" font-size="5" fill="#fff" text-anchor="middle" font-weight="bold">&#10003;</text>
+  <!-- Review text lines -->
+  <rect x="34" y="138" width="54" height="3" rx="1.5" fill="#ddd"/>
+  <rect x="37" y="144" width="48" height="3" rx="1.5" fill="#e4e4e4"/>
+  <rect x="35" y="150" width="52" height="3" rx="1.5" fill="#ddd"/>
+  <rect x="38" y="156" width="46" height="3" rx="1.5" fill="#e4e4e4"/>
+
+  <!-- ============ CARD 2: x=100 — amber/outdoor photo + play ============ -->
+  <rect x="100" y="18" width="66" height="180" rx="10" fill="#fff" filter="url(#sdc-shadow)" clip-path="url(#sdc-outer)"/>
+  <!-- Image area (warm amber) -->
+  <rect x="100" y="18" width="66" height="90" fill="#c4a46c" clip-path="url(#sdc-img2)"/>
+  <rect x="100" y="18" width="66" height="42" fill="#d8bc88" clip-path="url(#sdc-img2)"/>
+  <rect x="100" y="76" width="66" height="32" fill="#b09058" clip-path="url(#sdc-img2)"/>
+  <!-- Person hint -->
+  <circle cx="133" cy="50" r="7" fill="#a08048" opacity="0.5" clip-path="url(#sdc-img2)"/>
+  <rect x="127" y="56" width="12" height="18" rx="3" fill="#a08048" opacity="0.4" clip-path="url(#sdc-img2)"/>
+  <!-- Play button -->
+  <circle cx="133" cy="58" r="9" fill="#fff" opacity="0.9" clip-path="url(#sdc-img2)"/>
+  <polygon points="131,53 131,63 138,58" fill="#333" opacity="0.75" clip-path="url(#sdc-img2)"/>
+  <!-- Star rating bar -->
+  <rect x="107" y="102" width="52" height="14" rx="7" fill="#2d5a3d"/>
+  <text x="133" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#4caf50" text-anchor="middle" font-weight="bold">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <!-- Name -->
+  <text x="133" y="130" font-family="system-ui,sans-serif" font-size="7" fill="#222" text-anchor="middle" font-weight="600">Neil P.</text>
+  <circle cx="152" cy="127.5" r="3.5" fill="#1da1f2"/>
+  <text x="152" y="130" font-family="system-ui,sans-serif" font-size="5" fill="#fff" text-anchor="middle" font-weight="bold">&#10003;</text>
+  <!-- Review text -->
+  <rect x="106" y="138" width="54" height="3" rx="1.5" fill="#ddd"/>
+  <rect x="109" y="144" width="48" height="3" rx="1.5" fill="#e4e4e4"/>
+  <rect x="107" y="150" width="52" height="3" rx="1.5" fill="#ddd"/>
+
+  <!-- ============ CARD 3: x=172 — teal/kitchen photo + play ============ -->
+  <rect x="172" y="18" width="66" height="180" rx="10" fill="#fff" filter="url(#sdc-shadow)" clip-path="url(#sdc-outer)"/>
+  <!-- Image area (teal/blue-green) -->
+  <rect x="172" y="18" width="66" height="90" fill="#7a9e98" clip-path="url(#sdc-img3)"/>
+  <rect x="172" y="18" width="66" height="44" fill="#8ab0a8" clip-path="url(#sdc-img3)"/>
+  <rect x="172" y="74" width="66" height="34" fill="#688e88" clip-path="url(#sdc-img3)"/>
+  <!-- Play button -->
+  <circle cx="205" cy="58" r="9" fill="#fff" opacity="0.9" clip-path="url(#sdc-img3)"/>
+  <polygon points="203,53 203,63 210,58" fill="#333" opacity="0.75" clip-path="url(#sdc-img3)"/>
+  <!-- Star rating bar -->
+  <rect x="179" y="102" width="52" height="14" rx="7" fill="#2d5a3d"/>
+  <text x="205" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#4caf50" text-anchor="middle" font-weight="bold">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <!-- Name -->
+  <text x="205" y="130" font-family="system-ui,sans-serif" font-size="7" fill="#222" text-anchor="middle" font-weight="600">Jake J.</text>
+  <circle cx="222" cy="127.5" r="3.5" fill="#1da1f2"/>
+  <text x="222" y="130" font-family="system-ui,sans-serif" font-size="5" fill="#fff" text-anchor="middle" font-weight="bold">&#10003;</text>
+  <!-- Review text -->
+  <rect x="178" y="138" width="54" height="3" rx="1.5" fill="#ddd"/>
+  <rect x="181" y="144" width="48" height="3" rx="1.5" fill="#e4e4e4"/>
+  <rect x="179" y="150" width="52" height="3" rx="1.5" fill="#ddd"/>
+  <rect x="182" y="156" width="46" height="3" rx="1.5" fill="#e4e4e4"/>
+
+  <!-- ============ CARD 4: x=244 — dusty rose/sunset photo ============ -->
+  <rect x="244" y="18" width="66" height="180" rx="10" fill="#fff" filter="url(#sdc-shadow)" clip-path="url(#sdc-outer)"/>
+  <!-- Image area (warm pink/rose sunset) -->
+  <rect x="244" y="18" width="66" height="90" fill="#c8a090" clip-path="url(#sdc-img4)"/>
+  <rect x="244" y="18" width="66" height="36" fill="#d8b8a8" clip-path="url(#sdc-img4)"/>
+  <rect x="244" y="70" width="66" height="38" fill="#b89080" clip-path="url(#sdc-img4)"/>
+  <!-- Person hint -->
+  <circle cx="277" cy="52" r="6" fill="#a88070" opacity="0.5" clip-path="url(#sdc-img4)"/>
+  <!-- Play button -->
+  <circle cx="277" cy="58" r="9" fill="#fff" opacity="0.9" clip-path="url(#sdc-img4)"/>
+  <polygon points="275,53 275,63 282,58" fill="#333" opacity="0.75" clip-path="url(#sdc-img4)"/>
+  <!-- Star rating bar (4 stars) -->
+  <rect x="251" y="102" width="52" height="14" rx="7" fill="#2d5a3d"/>
+  <text x="277" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#4caf50" text-anchor="middle" font-weight="bold">&#9733;&#9733;&#9733;&#9733;</text>
+  <text x="293" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#8aaa8a" text-anchor="middle">&#9734;</text>
+  <!-- Name -->
+  <text x="277" y="130" font-family="system-ui,sans-serif" font-size="7" fill="#222" text-anchor="middle" font-weight="600">Zeita J.</text>
+  <circle cx="296" cy="127.5" r="3.5" fill="#1da1f2"/>
+  <text x="296" y="130" font-family="system-ui,sans-serif" font-size="5" fill="#fff" text-anchor="middle" font-weight="bold">&#10003;</text>
+  <!-- Review text -->
+  <rect x="250" y="138" width="54" height="3" rx="1.5" fill="#ddd"/>
+  <rect x="253" y="144" width="48" height="3" rx="1.5" fill="#e4e4e4"/>
+  <rect x="251" y="150" width="52" height="3" rx="1.5" fill="#ddd"/>
+
+  <!-- ============ CARD 5: x=316 — golden beach photo (partially clipped) ============ -->
+  <rect x="316" y="18" width="66" height="180" rx="10" fill="#fff" filter="url(#sdc-shadow)" clip-path="url(#sdc-outer)"/>
+  <!-- Image area (golden/beach) -->
+  <rect x="316" y="18" width="66" height="90" fill="#d4b478" clip-path="url(#sdc-img5)"/>
+  <rect x="316" y="18" width="66" height="38" fill="#e0c890" clip-path="url(#sdc-img5)"/>
+  <rect x="316" y="72" width="66" height="36" fill="#c0a060" clip-path="url(#sdc-img5)"/>
+  <!-- Star rating bar -->
+  <rect x="323" y="102" width="52" height="14" rx="7" fill="#2d5a3d" clip-path="url(#sdc-outer)"/>
+  <text x="349" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#4caf50" text-anchor="middle" font-weight="bold" clip-path="url(#sdc-outer)">&#9733;&#9733;&#9733;&#9733;&#9733;</text>
+  <!-- Name -->
+  <text x="349" y="130" font-family="system-ui,sans-serif" font-size="6.5" fill="#222" text-anchor="middle" font-weight="600" clip-path="url(#sdc-outer)">Brandon K.</text>
+  <!-- Review text -->
+  <rect x="322" y="138" width="54" height="3" rx="1.5" fill="#ddd" clip-path="url(#sdc-outer)"/>
+  <rect x="325" y="144" width="48" height="3" rx="1.5" fill="#e4e4e4" clip-path="url(#sdc-outer)"/>
+
+  <!-- Nav arrow right -->
+  <circle cx="370" cy="100" r="14" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="370" y="105" font-family="system-ui,sans-serif" font-size="14" fill="#666" text-anchor="middle">&#8250;</text>
+
+  <!-- Pagination dots -->
+  <circle cx="180" cy="210" r="5" fill="#2d5a3d"/>
+  <circle cx="194" cy="210" r="3.5" fill="#ccc"/>
+  <circle cx="206" cy="210" r="3.5" fill="#ccc"/>
+  <circle cx="218" cy="210" r="3.5" fill="#ccc"/>
+</svg>

@@ -4,31 +4,30 @@ export default function HeroSection() {
   return (
     <Section>
       <Left>
-        <Label>Built for modern teams</Label>
-        <Headline>Modern tools for teams that ship fast.</Headline>
+        <Label>AI-Powered Reviews — Free up to 200</Label>
+        <Headline>Reviews that sell. Powered by AI.</Headline>
         <Divider />
         <Badges>
-          <Badge><BadgeIcon>⚡</BadgeIcon>Fast</Badge>
-          <Badge><BadgeIcon>🔒</BadgeIcon>Secure</Badge>
-          <Badge><BadgeIcon>♻</BadgeIcon>Scalable</Badge>
+          <Badge><BadgeIcon>✦</BadgeIcon>AI-Powered</Badge>
+          <Badge><BadgeIcon>★</BadgeIcon>Auto-Collect</Badge>
+          <Badge><BadgeIcon>◈</BadgeIcon>Free to Start</Badge>
         </Badges>
         <Divider />
         <Body>
-          Visually-stunning, easy to customize tools built for teams that move fast.
-          The perfect starting point for your next project and the ultimate resource
-          for shipping real products.
+          Let AI do the heavy lifting — auto-collect, smart-sort, and beautifully display
+          product reviews that convert. Get started free with up to 200 reviews, no credit card needed.
         </Body>
       </Left>
 
       <Right>
         <Card style={{ width: '58%', height: '45%', top: '2%', right: '2%', transform: 'rotate(2deg)' }} bg="var(--color-secondary)">
-          <CardLabel style={{ color: 'rgba(255,255,255,0.2)' }}>Ship faster.</CardLabel>
+          <CardLabel style={{ color: 'rgba(255,255,255,0.2)' }}>AI Replies.</CardLabel>
         </Card>
         <Card style={{ width: '62%', height: '44%', top: '30%', left: '0%', transform: 'rotate(-1.5deg)' }} bg="var(--color-accent)">
-          <CardLabel>Build smart.</CardLabel>
+          <CardLabel>More Trust.</CardLabel>
         </Card>
         <Card style={{ width: '50%', height: '38%', bottom: '2%', right: '5%', transform: 'rotate(1deg)' }} bg="var(--color-border)">
-          <CardLabel>Scale easy.</CardLabel>
+          <CardLabel>More Sales.</CardLabel>
         </Card>
       </Right>
     </Section>

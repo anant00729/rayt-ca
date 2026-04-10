@@ -1,0 +1,99 @@
+{
+  "announcement": {
+    "text": "Your reviews, now supercharged with AI. Discover six new features driving more conversions.",
+    "ctaText": "Explore AI features",
+    "ctaHref": "/ai"
+  },
+  "hero": {
+    "badge": "Built for Shopify",
+    "headline": "Brilliant Reviews That Make You Stand Out",
+    "subtitle": "It's time to go beyond words.",
+    "ctaText": "Start free"
+  },
+  "stackingSection": {
+    "headline": "Visual reviews sell better",
+    "subtitle": "Join 130,000+ brands building trust with the strongest form of social proof.",
+    "cards": [
+      {
+        "id": "collect",
+        "title": "Gather more photos and videos",
+        "description": "RayT streamlines every step of your review collection with perfectly timed requests and proven incentives, maximizing visual review submissions.",
+        "ctaText": "Start free",
+        "colorKey": "salmon"
+      },
+      {
+        "id": "display",
+        "title": "Display reviews with flair",
+        "description": "From storefront to checkout, RayT widgets blend seamlessly with your brand and stand out where it matters. Make every review a natural part of your store.",
+        "ctaText": "Start free",
+        "colorKey": "darkGreen"
+      },
+      {
+        "id": "ai",
+        "title": "Supercharge your reviews with AI",
+        "description": "Automatically prioritize your best reviews, spotlight the most persuasive phrases, translate for global shoppers, and turn every review into more revenue.",
+        "ctaText": "Start free",
+        "colorKey": "purple"
+      },
+      {
+        "id": "share",
+        "title": "Amplify the love",
+        "description": "Maximize every happy customer interaction with our built-in conversion tools, including referrals, upsells, and smart discounts.",
+        "ctaText": "Start free",
+        "colorKey": "salmon"
+      },
+      {
+        "id": "sell",
+        "title": "Sell more, everywhere, all at once",
+        "description": "Showcase your glowing reviews on leading channels and take your social proof with you, everywhere you go.",
+        "ctaText": "Start free",
+        "colorKey": "darkGreen"
+      }
+    ]
+  },
+  "success": {
+    "badge": "BOOTSTRAPPED SINCE 2016",
+    "headline": "Obsessed with your success",
+    "subtitle": "Helping merchants grow isn't just our mission — it's our origin story.",
+    "cards": [
+      {
+        "title": "Designed for merchants",
+        "description": "Easy setup, seamless integrations, real results. RayT is simple, powerful, and built to work the way you do."
+      },
+      {
+        "title": "Built for results",
+        "description": "Every interaction, from automatic emails to beautiful widgets, is optimized to turn browsers into buyers."
+      },
+      {
+        "title": "Here for you, always",
+        "description": "From world-class support to product education, our team is here around the clock to help you grow and learn."
+      }
+    ]
+  },
+  "brands": {
+    "headline": "Serving 130K+ brands from 180+ countries worldwide",
+    "logos": ["KIM", "Arduino", "Urban Dictionary", "BlendJet", "Miami Heat", "Rudy", "Zumba", "New Era"]
+  },
+  "caseStudies": {
+    "headline": "Discover how brands grow with RayT",
+    "items": [
+      {
+        "title": "Knit in a Box: Increasing conversions through happy customers",
+        "ctaText": "Learn more"
+      },
+      {
+        "title": "How we helped BlendJet grow sales by $7.5M",
+        "ctaText": "Learn more",
+        "badge": "MERCHANT SPOTLIGHT"
+      },
+      {
+        "title": "How Volant went from $0 to $2M in 1 year using social proof",
+        "ctaText": "Learn more"
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "It's time to go beyond words.",
+    "ctaText": "Start free"
+  }
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#6aaed6"/>
+  <!-- Diagonal hatching -->
+  <line x1="-240" y1="0" x2="0" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-226" y1="0" x2="14" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-212" y1="0" x2="28" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-198" y1="0" x2="42" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-184" y1="0" x2="56" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-170" y1="0" x2="70" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-156" y1="0" x2="84" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-142" y1="0" x2="98" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-128" y1="0" x2="112" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-114" y1="0" x2="126" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-100" y1="0" x2="140" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-86" y1="0" x2="154" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-72" y1="0" x2="168" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-58" y1="0" x2="182" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-44" y1="0" x2="196" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-30" y1="0" x2="210" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-16" y1="0" x2="224" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-2" y1="0" x2="238" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="12" y1="0" x2="252" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="26" y1="0" x2="266" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="40" y1="0" x2="280" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="54" y1="0" x2="294" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="68" y1="0" x2="308" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="82" y1="0" x2="322" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="96" y1="0" x2="336" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="110" y1="0" x2="350" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="124" y1="0" x2="364" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="138" y1="0" x2="378" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="152" y1="0" x2="392" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <!-- Left video card -->
+  <rect x="30" y="50" width="96" height="130" rx="8" fill="#1a2e4a" opacity="0.8"/>
+  <circle cx="78" cy="110" r="16" fill="#fff" opacity="0.2"/>
+  <polygon points="86,110 72,102 72,118" fill="#fff" opacity="0.6"/>
+  <text x="78" y="192" font-family="system-ui,sans-serif" font-size="9" fill="#fff" text-anchor="middle" opacity="0.8">★★★★☆</text>
+  <!-- Center video card (taller, brighter) -->
+  <rect x="145" y="28" width="110" height="160" rx="8" fill="#1a2e4a"/>
+  <circle cx="200" cy="108" r="22" fill="#fff" opacity="0.25"/>
+  <polygon points="211,108 193,97 193,119" fill="#fff" opacity="0.9"/>
+  <text x="200" y="200" font-family="system-ui,sans-serif" font-size="9" fill="#fff" text-anchor="middle" opacity="0.9">★★★★★</text>
+  <!-- Right video card -->
+  <rect x="274" y="50" width="96" height="130" rx="8" fill="#1a2e4a" opacity="0.8"/>
+  <circle cx="322" cy="110" r="16" fill="#fff" opacity="0.2"/>
+  <polygon points="330,110 316,102 316,118" fill="#fff" opacity="0.6"/>
+  <text x="322" y="192" font-family="system-ui,sans-serif" font-size="9" fill="#fff" text-anchor="middle" opacity="0.8">★★★★★</text>
+  <!-- Nav dots -->
+  <circle cx="193" cy="225" r="4" fill="#fff"/>
+  <circle cx="205" cy="225" r="3" fill="#fff" opacity="0.5"/>
+  <circle cx="215" cy="225" r="3" fill="#fff" opacity="0.5"/>
+</svg>

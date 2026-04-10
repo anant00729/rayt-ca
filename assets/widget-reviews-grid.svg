@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#6aaed6"/>
+  <!-- Diagonal hatching -->
+  <line x1="-240" y1="0" x2="0" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-226" y1="0" x2="14" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-212" y1="0" x2="28" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-198" y1="0" x2="42" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-184" y1="0" x2="56" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-170" y1="0" x2="70" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-156" y1="0" x2="84" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-142" y1="0" x2="98" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-128" y1="0" x2="112" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-114" y1="0" x2="126" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-100" y1="0" x2="140" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-86" y1="0" x2="154" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-72" y1="0" x2="168" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-58" y1="0" x2="182" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-44" y1="0" x2="196" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-30" y1="0" x2="210" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-16" y1="0" x2="224" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-2" y1="0" x2="238" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="12" y1="0" x2="252" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="26" y1="0" x2="266" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="40" y1="0" x2="280" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="54" y1="0" x2="294" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="68" y1="0" x2="308" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="82" y1="0" x2="322" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="96" y1="0" x2="336" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="110" y1="0" x2="350" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="124" y1="0" x2="364" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="138" y1="0" x2="378" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="152" y1="0" x2="392" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <!-- 3x2 grid of review cards with gaps -->
+  <!-- Row 1, Col 1 — navy -->
+  <rect x="28" y="22" width="108" height="90" rx="8" fill="#1a2e4a"/>
+  <circle cx="52" cy="46" r="10" fill="#2a4a7a"/>
+  <rect x="38" y="62" width="80" height="6" rx="3" fill="#2a4a7a"/>
+  <text x="68" y="90" font-family="system-ui,sans-serif" font-size="10" fill="#f5a623" text-anchor="middle" opacity="0.8">★★★★★</text>
+  <rect x="38" y="98" width="70" height="5" rx="2" fill="#2a4a7a"/>
+  <!-- Row 1, Col 2 — green -->
+  <rect x="146" y="22" width="108" height="90" rx="8" fill="#7dcf8c"/>
+  <circle cx="170" cy="46" r="10" fill="#5db86c"/>
+  <rect x="156" y="62" width="80" height="6" rx="3" fill="#5db86c"/>
+  <text x="200" y="90" font-family="system-ui,sans-serif" font-size="10" fill="#fff" text-anchor="middle" opacity="0.9">★★★★★</text>
+  <rect x="156" y="98" width="70" height="5" rx="2" fill="#5db86c"/>
+  <!-- Row 1, Col 3 — white -->
+  <rect x="264" y="22" width="108" height="90" rx="8" fill="#fff"/>
+  <circle cx="288" cy="46" r="10" fill="#e0e8f0"/>
+  <rect x="274" y="62" width="80" height="6" rx="3" fill="#e8e8e8"/>
+  <text x="318" y="90" font-family="system-ui,sans-serif" font-size="10" fill="#f5a623" text-anchor="middle">★★★★☆</text>
+  <rect x="274" y="98" width="70" height="5" rx="2" fill="#e8e8e8"/>
+  <!-- Row 2, Col 1 — white -->
+  <rect x="28" y="122" width="108" height="98" rx="8" fill="#fff"/>
+  <circle cx="52" cy="146" r="10" fill="#e0e8f0"/>
+  <rect x="38" y="162" width="80" height="6" rx="3" fill="#e8e8e8"/>
+  <text x="68" y="190" font-family="system-ui,sans-serif" font-size="10" fill="#f5a623" text-anchor="middle">★★★★★</text>
+  <rect x="38" y="200" width="60" height="5" rx="2" fill="#e8e8e8"/>
+  <!-- Row 2, Col 2 — navy -->
+  <rect x="146" y="122" width="108" height="98" rx="8" fill="#1a2e4a"/>
+  <circle cx="170" cy="146" r="10" fill="#2a4a7a"/>
+  <rect x="156" y="162" width="80" height="6" rx="3" fill="#2a4a7a"/>
+  <text x="200" y="190" font-family="system-ui,sans-serif" font-size="10" fill="#f5a623" text-anchor="middle" opacity="0.8">★★★★★</text>
+  <rect x="156" y="200" width="70" height="5" rx="2" fill="#2a4a7a"/>
+  <!-- Row 2, Col 3 — green -->
+  <rect x="264" y="122" width="108" height="98" rx="8" fill="#7dcf8c"/>
+  <circle cx="288" cy="146" r="10" fill="#5db86c"/>
+  <rect x="274" y="162" width="80" height="6" rx="3" fill="#5db86c"/>
+  <text x="318" y="190" font-family="system-ui,sans-serif" font-size="10" fill="#fff" text-anchor="middle" opacity="0.9">★★★★★</text>
+  <rect x="274" y="200" width="60" height="5" rx="2" fill="#5db86c"/>
+</svg>

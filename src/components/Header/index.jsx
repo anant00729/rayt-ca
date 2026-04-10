@@ -51,7 +51,7 @@ const SIMPLE_NAV = [
   { label: 'Resources', path: '/resources' },
 ];
 
-export default function Header() {
+export default function Header({ floating = false, announcementVisible = false }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileProductOpen, setMobileProductOpen] = useState(false);
@@ -68,7 +68,7 @@ export default function Header() {
   }, []);
 
   return (
-    <HeaderBar>
+    <HeaderBar $floating={floating} $announcementVisible={announcementVisible}>
       <Container>
         <Logo to="/">
           <StarIcon viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

@@ -8,11 +8,27 @@ export const spinWithDelay = keyframes`
 `;
 
 export const HeaderBar = styled.header`
-  background: var(--color-primary);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
+  background: color-mix(in srgb, var(--color-primary) 60%, transparent);
+  backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+  box-shadow: 0 1px 0 color-mix(in srgb, white 8%, transparent), 0 4px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
   z-index: 100;
+
+  ${({ $floating, $announcementVisible }) => $floating ? `
+    position: fixed;
+    top: ${$announcementVisible ? '56px' : '16px'};
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 1300px;
+    border-radius: 6px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    transition: top 0.3s ease;
+  ` : `
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  `}
 `;
 
 export const Container = styled.div`
@@ -96,7 +112,7 @@ export const Dropdown = styled.div`
   transform: translateX(-50%);
   background: var(--color-primary);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 0.5rem;
   min-width: 340px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.15);
@@ -112,7 +128,7 @@ export const DropdownItem = styled(Link)`
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.75rem;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   transition: background 0.15s;
 
@@ -124,7 +140,7 @@ export const DropdownItem = styled(Link)`
 export const DropdownIcon = styled.span`
   width: 40px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: 6px;
   background: color-mix(in srgb, var(--color-border) 40%, transparent);
   display: flex;
   align-items: center;
@@ -208,7 +224,7 @@ export const Hamburger = styled.button`
     width: 22px;
     height: 2px;
     background: var(--color-secondary);
-    border-radius: 1px;
+    border-radius: 6px;
     transition: transform 0.2s, opacity 0.2s;
   }
 
@@ -280,7 +296,7 @@ export const MobileDropItem = styled(Link)`
 export const MobileDropIcon = styled.span`
   width: 36px;
   height: 36px;
-  border-radius: 8px;
+  border-radius: 6px;
   background: color-mix(in srgb, var(--color-border) 40%, transparent);
   display: flex;
   align-items: center;

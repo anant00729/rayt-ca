@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#7dcf8c"/>
+  <!-- Diagonal hatching -->
+  <line x1="-240" y1="0" x2="0" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-226" y1="0" x2="14" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-212" y1="0" x2="28" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-198" y1="0" x2="42" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-184" y1="0" x2="56" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-170" y1="0" x2="70" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-156" y1="0" x2="84" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-142" y1="0" x2="98" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-128" y1="0" x2="112" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-114" y1="0" x2="126" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-100" y1="0" x2="140" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-86" y1="0" x2="154" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-72" y1="0" x2="168" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-58" y1="0" x2="182" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-44" y1="0" x2="196" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-30" y1="0" x2="210" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-16" y1="0" x2="224" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="-2" y1="0" x2="238" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="12" y1="0" x2="252" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="26" y1="0" x2="266" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="40" y1="0" x2="280" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="54" y1="0" x2="294" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="68" y1="0" x2="308" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="82" y1="0" x2="322" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="96" y1="0" x2="336" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="110" y1="0" x2="350" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="124" y1="0" x2="364" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="138" y1="0" x2="378" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <line x1="152" y1="0" x2="392" y2="240" stroke="#fff" stroke-width="1" opacity="0.12"/>
+  <!-- White card -->
+  <rect x="30" y="15" width="340" height="210" rx="12" fill="#fff" opacity="0.95"/>
+  <!-- Nav arrow left -->
+  <circle cx="52" cy="110" r="14" fill="#f0f0f0"/>
+  <text x="52" y="115" font-family="system-ui,sans-serif" font-size="13" fill="#666" text-anchor="middle">&#8249;</text>
+  <!-- Nav arrow right -->
+  <circle cx="348" cy="110" r="14" fill="#f0f0f0"/>
+  <text x="348" y="115" font-family="system-ui,sans-serif" font-size="13" fill="#666" text-anchor="middle">&#8250;</text>
+  <!-- Card 1 -->
+  <rect x="70" y="30" width="64" height="90" rx="6" fill="#e0e8e0"/>
+  <text x="102" y="85" font-family="system-ui,sans-serif" font-size="9" fill="#aaa" text-anchor="middle">photo</text>
+  <text x="102" y="132" font-family="system-ui,sans-serif" font-size="8" fill="#f5a623" text-anchor="middle">★★★★★</text>
+  <rect x="74" y="140" width="56" height="5" rx="2" fill="#e0e0e0"/>
+  <rect x="78" y="149" width="48" height="5" rx="2" fill="#ececec"/>
+  <!-- Card 2 -->
+  <rect x="142" y="30" width="64" height="90" rx="6" fill="#d8e8f0"/>
+  <text x="174" y="85" font-family="system-ui,sans-serif" font-size="9" fill="#aaa" text-anchor="middle">photo</text>
+  <text x="174" y="132" font-family="system-ui,sans-serif" font-size="8" fill="#f5a623" text-anchor="middle">★★★★☆</text>
+  <rect x="146" y="140" width="56" height="5" rx="2" fill="#e0e0e0"/>
+  <rect x="150" y="149" width="48" height="5" rx="2" fill="#ececec"/>
+  <!-- Card 3 -->
+  <rect x="214" y="30" width="64" height="90" rx="6" fill="#f0e8d8"/>
+  <text x="246" y="85" font-family="system-ui,sans-serif" font-size="9" fill="#aaa" text-anchor="middle">photo</text>
+  <text x="246" y="132" font-family="system-ui,sans-serif" font-size="8" fill="#f5a623" text-anchor="middle">★★★★★</text>
+  <rect x="218" y="140" width="56" height="5" rx="2" fill="#e0e0e0"/>
+  <rect x="222" y="149" width="48" height="5" rx="2" fill="#ececec"/>
+  <!-- Card 4 -->
+  <rect x="286" y="30" width="54" height="90" rx="6" fill="#ecdfe8"/>
+  <text x="313" y="85" font-family="system-ui,sans-serif" font-size="9" fill="#aaa" text-anchor="middle">photo</text>
+  <text x="313" y="132" font-family="system-ui,sans-serif" font-size="8" fill="#f5a623" text-anchor="middle">★★★★★</text>
+  <rect x="290" y="140" width="46" height="5" rx="2" fill="#e0e0e0"/>
+  <rect x="293" y="149" width="38" height="5" rx="2" fill="#ececec"/>
+  <!-- Dots -->
+  <circle cx="182" cy="205" r="5" fill="#7dcf8c"/>
+  <circle cx="196" cy="205" r="4" fill="#ccc"/>
+  <circle cx="209" cy="205" r="4" fill="#ccc"/>
+</svg>

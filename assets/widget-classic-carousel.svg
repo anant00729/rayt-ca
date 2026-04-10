@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <!-- Background -->
+  <rect width="400" height="240" fill="#e2e2e2"/>
+  <defs>
+    <pattern id="stripe" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="white" stroke-width="4" stroke-opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="240" fill="url(#stripe)"/>
+
+  <!-- White card -->
+  <rect x="16" y="24" width="368" height="192" rx="16" fill="white"/>
+
+  <!-- Left column: title text + stars + lines -->
+  <text x="32" y="70" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#2c2c2c">Let customers</text>
+  <text x="32" y="86" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#2c2c2c">speak for us</text>
+  <text x="30" y="112" font-family="Arial,sans-serif" font-size="20" fill="#4cd880">★★★★★</text>
+  <rect x="32" y="122" width="84" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="32" y="143" width="42" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="80" y="143" width="60" height="7" rx="3.5" fill="#a8d8e8"/>
+
+  <!-- Left arrow -->
+  <polyline points="146,102 136,112 146,122" fill="none" stroke="#666" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Middle review column -->
+  <text x="158" y="72" font-family="Arial,sans-serif" font-size="15" fill="#4cd880">★★★★★</text>
+  <rect x="158" y="82" width="84" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="158" y="94" width="84" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="158" y="106" width="72" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="158" y="118" width="84" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="158" y="130" width="56" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="158" y="150" width="42" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="206" y="150" width="58" height="7" rx="3.5" fill="#a8d8e8"/>
+
+  <!-- Right arrow -->
+  <polyline points="366,102 376,112 366,122" fill="none" stroke="#666" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right review column -->
+  <text x="276" y="72" font-family="Arial,sans-serif" font-size="15" fill="#4cd880">★★★★★</text>
+  <rect x="276" y="82" width="84" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="276" y="94" width="70" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="276" y="106" width="84" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="276" y="118" width="60" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="276" y="130" width="78" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="276" y="150" width="46" height="7" rx="3.5" fill="#a8d8e8"/>
+  <rect x="328" y="150" width="32" height="7" rx="3.5" fill="#a8d8e8"/>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <!-- Dark green background -->
+  <rect width="400" height="240" fill="#2d5a3d"/>
+
+  <!-- White store card -->
+  <rect x="18" y="10" width="364" height="210" rx="14" fill="#fff"/>
+
+  <!-- Heading -->
+  <text x="200" y="35" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#111" text-anchor="middle" letter-spacing="2.5">CUSTOMER REVIEWS</text>
+
+  <!-- Clip paths — tiles are 104×130 (4:5 ratio), partial 4th clipped to container -->
+  <defs>
+    <clipPath id="gc1"><rect x="26"  y="46" width="104" height="130" rx="14"/></clipPath>
+    <clipPath id="gc2"><rect x="136" y="46" width="104" height="130" rx="14"/></clipPath>
+    <clipPath id="gc3"><rect x="246" y="46" width="104" height="130" rx="14"/></clipPath>
+    <!-- partial 4th tile clipped to card boundary -->
+    <clipPath id="gc4"><rect x="356" y="46" width="28"  height="130" rx="0"/></clipPath>
+  </defs>
+
+  <!-- === Tile 1: warm sand / living room === -->
+  <rect x="26"  y="46" width="104" height="130" rx="14" fill="#c4a882"/>
+  <rect x="26"  y="46" width="104" height="65"  fill="#d4b898" clip-path="url(#gc1)"/>
+  <rect x="26"  y="130" width="104" height="46" fill="#a89060" clip-path="url(#gc1)"/>
+  <!-- framed art on wall -->
+  <rect x="44"  y="62" width="34" height="26" rx="3" fill="#e8d8b8" clip-path="url(#gc1)"/>
+  <rect x="80"  y="66" width="24" height="20" rx="3" fill="#dcc8a0" clip-path="url(#gc1)"/>
+  <rect x="50"  y="92" width="22" height="18" rx="3" fill="#e0cca8" clip-path="url(#gc1)"/>
+  <!-- dark overlay + info -->
+  <rect x="26"  y="155" width="104" height="21" fill="rgba(0,0,0,0.55)" clip-path="url(#gc1)"/>
+  <text x="78"  y="165" font-family="system-ui,sans-serif" font-size="7.5" fill="#fff"    text-anchor="middle" clip-path="url(#gc1)">Sandeep R. ✓</text>
+  <text x="78"  y="174" font-family="system-ui,sans-serif" font-size="8.5" fill="#f5a623" text-anchor="middle" clip-path="url(#gc1)">★★★★★</text>
+
+  <!-- === Tile 2: tan / floral decor === -->
+  <rect x="136" y="46" width="104" height="130" rx="14" fill="#b89b72"/>
+  <rect x="136" y="46" width="104" height="72"  fill="#c8ab84" clip-path="url(#gc2)"/>
+  <rect x="152" y="60" width="28" height="34" rx="3" fill="#e0cca0" clip-path="url(#gc2)"/>
+  <rect x="184" y="65" width="24" height="28" rx="3" fill="#d8c090" clip-path="url(#gc2)"/>
+  <rect x="148" y="96" width="32" height="22" rx="3" fill="#dcc898" clip-path="url(#gc2)"/>
+  <rect x="182" y="100" width="26" height="18" rx="3" fill="#e4d0a4" clip-path="url(#gc2)"/>
+  <!-- dark overlay + info -->
+  <rect x="136" y="155" width="104" height="21" fill="rgba(0,0,0,0.55)" clip-path="url(#gc2)"/>
+  <text x="188" y="165" font-family="system-ui,sans-serif" font-size="7.5" fill="#fff"    text-anchor="middle" clip-path="url(#gc2)">Deepali S. ✓</text>
+  <text x="188" y="174" font-family="system-ui,sans-serif" font-size="8.5" fill="#f5a623" text-anchor="middle" clip-path="url(#gc2)">★★★★★</text>
+
+  <!-- === Tile 3: dark espresso / gallery art === -->
+  <rect x="246" y="46" width="104" height="130" rx="14" fill="#4a3828"/>
+  <rect x="246" y="46" width="104" height="60"  fill="#5c4838" clip-path="url(#gc3)"/>
+  <!-- colorful paintings -->
+  <rect x="260" y="60" width="28" height="36" rx="3" fill="#7a9870" clip-path="url(#gc3)"/>
+  <rect x="292" y="64" width="24" height="30" rx="3" fill="#e8b870" clip-path="url(#gc3)"/>
+  <circle cx="267" cy="114" r="16" fill="#c87868" opacity="0.85" clip-path="url(#gc3)"/>
+  <circle cx="295" cy="108" r="12" fill="#8898c8" opacity="0.85" clip-path="url(#gc3)"/>
+  <!-- dark overlay + info -->
+  <rect x="246" y="155" width="104" height="21" fill="rgba(0,0,0,0.65)" clip-path="url(#gc3)"/>
+  <text x="298" y="165" font-family="system-ui,sans-serif" font-size="7.5" fill="#fff"    text-anchor="middle" clip-path="url(#gc3)">Arpita D. ✓</text>
+  <text x="298" y="174" font-family="system-ui,sans-serif" font-size="8.5" fill="#f5a623" text-anchor="middle" clip-path="url(#gc3)">★★★★★</text>
+
+  <!-- === Partial Tile 4: cream / minimal (cropped at card right edge) === -->
+  <rect x="356" y="46" width="26" height="130" rx="0" fill="#ddd8ce" clip-path="url(#gc4)"/>
+  <rect x="356" y="46" width="26" height="66"  fill="#e8e4dc" clip-path="url(#gc4)"/>
+
+  <!-- Nav arrow -->
+  <circle cx="365" cy="111" r="14" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="365" y="116" font-family="system-ui,sans-serif" font-size="14" fill="#666" text-anchor="middle">&#8250;</text>
+
+  <!-- Pagination dots -->
+  <circle cx="175" cy="198" r="5"  fill="#2d5a3d"/>
+  <circle cx="189" cy="198" r="3.5" fill="#ccc"/>
+  <circle cx="201" cy="198" r="3.5" fill="#ccc"/>
+  <circle cx="213" cy="198" r="3.5" fill="#ccc"/>
+</svg>

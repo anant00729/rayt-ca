@@ -35,7 +35,7 @@ export const Label = styled.p`
 
 export const Headline = styled.h1`
   font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--color-secondary);
