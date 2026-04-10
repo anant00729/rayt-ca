@@ -290,6 +290,9 @@ export const MobileNavLink = styled(Link)`
   font-family: inherit;
   cursor: pointer;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 
   &:hover {
     color: var(--color-accent);

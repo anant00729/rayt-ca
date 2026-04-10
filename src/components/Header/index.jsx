@@ -136,7 +136,10 @@ export default function Header({ floating = false, announcementVisible = false, 
 
       <MobileMenu $open={menuOpen}>
         <MobileNavLink as="button" onClick={() => setMobileProductOpen(prev => !prev)}>
-          Product {mobileProductOpen ? '▴' : '▾'}
+          Product
+          <DropdownArrow $open={mobileProductOpen} viewBox="0 0 16 16" fill="none" aria-hidden>
+            <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+          </DropdownArrow>
         </MobileNavLink>
         {mobileProductOpen && (
           <MobileDropdownItems>

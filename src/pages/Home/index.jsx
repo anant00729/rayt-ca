@@ -20,7 +20,7 @@ import {
 } from './style';
 
 export default function Home({ theme, onThemeChange }) {
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showAnnouncement, setShowAnnouncement] = useState(false);
   const cardRefs = useRef([]);
 
   // Scale animation on stacking cards via IntersectionObserver (retained behaviour).
