@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { tokens } from '../../styles/tokens';
-import { bouncing, shimmerBg, twinkle } from '../../styles/animations';
+import { shimmerBg, twinkle } from '../../styles/animations';
 
 export const Wrap = styled.section`
   max-width: 1180px;
@@ -90,44 +90,3 @@ export const CtaRow = styled.div`
   flex-wrap: wrap;
 `;
 
-export const PrimaryCta = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #fff;
-  color: ${tokens.ink900};
-  padding: 1rem 1.85rem;
-  border-radius: ${tokens.radiusPill};
-  font-weight: 800;
-  font-size: 0.98rem;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-
-  &:hover { transform: translateY(-2px); }
-
-  span.arrow {
-    display: inline-block;
-    animation: ${bouncing} 2.2s cubic-bezier(.28,.84,.42,1) infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    span.arrow { animation: none; }
-  }
-`;
-
-export const SecondaryCta = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: ${tokens.radiusPill};
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  transition: background 0.2s ease;
-
-  &:hover { background: rgba(255, 255, 255, 0.18); }
-`;

@@ -49,24 +49,6 @@ export const GridSubtitle = styled.p`
   max-width: 620px;
 `;
 
-export const GridLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: ${tokens.sky700};
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  padding: 0.4rem 0;
-  border-bottom: 2px solid ${tokens.sky200};
-  transition: gap 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    gap: 0.7rem;
-    color: ${tokens.ink900};
-  }
-`;
-
 export const Cells = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

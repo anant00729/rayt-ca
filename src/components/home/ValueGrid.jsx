@@ -1,6 +1,7 @@
 import { HeadlineSplit } from '../text/Highlights';
+import Button from '../ui/Button';
 import {
-  GridWrap, GridHeader, GridEyebrow, GridHeadline, GridSubtitle, GridLink,
+  GridWrap, GridHeader, GridEyebrow, GridHeadline, GridSubtitle,
   Cells, Cell, CellIcon, CellTitle, CellDesc,
 } from './ValueGrid.style';
 
@@ -15,7 +16,9 @@ export default function ValueGrid({ data }) {
           </GridHeadline>
           <GridSubtitle>{data.subtitle}</GridSubtitle>
         </div>
-        <GridLink href={data.ctaHref}>{data.ctaText} →</GridLink>
+        <Button variant="ghostLink" to={data.ctaHref} icon="→">
+          {data.ctaText}
+        </Button>
       </GridHeader>
 
       <Cells>

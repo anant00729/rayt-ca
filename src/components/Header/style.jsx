@@ -209,20 +209,9 @@ export const Actions = styled.div`
   gap: 0.75rem;
 `;
 
-export const CTAButton = styled.a`
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  padding: 0.5rem 1.25rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.2s;
-
-  &:hover {
-    background: var(--color-muted);
-  }
-
+// Desktop CTA visibility wrapper — the <Button> primitive handles styling;
+// this wrapper only hides it on mobile where <MobileCTA> takes over.
+export const DesktopCTAHolder = styled.div`
   @media (max-width: 1024px) {
     display: none;
   }
@@ -350,20 +339,3 @@ export const MobileDropDesc = styled.span`
   line-height: 1.35;
 `;
 
-export const MobileCTA = styled.a`
-  display: inline-block;
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  padding: 0.625rem 1.25rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 1rem;
-  transition: background 0.2s;
-
-  &:hover {
-    background: var(--color-muted);
-  }
-`;

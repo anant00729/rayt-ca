@@ -1,6 +1,7 @@
+import Button from '../../ui/Button';
 import {
   Section, Left, Label, Headline, Subtitle, Divider, Badges, Badge, BadgeIcon,
-  CTALink, Right, PlaceholderVisual, PlaceholderLabel,
+  Right, PlaceholderVisual, PlaceholderLabel,
 } from './style';
 
 export default function PageHero({ label, title, subtitle, badges = [], ctaText, ctaHref = '#' }) {
@@ -24,7 +25,16 @@ export default function PageHero({ label, title, subtitle, badges = [], ctaText,
             <Divider />
           </>
         )}
-        {ctaText && <CTALink href={ctaHref}>{ctaText}</CTALink>}
+        {ctaText && (
+          <Button
+            variant="themed"
+            size="md"
+            href={ctaHref}
+            style={{ marginTop: '1rem', width: 'fit-content' }}
+          >
+            {ctaText}
+          </Button>
+        )}
       </Left>
       <Right>
         <PlaceholderVisual>

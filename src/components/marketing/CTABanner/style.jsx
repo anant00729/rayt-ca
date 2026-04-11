@@ -29,20 +29,3 @@ export const Subtitle = styled.p`
   line-height: 1.6;
 `;
 
-export const CTAButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.9;
-  }
-`;

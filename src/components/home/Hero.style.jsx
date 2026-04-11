@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { tokens } from '../../styles/tokens';
-import { levitating, bouncing, rolling, twinkle, shimmerBg } from '../../styles/animations';
+import { levitating, bouncing, rolling, twinkle } from '../../styles/animations';
 
 export const HeroWrap = styled.section`
   position: relative;
@@ -111,55 +111,6 @@ export const CtaRow = styled.div`
 
   @media (max-width: 1050px) {
     justify-content: center;
-  }
-`;
-
-export const PrimaryCta = styled.a`
-  --angle: 120deg;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(var(--angle), ${tokens.ink900}, ${tokens.sky700});
-  background-size: 200% 200%;
-  color: #fff;
-  padding: 1rem 1.75rem;
-  border-radius: ${tokens.radiusPill};
-  font-size: 0.98rem;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: ${tokens.shadowGlow};
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: ${shimmerBg} 6s ease-in-out infinite;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 36px rgba(46, 111, 176, 0.28);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-`;
-
-export const SecondaryCta = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: #fff;
-  color: ${tokens.ink900};
-  padding: 1rem 1.5rem;
-  border-radius: ${tokens.radiusPill};
-  font-size: 0.98rem;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid ${tokens.border};
-  box-shadow: ${tokens.shadowSm};
-  transition: transform 0.2s ease, border-color 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    border-color: ${tokens.sky200};
   }
 `;
 

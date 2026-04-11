@@ -29,20 +29,6 @@ export const AnnouncementText = styled.span`
   font-weight: 500;
 `;
 
-export const AnnouncementCTA = styled.a`
-  background: ${tokens.mint500};
-  color: ${tokens.ink900};
-  padding: 0.38rem 1rem;
-  border-radius: ${tokens.radiusPill};
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 700;
-  white-space: nowrap;
-  transition: opacity 0.2s, transform 0.2s;
-
-  &:hover { opacity: 0.9; transform: translateY(-1px); }
-`;
-
 export const DismissButton = styled.button`
   background: none;
   border: none;
@@ -160,26 +146,6 @@ export const CardText = styled.div`
     color: ${tokens.ink500};
     margin: 0;
   }
-`;
-
-export const CardCTA = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  align-self: flex-start;
-  background: #fff;
-  color: ${tokens.ink900};
-  padding: 0.7rem 1.3rem;
-  border-radius: ${tokens.radiusPill};
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  border: 1px solid ${tokens.border};
-  box-shadow: ${tokens.shadowSm};
-  margin-top: 0.5rem;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-
-  &:hover { transform: translateY(-2px); border-color: ${tokens.sky200}; }
 `;
 
 export const CardImagePlaceholder = styled.div`

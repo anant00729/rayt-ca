@@ -83,26 +83,6 @@ export const BadgeIcon = styled.span`
   font-size: 0.75rem;
 `;
 
-export const CTALink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  padding: 0.75rem 1.75rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  width: fit-content;
-  transition: background 0.2s;
-
-  &:hover {
-    background: var(--color-muted);
-  }
-`;
-
 export const Right = styled.div`
   position: relative;
   height: 420px;

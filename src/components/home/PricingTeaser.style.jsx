@@ -89,23 +89,6 @@ export const Body = styled.p`
   max-width: 520px;
 `;
 
-export const Cta = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  background: ${tokens.ink900};
-  color: #fff;
-  padding: 0.95rem 1.75rem;
-  border-radius: ${tokens.radiusPill};
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  box-shadow: ${tokens.shadowGlow};
-  transition: transform 0.2s ease;
-
-  &:hover { transform: translateY(-2px); }
-`;
-
 export const Perks = styled.ul`
   list-style: none;
   padding: 0;

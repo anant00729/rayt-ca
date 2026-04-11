@@ -1,7 +1,9 @@
 import { HeadlineSplit } from '../text/Highlights';
+import Button from '../ui/Button';
+import { ROUTES } from '../../constants/routes';
 import {
   HeroWrap, HeroGrid, HeroLeft, HeroEyebrow, HeroHeadline, HeroSubtitle,
-  CtaRow, PrimaryCta, SecondaryCta, TrustLine,
+  CtaRow, TrustLine,
   Collage, CollageImg3, CollageImg4, CollageImg6, CollageOrb, CollageStar,
 } from './Hero.style';
 
@@ -16,8 +18,12 @@ export default function Hero({ data }) {
           </HeroHeadline>
           <HeroSubtitle>{data.subtitle}</HeroSubtitle>
           <CtaRow>
-            <PrimaryCta href="/pricing">{data.ctaPrimary} →</PrimaryCta>
-            <SecondaryCta href="#widgets">{data.ctaSecondary}</SecondaryCta>
+            <Button variant="primary" size="lg" to={ROUTES.PRICING} icon="→">
+              {data.ctaPrimary}
+            </Button>
+            <Button variant="secondary" size="lg" href="#widgets">
+              {data.ctaSecondary}
+            </Button>
           </CtaRow>
           <TrustLine>{data.trustLine}</TrustLine>
         </HeroLeft>

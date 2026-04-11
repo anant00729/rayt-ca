@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
+import Button from '../ui/Button';
+import { EXTERNAL } from '../../constants/routes';
 import {
   HeaderBar, Container, StarIcon, Logo, Nav, NavLink, NavItem,
   DropdownTrigger, DropdownArrow, Dropdown, DropdownItem, DropdownIcon, DropdownText, DropdownTitle, DropdownDesc,
-  Actions, CTAButton, Hamburger, MobileMenu, MobileNavLink, MobileCTA,
+  Actions, DesktopCTAHolder, Hamburger, MobileMenu, MobileNavLink,
   MobileDropdownItems, MobileDropItem, MobileDropIcon, MobileDropText, MobileDropTitle, MobileDropDesc,
 } from './style';
 
@@ -119,9 +121,17 @@ export default function Header({ floating = false, announcementVisible = false, 
         </Nav>
 
         <Actions>
-          <CTAButton href="https://google.com" target="_blank" rel="noopener noreferrer">
-            Get started
-          </CTAButton>
+          <DesktopCTAHolder>
+            <Button
+              variant="themed"
+              size="sm"
+              href={EXTERNAL.GET_STARTED}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get started
+            </Button>
+          </DesktopCTAHolder>
           <Hamburger
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
@@ -159,9 +169,16 @@ export default function Header({ floating = false, announcementVisible = false, 
             {label}
           </MobileNavLink>
         ))}
-        <MobileCTA href="https://google.com" target="_blank" rel="noopener noreferrer">
+        <Button
+          variant="themed"
+          size="md"
+          href={EXTERNAL.GET_STARTED}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ marginTop: '1rem', justifyContent: 'center' }}
+        >
           Get started
-        </MobileCTA>
+        </Button>
       </MobileMenu>
     </HeaderBar>
   );

@@ -12,11 +12,13 @@ import PricingTeaser from '../../components/home/PricingTeaser';
 import ContactSubscribe from '../../components/home/ContactSubscribe';
 import FinalCTA from '../../components/home/FinalCTA';
 
+import Button from '../../components/ui/Button';
+import { ROUTES } from '../../constants/routes';
 import {
   Page,
-  AnnouncementWrapper, AnnouncementText, AnnouncementCTA, DismissButton,
+  AnnouncementWrapper, AnnouncementText, DismissButton,
   StackingWrapper, StackingHeader, StackingEyebrow, StackingHeadline, StackingSubtitle,
-  CardsContainer, StackingCard, CardText, CardCTA, CardImagePlaceholder, StackingBottomSpacer,
+  CardsContainer, StackingCard, CardText, CardImagePlaceholder, StackingBottomSpacer,
 } from './style';
 
 export default function Home({ theme, onThemeChange }) {
@@ -59,9 +61,9 @@ export default function Home({ theme, onThemeChange }) {
       {showAnnouncement && (
         <AnnouncementWrapper>
           <AnnouncementText>{content.announcement.text}</AnnouncementText>
-          <AnnouncementCTA href={content.announcement.ctaHref}>
+          <Button variant="accent" size="sm" to={content.announcement.ctaHref}>
             {content.announcement.ctaText}
-          </AnnouncementCTA>
+          </Button>
           <DismissButton onClick={() => setShowAnnouncement(false)} aria-label="Dismiss">
             ✕
           </DismissButton>
@@ -114,7 +116,15 @@ export default function Home({ theme, onThemeChange }) {
               <CardText>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
-                <CardCTA href="/pricing">{card.ctaText} →</CardCTA>
+                <Button
+                  variant="secondary"
+                  size="md"
+                  to={ROUTES.PRICING}
+                  icon="→"
+                  style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}
+                >
+                  {card.ctaText}
+                </Button>
               </CardText>
               <CardImagePlaceholder $colorKey={card.colorKey} />
             </StackingCard>

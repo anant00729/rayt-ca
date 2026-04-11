@@ -56,23 +56,6 @@ export const PanelBody = styled.p`
   flex: 1;
 `;
 
-export const ContactCta = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  align-self: flex-start;
-  background: #fff;
-  color: ${tokens.ink900};
-  padding: 0.85rem 1.5rem;
-  border-radius: ${tokens.radiusPill};
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-
-  &:hover { transform: translateY(-2px); }
-`;
-
 export const SubscribePanel = styled.div`
   background: #fff;
   border: 1px solid ${tokens.border};
@@ -134,19 +117,3 @@ export const SubscribeInput = styled.input`
   &::placeholder { color: ${tokens.ink300}; }
 `;
 
-export const SubscribeButton = styled.button`
-  background: ${tokens.ink900};
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: ${tokens.radiusPill};
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-
-  &:hover {
-    transform: translateY(-1px);
-    background: ${tokens.sky700};
-  }
-`;

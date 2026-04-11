@@ -1,6 +1,8 @@
 import { HeadlineSplit } from '../text/Highlights';
+import Button from '../ui/Button';
+import { ROUTES } from '../../constants/routes';
 import {
-  Wrap, Banner, Eyebrow, Headline, Subtitle, CtaRow, PrimaryCta, SecondaryCta,
+  Wrap, Banner, Eyebrow, Headline, Subtitle, CtaRow,
 } from './FinalCTA.style';
 
 export default function FinalCTA({ data }) {
@@ -13,10 +15,12 @@ export default function FinalCTA({ data }) {
         </Headline>
         <Subtitle>{data.subtitle}</Subtitle>
         <CtaRow>
-          <PrimaryCta href="/pricing">
-            {data.ctaPrimary} <span className="arrow">→</span>
-          </PrimaryCta>
-          <SecondaryCta href="/pricing">{data.ctaSecondary}</SecondaryCta>
+          <Button variant="secondary" size="lg" to={ROUTES.PRICING} icon="→" iconAnimate>
+            {data.ctaPrimary}
+          </Button>
+          <Button variant="outlineLight" size="lg" to={ROUTES.PRICING}>
+            {data.ctaSecondary}
+          </Button>
         </CtaRow>
       </Banner>
     </Wrap>

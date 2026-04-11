@@ -1,8 +1,9 @@
+import Button from '../ui/Button';
 import {
   Wrap, Inner,
-  ContactPanel, PanelEyebrow, PanelHeadline, PanelBody, ContactCta,
+  ContactPanel, PanelEyebrow, PanelHeadline, PanelBody,
   SubscribePanel, SubscribeHeadline, SubscribeBody,
-  SubscribeForm, SubscribeInput, SubscribeButton,
+  SubscribeForm, SubscribeInput,
 } from './ContactSubscribe.style';
 
 export default function ContactSubscribe({ data }) {
@@ -18,7 +19,15 @@ export default function ContactSubscribe({ data }) {
           <PanelEyebrow>{data.contact.eyebrow}</PanelEyebrow>
           <PanelHeadline>{data.contact.headline}</PanelHeadline>
           <PanelBody>{data.contact.body}</PanelBody>
-          <ContactCta href={data.contact.ctaHref}>{data.contact.ctaText} →</ContactCta>
+          <Button
+            variant="secondary"
+            size="md"
+            to={data.contact.ctaHref}
+            icon="→"
+            style={{ alignSelf: 'flex-start' }}
+          >
+            {data.contact.ctaText}
+          </Button>
         </ContactPanel>
 
         <SubscribePanel>
@@ -31,7 +40,9 @@ export default function ContactSubscribe({ data }) {
               aria-label="Email address"
               required
             />
-            <SubscribeButton type="submit">{data.subscribe.ctaText} →</SubscribeButton>
+            <Button variant="primary" size="md" type="submit" icon="→">
+              {data.subscribe.ctaText}
+            </Button>
           </SubscribeForm>
         </SubscribePanel>
       </Inner>
