@@ -6,7 +6,6 @@ import content from '../../data/homeContent.json';
 import Hero from '../../components/home/Hero';
 import TrustStrip from '../../components/home/TrustStrip';
 import ValueGrid from '../../components/home/ValueGrid';
-import WidgetsShowcase from '../../components/home/WidgetsShowcase';
 import HowItWorks from '../../components/home/HowItWorks';
 import PricingTeaser from '../../components/home/PricingTeaser';
 import ContactSubscribe from '../../components/home/ContactSubscribe';
@@ -81,9 +80,6 @@ export default function Home({ theme, onThemeChange }) {
 
       {/* Value features grid (9 cells) */}
       <ValueGrid data={content.valueGrid} />
-
-      {/* Widgets showcase — all 23 widgets with per-card animation */}
-      <WidgetsShowcase data={content.widgetsShowcase} />
 
       {/* How it works */}
       <HowItWorks data={content.howItWorks} />

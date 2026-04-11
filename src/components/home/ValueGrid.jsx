@@ -1,5 +1,6 @@
 import { HeadlineSplit } from '../text/Highlights';
 import Button from '../ui/Button';
+import { VALUE_GRID_ICONS } from '../icons/valueGridIcons';
 import {
   GridWrap, GridHeader, GridEyebrow, GridHeadline, GridSubtitle,
   Cells, Cell, CellIcon, CellTitle, CellDesc,
@@ -24,7 +25,9 @@ export default function ValueGrid({ data }) {
       <Cells>
         {data.cells.map((cell) => (
           <Cell key={cell.title}>
-            <CellIcon aria-hidden>{cell.icon}</CellIcon>
+            <CellIcon>
+              <img src={VALUE_GRID_ICONS[cell.iconKey]} alt="" width={22} height={22} />
+            </CellIcon>
             <CellTitle>{cell.title}</CellTitle>
             <CellDesc>{cell.description}</CellDesc>
           </Cell>

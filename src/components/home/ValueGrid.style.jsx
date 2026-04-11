@@ -89,9 +89,8 @@ export const CellIcon = styled.div`
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: ${tokens.sky50};
-  border: 1px solid ${tokens.sky100};
-  font-size: 1.35rem;
+  background: linear-gradient(135deg, ${tokens.sky100}, ${tokens.mint100});
+  border: 1px solid ${tokens.sky200};
   margin-bottom: 1rem;
 `;
 

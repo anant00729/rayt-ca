@@ -36,49 +36,49 @@
     "ctaHref": "/pricing",
     "cells": [
       {
-        "icon": "📸",
+        "iconKey": "photosVideos",
         "title": "Photos & Videos",
         "description": "Collect three times more visual reviews with prompts that feel like a friendly nudge, not a nag."
       },
       {
-        "icon": "📱",
+        "iconKey": "mobileFirstForms",
         "title": "Mobile-First Forms",
         "description": "Nine out of ten shoppers review on phones. Our forms feel native on every one of them."
       },
       {
-        "icon": "🛡️",
+        "iconKey": "automatedModeration",
         "title": "Automated Moderation",
         "description": "Spam, profanity and trolls get filtered before they ever touch your storefront."
       },
       {
-        "icon": "🎨",
-        "title": "Custom Questions",
-        "description": "Ask about fit, colour, fragrance — anything — and display the answers as gorgeous attributes."
+        "iconKey": "reviewTagging",
+        "title": "Review Tagging",
+        "description": "Label and categorize every review so your team can instantly surface, filter and act on the feedback that matters most."
       },
       {
-        "icon": "💬",
+        "iconKey": "reviewReplies",
         "title": "Review Replies",
         "description": "Turn every response into a public love letter that future shoppers will absolutely read."
       },
       {
-        "icon": "✍️",
+        "iconKey": "customerEdits",
         "title": "Customer Edits",
         "description": "When you fix an issue, let customers update their rating in one tap — and watch your score rise."
       },
       {
-        "icon": "🏬",
-        "title": "Multi-Store Sync",
-        "description": "Run several storefronts? Share a single pool of reviews across all of them, effortlessly."
+        "iconKey": "searchFilterReviews",
+        "title": "Search & Filter Reviews",
+        "description": "Give shoppers powerful search and smart filters so they always land on the reviews most relevant to their decision."
       },
       {
-        "icon": "📈",
+        "iconKey": "powerfulAnalytics",
         "title": "Powerful Analytics",
         "description": "Know exactly which widgets convert, which questions land, and which reviews drive the most revenue."
       },
       {
-        "icon": "🔌",
-        "title": "Developer API",
-        "description": "A clean REST API and webhooks for the teams who want to go absolutely wild with custom experiences."
+        "iconKey": "productGroups",
+        "title": "Product Groups",
+        "description": "Automatically pool reviews across bundled products and identical listings — more social proof with zero duplicate effort."
       }
     ]
   },

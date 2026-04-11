@@ -1,12 +1,14 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { Page, Content } from './style';
+import WidgetsShowcase from '../../components/home/WidgetsShowcase';
+import content from '../../data/homeContent.json';
+import { Page } from './style';
 
 export default function Widgets({ theme, onThemeChange }) {
   return (
     <Page>
       <Header />
-      <Content><h1>Widgets</h1></Content>
+      <WidgetsShowcase data={content.widgetsShowcase} />
       <Footer theme={theme} onThemeChange={onThemeChange} />
     </Page>
   );
