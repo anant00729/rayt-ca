@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
+import { tokens } from './styles/tokens';
 
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -28,6 +29,30 @@ const ThemeVars = createGlobalStyle`
   }
 `;
 
+const GlobalBg = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -10% -10% auto -10%;
+    height: 80%;
+    background:
+      radial-gradient(60% 60% at 20% 30%, ${tokens.sky100} 0%, transparent 60%),
+      radial-gradient(50% 50% at 80% 20%, ${tokens.mint100} 0%, transparent 65%),
+      radial-gradient(50% 50% at 60% 80%, ${tokens.lilac100} 0%, transparent 70%);
+    filter: blur(30px);
+    opacity: 0.85;
+  }
+`;
+
 const PageBody = styled.div`
   padding-top: 96px;
 `;
@@ -40,6 +65,7 @@ export default function App() {
   return (
     <>
       <ThemeVars $colors={theme.colors} />
+      <GlobalBg />
       <Header floating />
       <PageBody>
         <Routes>

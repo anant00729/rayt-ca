@@ -10,7 +10,7 @@ export const spinWithDelay = keyframes`
 `;
 
 export const HeaderBar = styled.header`
-  background: color-mix(in srgb, var(--color-primary) 60%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 30%, transparent);
   backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
   -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
   box-shadow: 0 1px 0 color-mix(in srgb, white 8%, transparent), 0 4px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);

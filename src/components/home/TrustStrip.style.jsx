@@ -9,7 +9,7 @@ export const StripWrap = styled.section`
 `;
 
 export const StripInner = styled.div`
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid ${tokens.border};
   border-radius: ${tokens.radiusLg};
   box-shadow: ${tokens.shadowMd};

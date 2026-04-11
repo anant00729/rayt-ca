@@ -4,7 +4,7 @@ import { tokens, accentMap } from '../../styles/tokens';
 /* ── Page ── */
 export const Page = styled.div`
   min-height: 100vh;
-  background: ${tokens.paper};
+  background: transparent;
   color: ${tokens.ink900};
   font-family: 'Nunito Sans', sans-serif;
 `;
@@ -47,7 +47,7 @@ export const DismissButton = styled.button`
 export const StackingWrapper = styled.section`
   position: relative;
   padding: 4rem 0 0;
-  background: linear-gradient(180deg, ${tokens.paper} 0%, ${tokens.paper2} 100%);
+  background: transparent;
 `;
 
 export const StackingHeader = styled.div`

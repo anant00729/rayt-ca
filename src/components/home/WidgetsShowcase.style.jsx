@@ -2,21 +2,9 @@ import styled from 'styled-components';
 import { tokens, accentMap } from '../../styles/tokens';
 
 export const ShowcaseWrap = styled.section`
-  background: linear-gradient(180deg, ${tokens.paper} 0%, ${tokens.sky50} 50%, ${tokens.paper} 100%);
-  padding: 6rem 0;
+  padding: 2rem 0;
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(40% 40% at 10% 10%, ${tokens.mint100} 0%, transparent 60%),
-      radial-gradient(40% 40% at 90% 80%, ${tokens.lilac100} 0%, transparent 60%);
-    opacity: 0.4;
-    pointer-events: none;
-  }
 `;
 
 export const ShowcaseInner = styled.div`

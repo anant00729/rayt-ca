@@ -8,21 +8,6 @@ export const HeroWrap = styled.section`
   margin: 0 auto;
   overflow: hidden;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -10% -10% auto -10%;
-    height: 60%;
-    background:
-      radial-gradient(60% 60% at 20% 30%, ${tokens.sky100} 0%, transparent 60%),
-      radial-gradient(50% 50% at 80% 20%, ${tokens.mint100} 0%, transparent 65%),
-      radial-gradient(50% 50% at 60% 80%, ${tokens.lilac100} 0%, transparent 70%);
-    filter: blur(30px);
-    opacity: 0.85;
-    z-index: 0;
-    pointer-events: none;
-  }
-
   @media (max-width: 768px) {
     padding: 7rem 0 3rem;
   }
