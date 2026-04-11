@@ -4,7 +4,7 @@ import { levitating, bouncing, rolling, twinkle } from '../../styles/animations'
 
 export const HeroWrap = styled.section`
   position: relative;
-  padding: 9rem 4rem 5rem;
+  padding: 3rem 0 5rem;
   margin: 0 auto;
   overflow: hidden;
 
@@ -24,8 +24,14 @@ export const HeroWrap = styled.section`
   }
 
   @media (max-width: 768px) {
-    padding: 7rem 1.25rem 3rem;
+    padding: 7rem 0 3rem;
   }
+`;
+
+export const HeroInner = styled.div`
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 `;
 
 export const HeroGrid = styled.div`

@@ -2,7 +2,7 @@ import { HeadlineSplit } from '../text/Highlights';
 import Button from '../ui/Button';
 import { ROUTES } from '../../constants/routes';
 import {
-  HeroWrap, HeroGrid, HeroLeft, HeroEyebrow, HeroHeadline, HeroSubtitle,
+  HeroWrap, HeroInner, HeroGrid, HeroLeft, HeroEyebrow, HeroHeadline, HeroSubtitle,
   CtaRow, TrustLine,
   Collage, CollageImg3, CollageImg4, CollageImg6, CollageOrb, CollageStar,
 } from './Hero.style';
@@ -10,6 +10,7 @@ import {
 export default function Hero({ data }) {
   return (
     <HeroWrap>
+      <HeroInner>
       <HeroGrid>
         <HeroLeft>
           <HeroEyebrow>{data.eyebrow}</HeroEyebrow>
@@ -36,6 +37,7 @@ export default function Hero({ data }) {
           <CollageStar>✦</CollageStar>
         </Collage>
       </HeroGrid>
+      </HeroInner>
     </HeroWrap>
   );
 }

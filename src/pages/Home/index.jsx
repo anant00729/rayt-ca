@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import content from '../../data/homeContent.json';
 
@@ -68,9 +67,6 @@ export default function Home({ theme, onThemeChange }) {
           </DismissButton>
         </AnnouncementWrapper>
       )}
-
-      {/* Floating Header */}
-      <Header floating announcementVisible={showAnnouncement} />
 
       {/* Hero */}
       <Hero data={content.hero} />

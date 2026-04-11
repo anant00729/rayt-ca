@@ -1,4 +1,3 @@
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHero from '../../components/marketing/PageHero';
 import StatsStrip from '../../components/marketing/StatsStrip';
@@ -21,7 +20,6 @@ const BADGES = [
 export default function CustomerReferrals({ theme, onThemeChange }) {
   return (
     <Page>
-      <Header />
       <PageHero
         label="Customer Referrals"
         title="Turn happy customers into brand advocates."

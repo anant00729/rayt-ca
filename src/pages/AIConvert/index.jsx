@@ -1,4 +1,3 @@
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import PageHero from '../../components/marketing/PageHero';
 import ToggleDemo from '../../components/marketing/ToggleDemo';
@@ -14,7 +13,6 @@ const BADGES = [
 export default function AIConvert({ theme, onThemeChange }) {
   return (
     <Page>
-      <Header />
       <PageHero
         label="AI Convert"
         title="Your reviews, superpowered."

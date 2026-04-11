@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
+import Header from './components/Header';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import ProductReviews from './pages/ProductReviews';
@@ -26,6 +28,10 @@ const ThemeVars = createGlobalStyle`
   }
 `;
 
+const PageBody = styled.div`
+  padding-top: 96px;
+`;
+
 const defaultTheme = THEMES.find(t => t.name === 'Facebook Blue') ?? THEMES[0];
 
 export default function App() {
@@ -34,17 +40,20 @@ export default function App() {
   return (
     <>
       <ThemeVars $colors={theme.colors} />
-      <Routes>
-        <Route path="/" element={<Home theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/product" element={<Product theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/product-reviews" element={<ProductReviews theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/customer-referrals" element={<CustomerReferrals theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/ai" element={<AIConvert theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/widgets" element={<Widgets theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/customers" element={<Customers theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />
-      </Routes>
+      <Header floating />
+      <PageBody>
+        <Routes>
+          <Route path="/" element={<Home theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/product" element={<Product theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/product-reviews" element={<ProductReviews theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/customer-referrals" element={<CustomerReferrals theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/ai" element={<AIConvert theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/widgets" element={<Widgets theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/customers" element={<Customers theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />
+        </Routes>
+      </PageBody>
     </>
   );
 }
