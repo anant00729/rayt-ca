@@ -11,6 +11,7 @@ import ProductReviews from './pages/ProductReviews';
 import CustomerReferrals from './pages/CustomerReferrals';
 import AIConvert from './pages/AIConvert';
 import Widgets from './pages/Widgets';
+import WidgetDetail from './pages/WidgetDetail';
 import Customers from './pages/Customers';
 import Pricing from './pages/Pricing';
 import Resources from './pages/Resources';
@@ -75,6 +76,7 @@ export default function App() {
           <Route path="/customer-referrals" element={<CustomerReferrals theme={theme} onThemeChange={setTheme} />} />
           <Route path="/ai" element={<AIConvert theme={theme} onThemeChange={setTheme} />} />
           <Route path="/widgets" element={<Widgets theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/widgets/:slug" element={<WidgetDetail theme={theme} onThemeChange={setTheme} />} />
           <Route path="/customers" element={<Customers theme={theme} onThemeChange={setTheme} />} />
           <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
           <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />

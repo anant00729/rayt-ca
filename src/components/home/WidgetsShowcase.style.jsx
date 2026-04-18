@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { tokens, accentMap } from '../../styles/tokens';
 
 export const ShowcaseWrap = styled.section`
@@ -65,7 +66,7 @@ export const WidgetGrid = styled.div`
   }
 `;
 
-export const WidgetCard = styled.article`
+const sharedCardStyles = css`
   background: #fff;
   border: 1px solid ${tokens.border};
   border-radius: ${tokens.radius};
@@ -73,6 +74,8 @@ export const WidgetCard = styled.article`
   box-shadow: ${tokens.shadowSm};
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
   &:hover {
@@ -81,6 +84,10 @@ export const WidgetCard = styled.article`
     border-color: ${({ $accent }) => accentMap[$accent]?.edge || tokens.sky200};
   }
 `;
+
+export const WidgetCard = styled.article`${sharedCardStyles}`;
+
+export const WidgetLink = styled(Link)`${sharedCardStyles}`;
 
 export const WidgetPreview = styled.div`
   position: relative;

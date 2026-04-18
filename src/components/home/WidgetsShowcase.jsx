@@ -1,11 +1,28 @@
 import widgets from '../../data/widgets.json';
+import { ROUTES } from '../../constants/routes';
 import { HeadlineSplit } from '../text/Highlights';
 import {
   ShowcaseWrap, ShowcaseInner, ShowcaseHeader, ShowcaseEyebrow,
   ShowcaseHeadline, ShowcaseSubtitle, WidgetGrid,
-  WidgetCard, WidgetPreview, WidgetBody, WidgetCategory, WidgetName,
+  WidgetCard, WidgetLink, WidgetPreview, WidgetBody, WidgetCategory, WidgetName,
   WidgetTagline, WidgetDesc,
 } from './WidgetsShowcase.style';
+
+function CardContents({ w }) {
+  return (
+    <>
+      <WidgetPreview $accent={w.accent} $animation={w.animation}>
+        <img src={w.image} alt={`${w.name} preview`} loading="lazy" />
+      </WidgetPreview>
+      <WidgetBody>
+        <WidgetCategory $accent={w.accent}>{w.category}</WidgetCategory>
+        <WidgetName>{w.name}</WidgetName>
+        <WidgetTagline>{w.tagline}</WidgetTagline>
+        <WidgetDesc>{w.description}</WidgetDesc>
+      </WidgetBody>
+    </>
+  );
+}
 
 export default function WidgetsShowcase({ data }) {
   return (
@@ -20,19 +37,17 @@ export default function WidgetsShowcase({ data }) {
         </ShowcaseHeader>
 
         <WidgetGrid>
-          {widgets.map((w) => (
-            <WidgetCard key={w.slug} $accent={w.accent}>
-              <WidgetPreview $accent={w.accent} $animation={w.animation}>
-                <img src={w.image} alt={`${w.name} preview`} loading="lazy" />
-              </WidgetPreview>
-              <WidgetBody>
-                <WidgetCategory $accent={w.accent}>{w.category}</WidgetCategory>
-                <WidgetName>{w.name}</WidgetName>
-                <WidgetTagline>{w.tagline}</WidgetTagline>
-                <WidgetDesc>{w.description}</WidgetDesc>
-              </WidgetBody>
-            </WidgetCard>
-          ))}
+          {widgets.map((w) =>
+            w.slug === 'reviews-list' ? (
+              <WidgetLink key={w.slug} to={ROUTES.WIDGET_DETAIL(w.slug)} $accent={w.accent}>
+                <CardContents w={w} />
+              </WidgetLink>
+            ) : (
+              <WidgetCard key={w.slug} $accent={w.accent}>
+                <CardContents w={w} />
+              </WidgetCard>
+            )
+          )}
         </WidgetGrid>
       </ShowcaseInner>
     </ShowcaseWrap>
