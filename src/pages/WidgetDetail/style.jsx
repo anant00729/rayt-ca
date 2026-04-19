@@ -1,24 +1,23 @@
 import styled from 'styled-components';
 import { tokens } from '../../styles/tokens';
 
-// ── Shared Layout ────────────────────────────────────────────────────────────
-
 export const Page = styled.div`
   min-height: 100vh;
   background: transparent;
 `;
 
 export const Container = styled.div`
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 0.6rem;
+  @media (max-width: 1099px) {
+    padding: 0 1.5rem;
+  }
 `;
-
-// ── Shared Elements ──────────────────────────────────────────────────────────
 
 export const Breadcrumb = styled.div`
   padding-top: 1.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1.5rem;
 
   a {
     display: inline-flex;
@@ -36,9 +35,7 @@ export const Breadcrumb = styled.div`
     backdrop-filter: blur(8px);
     transition: all 0.2s ease;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
+    &:hover { background: rgba(255, 255, 255, 0.8); }
   }
 `;
 
@@ -59,41 +56,166 @@ export const Eyebrow = styled.span`
   }
 `;
 
-export const DisplayTitle = styled.h1`
+export const Tagline = styled.h1`
   font-family: 'Nunito Sans', sans-serif;
-  font-weight: 900;
-  font-size: clamp(2rem, 4.8vw, 3.75rem);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.6vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
   color: ${tokens.ink900};
-  margin: 0;
+  margin: 0rem 0 1.25rem;
+  max-width: 32ch;
+`;
 
-  .grad {
-    background: linear-gradient(100deg, ${tokens.sky700} 0%, ${tokens.lilacDeep} 60%, ${tokens.mint500} 120%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+export const MetricStrip = styled.div`
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2.25rem;
+`;
+
+export const MetricPill = styled.span`
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: ${tokens.ink700};
+
+  ${({ $accent }) => {
+    if ($accent === 'mint') {
+      return `
+        background: rgba(234, 248, 241, 0.75);
+        color: #147A55;
+        border-color: rgba(182, 227, 204, 0.75);
+      `;
+    }
+    if ($accent === 'lilac') {
+      return `
+        background: rgba(243, 241, 252, 0.78);
+        color: ${tokens.lilacDeep};
+        border-color: rgba(211, 204, 245, 0.75);
+      `;
+    }
+    return '';
+  }}
+`;
+
+export const StageWrap = styled.section`
+  position: relative;
+  padding: ${({ $bare }) => ($bare ? '0' : '0rem 0 4rem')};
+  overflow: ${({ $bare }) => ($bare ? 'visible' : 'hidden')};
+
+  ${({ $bare }) =>
+    $bare
+      ? ''
+      : `
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      transform: translateX(-50%);
+      width: min(1400px, 130%);
+      height: 900px;
+      background:
+        radial-gradient(ellipse 65% 55% at 50% 38%, rgba(188, 216, 240, 0.35) 0%, transparent 68%),
+        radial-gradient(ellipse 50% 40% at 30% 60%, rgba(82, 201, 160, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 35% at 75% 55%, rgba(73, 55, 165, 0.08) 0%, transparent 55%);
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+  `}
+`;
+
+export const MobileToggle = styled.button`
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: ${tokens.ink900};
+  cursor: pointer;
+
+  svg {
+    transition: transform 0.2s;
+    transform: ${({ $open }) => ($open ? 'rotate(180deg)' : 'rotate(0)')};
+    color: ${tokens.sky700};
+  }
+
+  @media (max-width: 1099px) {
+    display: flex;
   }
 `;
 
-export const Lede = styled.p`
-  color: ${tokens.ink500};
-  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
-  line-height: 1.6;
-  max-width: 54ch;
-  margin: 0;
-  text-align: center;
+export const Playground = styled.div`
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  align-items: start;
+
+  @media (max-width: 1099px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
+
+export const SettingsPane = styled.aside`
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow: visible;
+
+  @media (max-width: 1099px) {
+    position: static;
+    max-height: none;
+    display: ${({ $open }) => ($open ? 'block' : 'none')};
+  }
+`;
+
+export const StageFrame = styled.div`
+  position: relative;
+  border-radius: 26px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.74) 0%,
+      rgba(234, 244, 253, 0.52) 40%,
+      rgba(234, 248, 241, 0.42) 75%,
+      rgba(243, 241, 252, 0.5) 100%
+    );
+  backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
+  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+    1px 0 0 0 rgba(255, 255, 255, 0.5) inset,
+    0 8px 32px rgba(14, 27, 43, 0.08),
+    0 32px 80px rgba(18, 52, 88, 0.12);
 
   @media (max-width: 600px) {
-    max-width: 100%;
-    text-align: left;
+    border-radius: 18px;
   }
 `;
 
-// ── Widget scroll container (replaces browser frame) ─────────────────────────
-
 export const WidgetScroll = styled.div`
-  max-height: 680px;
+  max-height: 720px;
   overflow-y: auto;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.6);
@@ -105,295 +227,93 @@ export const WidgetScroll = styled.div`
     border-radius: 3px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1099px) {
     max-height: 560px;
-    border-radius: 12px;
   }
 `;
 
-// ── Stage ────────────────────────────────────────────────────────────────────
-
-export const StageC = styled.section`
-  position: relative;
-  padding: 3rem 1.5rem 5rem;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 160px;
-    transform: translateX(-50%);
-    width: min(1400px, 130%);
-    height: 900px;
-    background:
-      radial-gradient(ellipse 65% 55% at 50% 38%, rgba(188, 216, 240, 0.35) 0%, transparent 68%),
-      radial-gradient(ellipse 50% 40% at 30% 60%, rgba(82, 201, 160, 0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 35% at 75% 55%, rgba(73, 55, 165, 0.07) 0%, transparent 55%);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-  }
-`;
-
-export const HeaderC = styled.div`
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
-  text-align: center;
-  display: flex;
+export const PrimerCard = styled.div`
+  display: none;
   flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-
-  @media (max-width: 600px) {
-    text-align: left;
-    align-items: flex-start;
-    margin-bottom: 1.75rem;
-  }
-`;
-
-export const StackC = styled.div`
-  position: relative;
-  z-index: 2;
-  max-width: 1040px;
-  margin: 0 auto;
-
-  @media (max-width: 1100px) {
-    max-width: 100%;
-  }
-`;
-
-// ── Liquid Glass Pedestal ─────────────────────────────────────────────────────
-
-export const Pedestal = styled.div`
-  position: relative;
-  padding: 2rem 2rem 2rem;
-  border-radius: 32px;
-
-  /* Liquid glass layers */
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.72) 0%,
-      rgba(234, 244, 253, 0.52) 35%,
-      rgba(234, 248, 241, 0.42) 65%,
-      rgba(243, 241, 252, 0.48) 100%
-    );
-  backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
-  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
-
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow:
-    /* top specular highlight */
-    0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
-    /* left edge highlight */
-    1px 0 0 0 rgba(255, 255, 255, 0.5) inset,
-    /* inner ambient */
-    0 0 0 1px rgba(255, 255, 255, 0.22) inset,
-    /* outer depth */
-    0 8px 32px rgba(14, 27, 43, 0.08),
-    0 32px 80px rgba(18, 52, 88, 0.12),
-    0 2px 8px rgba(90, 155, 224, 0.08);
-
-  @media (max-width: 600px) {
-    padding: 1.25rem 1rem 1.25rem;
-    border-radius: 22px;
-  }
-`;
-
-export const BadgeRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.25rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  @media (max-width: 600px) {
-    margin-bottom: 1rem;
-  }
-`;
-
-export const BadgeGroup = styled.div`
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-`;
-
-export const Badge = styled.span`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-
-  ${({ $variant }) => {
-    switch ($variant) {
-      case 'sky':
-        return `
-          background: rgba(234,244,253,0.8);
-          color: ${tokens.sky700};
-          border: 1px solid rgba(188,216,240,0.7);
-          backdrop-filter: blur(8px);
-        `;
-      case 'mint':
-        return `
-          background: rgba(234,248,241,0.8);
-          color: #147A55;
-          border: 1px solid rgba(214,240,228,0.7);
-          backdrop-filter: blur(8px);
-        `;
-      default:
-        return `
-          background: rgba(255,255,255,0.5);
-          color: ${tokens.ink500};
-          border: 1px solid rgba(255,255,255,0.65);
-          backdrop-filter: blur(8px);
-          display: none;
-
-          @media (min-width: 601px) { display: inline-flex; }
-        `;
-    }
-  }}
-`;
-
-// ── Annotation overlays (fade on scroll) ─────────────────────────────────────
-
-export const Anno = styled.div`
-  position: absolute;
+  gap: 4px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
   border-radius: 14px;
-  padding: 0.7rem 0.9rem;
-  max-width: 210px;
-  z-index: 5;
-  font-size: 0.8rem;
-  color: ${tokens.ink700};
-
-  /* Liquid glass */
-  background: rgba(255, 255, 255, 0.68);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
-    0 4px 20px rgba(18, 52, 88, 0.1);
-
-  /* Fade on scroll */
-  opacity: ${({ $faded }) => ($faded ? 0 : 1)};
-  pointer-events: ${({ $faded }) => ($faded ? 'none' : 'auto')};
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  ${({ $pos }) => {
-    switch ($pos) {
-      case 'a1': return `top: 8%; left: -6%;`;
-      case 'a2': return `top: 42%; right: -6%;`;
-      case 'a3': return `bottom: 14%; left: -4%;`;
-      default: return '';
-    }
-  }}
-
-  @media (max-width: 1000px) { display: none; }
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px) saturate(170%);
+  box-shadow: 0 4px 18px rgba(18, 52, 88, 0.06);
 `;
 
-export const AnnoLabel = styled.div`
-  font-size: 0.64rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
+export const PrimerKicker = styled.div`
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: ${({ $color }) => $color || tokens.sky700};
-  margin-bottom: 0.15rem;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
+  color: ${tokens.sky700};
 
   &::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: ${({ $dot }) => $dot || tokens.sky500};
+    content: '●';
+    color: ${tokens.mint500};
+    margin-right: 6px;
+    font-size: 0.7rem;
   }
 `;
 
-export const ConnectorsSvg = styled.svg`
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
-  overflow: visible;
-  width: 100%;
-  height: 100%;
-  opacity: ${({ $faded }) => ($faded ? 0 : 1)};
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  @media (max-width: 1000px) { display: none; }
+export const PrimerBody = styled.p`
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: ${tokens.ink500};
 `;
 
-// ── Rail (liquid glass cards) ─────────────────────────────────────────────────
-
-export const Rail = styled.div`
+export const FeatureMatrixWrap = styled.section`
   position: relative;
   z-index: 2;
   max-width: 1040px;
-  margin: 1.75rem auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.8rem;
+  margin: 4rem auto 3rem;
+  padding: 0 0.25rem;
+`;
 
-  @media (max-width: 1100px) { max-width: 100%; }
+export const FMHeader = styled.div`
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: ${tokens.sky700};
+  padding-bottom: 12px;
+  border-bottom: 1px solid ${tokens.borderStrong};
+  margin-bottom: 4px;
+`;
+
+export const FMRow = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid ${tokens.border};
+
+  &:last-child { border-bottom: none; }
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
-    gap: 0.6rem;
+    gap: 2px;
+    padding: 12px 0;
   }
 `;
 
-export const RailCell = styled.div`
-  padding: 1rem 1.15rem;
-  border-radius: 20px;
-
-  /* Liquid glass */
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.65) 0%,
-      rgba(234, 244, 253, 0.42) 100%
-    );
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.85) inset,
-    0 4px 16px rgba(18, 52, 88, 0.07);
-`;
-
-export const RailKey = styled.div`
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${({ $color }) => $color || tokens.sky700};
-`;
-
-export const RailTitle = styled.div`
-  font-weight: 800;
+export const FMKey = styled.div`
+  font-size: 0.86rem;
+  font-weight: 700;
   color: ${tokens.ink900};
-  margin-top: 0.25rem;
 `;
 
-export const RailDesc = styled.div`
+export const FMValue = styled.div`
+  font-size: 0.86rem;
+  line-height: 1.55;
   color: ${tokens.ink500};
-  font-size: 0.85rem;
-  margin-top: 0.15rem;
-  line-height: 1.5;
 `;
-
-// ── Not Found ─────────────────────────────────────────────────────────────────
 
 export const NotFoundWrap = styled.div`
   text-align: center;

@@ -120,9 +120,7 @@ export default function ReviewsList({ settings = {}, reviews = [] }) {
                 onClick={() => setBreakdownOpen(o => !o)}
                 aria-expanded={breakdownOpen}
               >
-                <span style={{ color: s.starColor, fontSize: (s.topBarStarSize || 18) + 'px', lineHeight: 1 }}>
-                  ★
-                </span>
+                <Stars rating={1} count={1} size={s.topBarStarSize || 18} filled={s.starColor} muted={s.starColor} icon={s.ratingIcon} />
                 <span>{stats.avg} · {stats.total} Reviews</span>
                 <ChevronSvg open={breakdownOpen} color={s.topBarCountColor} />
               </RatingTrigger>
@@ -165,7 +163,7 @@ export default function ReviewsList({ settings = {}, reviews = [] }) {
                     $starColor={s.starColor}
                     title={`Filter by ${star} stars`}
                   >
-                    <BreakdownLabel $color={s.topBarCountColor}>{star} ★</BreakdownLabel>
+                    <BreakdownLabel $color={s.topBarCountColor} style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>{star} <Stars rating={1} count={1} size={13} filled={s.starColor} muted={s.starColor} icon={s.ratingIcon} /></BreakdownLabel>
                     <BarTrack>
                       <BarFill
                         $pct={stats.total > 0 ? ((stats.counts[star] || 0) / stats.total) * 100 : 0}
@@ -191,7 +189,7 @@ export default function ReviewsList({ settings = {}, reviews = [] }) {
                   $activeColor={s.starColor}
                   onClick={() => toggleFilter(star)}
                 >
-                  {star} ★
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>{star} <Stars rating={1} count={1} size={12} filled="currentColor" muted="currentColor" icon={s.ratingIcon} /></span>
                 </FilterChip>
               ))}
               {activeFilters.length > 0 && (
