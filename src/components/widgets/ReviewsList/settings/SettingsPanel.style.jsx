@@ -304,6 +304,8 @@ export const CtaRow = styled.div`
 `;
 
 export const StartNowBtn = styled.button`
+  text-decoration: none;
+  text-align: center;
   width: 100%;
   padding: 11px 14px;
   border: none;

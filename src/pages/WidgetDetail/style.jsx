@@ -166,7 +166,7 @@ export const Playground = styled.div`
   z-index: 2;
   display: grid;
   grid-template-columns: 340px 1fr;
-  gap: 32px;
+  gap: 16px;
   align-items: start;
 
   @media (max-width: 1099px) {
@@ -313,6 +313,41 @@ export const FMValue = styled.div`
   font-size: 0.86rem;
   line-height: 1.55;
   color: ${tokens.ink500};
+`;
+
+export const PreviewToolbar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+`;
+
+export const ViewToggleGroup = styled.div`
+  display: flex;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  overflow: hidden;
+`;
+
+export const ViewToggleBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 32px;
+  border: none;
+  border-right: ${(p) => (p.$last ? 'none' : '1px solid #e2e2e2')};
+  background: ${(p) => (p.$active ? '#eef2ff' : '#ffffff')};
+  cursor: pointer;
+  color: ${(p) => (p.$active ? '#4f46e5' : '#888888')};
+  transition: background 0.1s, color 0.1s;
+  padding: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
 `;
 
 export const NotFoundWrap = styled.div`

@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Widget = styled.div`
   display: grid;
-  grid-template-columns: ${({ $layout }) => $layout === 'side-by-side' ? '260px 1fr' : '1fr'};
+  grid-template-columns: ${({ $layout, $isMobile }) =>
+    $isMobile || $layout !== 'side-by-side' ? '1fr' : '260px 1fr'};
   gap: 2rem;
   background: ${({ $bg }) => $bg || '#fff'};
   padding: ${({ $padding }) => $padding || 32}px;

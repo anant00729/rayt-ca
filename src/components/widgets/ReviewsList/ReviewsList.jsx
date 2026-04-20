@@ -43,7 +43,7 @@ function VerifiedCheckSvg() {
   );
 }
 
-export default function ReviewsList({ settings = {}, reviews = [] }) {
+export default function ReviewsList({ settings = {}, reviews = [], isMobile = false }) {
   const s = settings;
 
   const [sortBy, setSortBy] = useState(s.defaultSort || 'recent');
@@ -75,7 +75,7 @@ export default function ReviewsList({ settings = {}, reviews = [] }) {
   };
 
   return (
-    <Widget $layout={s.layout} $bg={s.containerBgColor} $padding={s.containerPadding}>
+    <Widget $layout={s.layout} $isMobile={isMobile} $bg={s.containerBgColor} $padding={s.containerPadding}>
 
       {s.showSectionHeader && (
         <SectionHeader>
