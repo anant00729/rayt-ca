@@ -25,7 +25,7 @@ export const HeaderBar = styled.header`
     max-width: 1300px;
     border-radius: 6px;
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-    transition: top 0.3s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: top 0.3s ease, transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   ` : `
     position: sticky;
     top: 0;
@@ -418,7 +418,7 @@ export const ResourceTile = styled(Link)`
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px color-mix(in srgb, ${tokens.sky700} 4%, transparent);
+    // box-shadow: 0 12px 28px color-mix(in srgb, ${tokens.sky700} 4%, transparent);
     border-color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky500)};
   }
 

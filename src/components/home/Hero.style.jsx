@@ -9,7 +9,7 @@ export const HeroWrap = styled.section`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    padding: 7rem 0 3rem;
+    padding: 1rem 0 3rem;
   }
 `;
 
