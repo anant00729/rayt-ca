@@ -1,6 +1,6 @@
 ---
 title: Getting Started with RayT
-date: 2026-04-21
+date: 2026-04-21 
 description: Learn how to install RayT on your Shopify store and start collecting product reviews in under 5 minutes.
 slug: getting-started-with-rayt
 category: guides

@@ -13,7 +13,7 @@ import {
 } from './style';
 
 const AUTHOR_NAME = 'Anant S Awasthy';
-const AUTHOR_AVATAR = '/author-placeholder.svg';
+const AUTHOR_AVATAR = 'https://avatars.githubusercontent.com/u/20675885?s=400&u=3011a32dd3a6ebc1147a9d5a68ddda22b70b49c9&v=4';
 
 export default function Docs({ theme, onThemeChange }) {
   useDocumentMeta({
