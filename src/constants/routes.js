@@ -12,6 +12,8 @@ export const ROUTES = {
   AI: '/ai',
   RESOURCES: '/resources',
   CONTACT: '/contact',
+  BLOG: '/blog',
+  BLOG_POST: (slug) => `/blog/${slug}`,
 };
 
 // External URLs used across the app. Replace these in one place as

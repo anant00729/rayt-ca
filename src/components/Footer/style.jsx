@@ -44,7 +44,7 @@ export const ColHeading = styled.p`
   margin-bottom: 1rem;
 `;
 
-export const ColLink = styled.a`
+const colLinkStyles = `
   display: block;
   font-size: 0.9rem;
   color: var(--color-muted);
@@ -56,6 +56,10 @@ export const ColLink = styled.a`
     color: var(--color-secondary);
   }
 `;
+
+export const ColLink = styled.a`${colLinkStyles}`;
+
+export const ColLinkInternal = styled(Link)`${colLinkStyles}`;
 
 export const Bottom = styled.div`
   margin-top: 3rem;

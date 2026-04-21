@@ -1,22 +1,47 @@
 import { THEMES } from '../../App';
-import { Wrapper, Inner, FooterLogo, Grid, Column, ColHeading, ColLink, Bottom, ThemeSelect } from './style';
+import { ROUTES } from '../../constants/routes';
+import { Wrapper, Inner, FooterLogo, Grid, Column, ColHeading, ColLink, ColLinkInternal, Bottom, ThemeSelect } from './style';
 
 const COLUMNS = [
   {
     heading: 'Product',
-    links: ['Analytics', 'Workflows', 'Integrations', 'Widgets', 'API'],
+    links: [
+      { label: 'Analytics' },
+      { label: 'Workflows' },
+      { label: 'Integrations' },
+      { label: 'Widgets' },
+      { label: 'API' },
+    ],
   },
   {
     heading: 'Resources',
-    links: ['Documentation', 'Changelog', 'Status', 'Blog', 'Community'],
+    links: [
+      { label: 'Documentation' },
+      { label: 'Changelog' },
+      { label: 'Status' },
+      { label: 'Blog', to: ROUTES.BLOG },
+      { label: 'Community' },
+    ],
   },
   {
     heading: 'Company',
-    links: ['About', 'Customers', 'Careers', 'Press', 'Contact'],
+    links: [
+      { label: 'About' },
+      { label: 'Customers' },
+      { label: 'Careers' },
+      { label: 'Press' },
+      { label: 'Contact' },
+    ],
   },
   {
     heading: 'Legal',
-    links: ['Privacy', 'Terms', 'Cookie Policy', 'Security', 'Licenses'],
+    links: [
+      { label: 'Privacy' },
+      { label: 'Terms' },
+      { label: 'Cookie Policy' },
+      { label: 'Security' },
+      { label: 'Licenses' },
+    ],
   },
 ];
 
@@ -29,11 +54,15 @@ export default function Footer({ theme, onThemeChange }) {
           {COLUMNS.map(col => (
             <Column key={col.heading}>
               <ColHeading>{col.heading}</ColHeading>
-              {col.links.map(link => (
-                <ColLink key={link} href="https://google.com" target="_blank" rel="noopener noreferrer">
-                  {link}
-                </ColLink>
-              ))}
+              {col.links.map(link =>
+                link.to ? (
+                  <ColLinkInternal key={link.label} to={link.to}>{link.label}</ColLinkInternal>
+                ) : (
+                  <ColLink key={link.label} href="https://google.com" target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </ColLink>
+                )
+              )}
             </Column>
           ))}
         </Grid>

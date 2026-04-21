@@ -15,6 +15,9 @@ import WidgetDetail from './pages/WidgetDetail';
 import Customers from './pages/Customers';
 import Pricing from './pages/Pricing';
 import Resources from './pages/Resources';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import NotFound from './pages/NotFound';
 
 import colors from './data/colors.json';
 
@@ -80,6 +83,9 @@ export default function App() {
           <Route path="/customers" element={<Customers theme={theme} onThemeChange={setTheme} />} />
           <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
           <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/blog" element={<Blog theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/blog/:slug" element={<BlogPost theme={theme} onThemeChange={setTheme} />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </PageBody>
     </>
