@@ -7,6 +7,7 @@ import Button from '../../components/ui/Button';
 import { getPostBySlug } from '../../lib/posts';
 import { formatPostDate } from '../../lib/formatDate';
 import { useDocumentMeta } from '../../lib/seo';
+import { extractHeadings, headingComponents } from '../../lib/markdown';
 import { ROUTES } from '../../constants/routes';
 import {
   Page, ArticleHeader, ArticleTitle, ArticleMeta, ArticleDate,
@@ -15,29 +16,6 @@ import {
   ArticleLayout, TocSidebar, TocTitle, TocList, TocItem, TocLink,
   NotFoundContainer, NotFoundCode, NotFoundHeading, NotFoundBody,
 } from './style';
-
-function slugify(text) {
-  return text.toLowerCase().replace(/[^\w\s-]/g, '').trim().replace(/\s+/g, '-');
-}
-
-function extractHeadings(body) {
-  return [...body.matchAll(/^#{2,3} (.+)$/gm)].map(m => ({
-    level: m[0].startsWith('###') ? 3 : 2,
-    text: m[1].trim(),
-    id: slugify(m[1].trim()),
-  }));
-}
-
-const headingComponents = {
-  h2: ({ children, ...props }) => {
-    const id = slugify(String(children));
-    return <h2 id={id} {...props}>{children}</h2>;
-  },
-  h3: ({ children, ...props }) => {
-    const id = slugify(String(children));
-    return <h3 id={id} {...props}>{children}</h3>;
-  },
-};
 
 function NotFound({ theme, onThemeChange }) {
   useDocumentMeta({ title: 'Article not found', description: 'This article does not exist.' });

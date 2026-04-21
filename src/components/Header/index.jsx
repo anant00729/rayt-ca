@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Button from '../ui/Button';
 import { EXTERNAL } from '../../constants/routes';
 import {
@@ -54,6 +55,8 @@ const SIMPLE_NAV = [
 ];
 
 export default function Header({ floating = false, announcementVisible = false, hideDistance = '200%' }) {
+  const { pathname } = useLocation();
+  const isDocsHome = pathname === '/docs';
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileProductOpen, setMobileProductOpen] = useState(false);
@@ -82,7 +85,7 @@ export default function Header({ floating = false, announcementVisible = false, 
   }, []);
 
   return (
-    <HeaderBar $floating={floating} $announcementVisible={announcementVisible} $hidden={hidden} $hideDistance={hideDistance}>
+    <HeaderBar $floating={floating} $announcementVisible={announcementVisible} $hidden={hidden} $hideDistance={hideDistance} $whiteBg={isDocsHome}>
       <Container>
         <Logo to="/">
           <StarIcon viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

@@ -17,6 +17,9 @@ import Pricing from './pages/Pricing';
 import Resources from './pages/Resources';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Docs from './pages/Docs';
+import DocsCollection from './pages/DocsCollection';
+import DocsArticle from './pages/DocsArticle';
 import NotFound from './pages/NotFound';
 
 import colors from './data/colors.json';
@@ -85,6 +88,9 @@ export default function App() {
           <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />
           <Route path="/blog" element={<Blog theme={theme} onThemeChange={setTheme} />} />
           <Route path="/blog/:slug" element={<BlogPost theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/docs" element={<Docs theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/docs/:collection" element={<DocsCollection theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/docs/:collection/:article" element={<DocsArticle theme={theme} onThemeChange={setTheme} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </PageBody>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function getOrCreate(attrType, attrValue) {
+function getOrCreateMeta(attrType, attrValue) {
   let el = document.querySelector(`meta[${attrType}="${attrValue}"]`);
   if (!el) {
     el = document.createElement('meta');
@@ -10,22 +10,49 @@ function getOrCreate(attrType, attrValue) {
   return el;
 }
 
+function getOrCreateLink(rel) {
+  let el = document.querySelector(`link[rel="${rel}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('rel', rel);
+    document.head.appendChild(el);
+  }
+  return el;
+}
+
 /**
  * Sets document title + meta tags on mount, restores title on unmount.
- * @param {{ title: string, description: string, ogType?: string, url?: string }} opts
+ * @param {{
+ *   title: string,
+ *   description: string,
+ *   ogType?: string,
+ *   url?: string,
+ *   canonical?: string,
+ *   keywords?: string[],
+ * }} opts
  */
-export function useDocumentMeta({ title, description, ogType = 'website', url }) {
+export function useDocumentMeta({ title, description, ogType = 'website', url, canonical, keywords }) {
+  const keywordsKey = Array.isArray(keywords) ? keywords.join(',') : '';
+
   useEffect(() => {
     const prevTitle = document.title;
     const fullTitle = `${title} | RayT`;
 
     document.title = fullTitle;
-    getOrCreate('name', 'description').setAttribute('content', description);
-    getOrCreate('property', 'og:title').setAttribute('content', fullTitle);
-    getOrCreate('property', 'og:description').setAttribute('content', description);
-    getOrCreate('property', 'og:type').setAttribute('content', ogType);
-    if (url) getOrCreate('property', 'og:url').setAttribute('content', url);
+    getOrCreateMeta('name', 'description').setAttribute('content', description);
+    getOrCreateMeta('property', 'og:title').setAttribute('content', fullTitle);
+    getOrCreateMeta('property', 'og:description').setAttribute('content', description);
+    getOrCreateMeta('property', 'og:type').setAttribute('content', ogType);
+
+    const ogUrl = url || canonical;
+    if (ogUrl) getOrCreateMeta('property', 'og:url').setAttribute('content', ogUrl);
+
+    if (canonical) getOrCreateLink('canonical').setAttribute('href', canonical);
+
+    if (keywordsKey) {
+      getOrCreateMeta('name', 'keywords').setAttribute('content', keywordsKey);
+    }
 
     return () => { document.title = prevTitle; };
-  }, [title, description, ogType, url]);
+  }, [title, description, ogType, url, canonical, keywordsKey]);
 }

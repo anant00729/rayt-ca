@@ -14,6 +14,9 @@ export const ROUTES = {
   CONTACT: '/contact',
   BLOG: '/blog',
   BLOG_POST: (slug) => `/blog/${slug}`,
+  DOCS: '/docs',
+  DOCS_COLLECTION: (col) => `/docs/${col}`,
+  DOCS_ARTICLE: (col, slug) => `/docs/${col}/${slug}`,
 };
 
 // External URLs used across the app. Replace these in one place as
