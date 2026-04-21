@@ -8,52 +8,11 @@ export const Page = styled.div`
 `;
 
 export const ArticleHeader = styled.header`
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 1.5rem;
-`;
-
-export const AuthorRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: ${tokens.ink500};
-  font-size: 0.9rem;
-  margin-top: 1rem;
-`;
-
-export const Avatar = styled.span`
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: ${tokens.sky100};
-  background-image: ${p => (p.$src ? `url(${p.$src})` : 'none')};
-  background-size: cover;
-  background-position: center;
-  display: inline-block;
-  border: 1px solid ${tokens.border};
-  flex-shrink: 0;
-`;
-
-export const AuthorTextBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: 1.35;
-`;
-
-export const AuthorLine = styled.span`
-  color: ${tokens.ink700};
-`;
-
-export const UpdatedLine = styled.span`
-  color: ${tokens.ink500};
-  font-size: 0.85rem;
+  padding: 2rem 0 1.5rem;
 `;
 
 export const BelowArticle = styled.div`
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  padding: 0 0 5rem;
 `;
 
 export const RelatedHeading = styled.h2`

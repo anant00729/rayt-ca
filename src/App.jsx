@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { tokens } from './styles/tokens';
 
 import Header from './components/Header';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import ProductReviews from './pages/ProductReviews';
@@ -72,6 +73,7 @@ export default function App() {
   return (
     <>
       <ThemeVars $colors={theme.colors} />
+      <ScrollToTop />
       <GlobalBg />
       <Header floating />
       <PageBody>
@@ -87,7 +89,7 @@ export default function App() {
           <Route path="/pricing" element={<Pricing theme={theme} onThemeChange={setTheme} />} />
           <Route path="/resources" element={<Resources theme={theme} onThemeChange={setTheme} />} />
           <Route path="/blog" element={<Blog theme={theme} onThemeChange={setTheme} />} />
-          <Route path="/blog/:slug" element={<BlogPost theme={theme} onThemeChange={setTheme} />} />
+          <Route path="/blog/:category/:slug" element={<BlogPost theme={theme} onThemeChange={setTheme} />} />
           <Route path="/docs" element={<Docs theme={theme} onThemeChange={setTheme} />} />
           <Route path="/docs/:collection" element={<DocsCollection theme={theme} onThemeChange={setTheme} />} />
           <Route path="/docs/:collection/:article" element={<DocsArticle theme={theme} onThemeChange={setTheme} />} />

@@ -5,11 +5,14 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
-import DocSearchBar from '../../components/docs/DocSearchBar';
 import ArticleRow from '../../components/docs/ArticleRow';
+import ArticleSearch from '../../components/docs/ArticleSearch';
+import HeaderBackdrop from '../../components/docs/HeaderBackdrop';
+import AuthorMeta from '../../components/docs/AuthorMeta';
 import { getArticle, getRelatedArticles, getCollection } from '../../lib/docs';
 import { useDocumentMeta } from '../../lib/seo';
 import { extractHeadings, headingComponents } from '../../lib/markdown';
+import { useActiveHeading } from '../../lib/useActiveHeading';
 import { ROUTES } from '../../constants/routes';
 import {
   ArticleTitle, Prose,
@@ -18,13 +21,10 @@ import {
   NotFoundContainer, NotFoundCode, NotFoundHeading, NotFoundBody,
 } from '../BlogPost/style';
 import {
-  Page, ArticleHeader, AuthorRow, Avatar, AuthorTextBlock,
-  AuthorLine, UpdatedLine, BelowArticle, RelatedHeading, RelatedCard,
+  Page, ArticleHeader, BelowArticle, RelatedHeading, RelatedCard,
   FeedbackCard, FeedbackText, EmojiRow, EmojiButton, BreadcrumbGroupSpan,
 } from './style';
 
-const AUTHOR_NAME = 'Anant S Awasthy';
-const AUTHOR_AVATAR = '/author-placeholder.svg';
 const EMOJIS = [
   { key: 'sad', char: '😞', label: 'Not helpful' },
   { key: 'neutral', char: '😐', label: 'Somewhat helpful' },
@@ -40,7 +40,7 @@ function ArticleNotFound({ theme, onThemeChange }) {
   }
   return (
     <Page>
-      <DocSearchBar compact value="" onChange={() => {}} onSubmit={handleSearchSubmit} />
+      <HeaderBackdrop />
       <NotFoundContainer>
         <NotFoundCode>404</NotFoundCode>
         <NotFoundHeading>Article not found</NotFoundHeading>
@@ -70,6 +70,7 @@ function ArticleView({ article, theme, onThemeChange }) {
   const collectionLabel = article.collectionLabel || collection?.label || article.collection;
 
   const headings = extractHeadings(article.body);
+  const activeId = useActiveHeading(headings);
   const related = getRelatedArticles(article.collection, article.slug, 5);
 
   const keywords = [
@@ -93,12 +94,7 @@ function ArticleView({ article, theme, onThemeChange }) {
 
   return (
     <Page>
-      <DocSearchBar
-        compact
-        value={searchInput}
-        onChange={setSearchInput}
-        onSubmit={handleSearchSubmit}
-      />
+      <HeaderBackdrop />
 
       <Breadcrumb aria-label="Breadcrumb">
         <Link to={ROUTES.DOCS} style={{ color: 'inherit', textDecoration: 'none' }}>All Collections</Link>
@@ -112,20 +108,14 @@ function ArticleView({ article, theme, onThemeChange }) {
         <BreadcrumbSep aria-hidden>›</BreadcrumbSep>
         <BreadcrumbGroupSpan>{article.group}</BreadcrumbGroupSpan>
         <BreadcrumbSep aria-hidden>›</BreadcrumbSep>
-        <BreadcrumbCurrent style={{ maxWidth: 280 }}>{article.title}</BreadcrumbCurrent>
+        <BreadcrumbCurrent>{article.title}</BreadcrumbCurrent>
       </Breadcrumb>
 
       <ArticleLayout>
         <div>
           <ArticleHeader>
             <ArticleTitle>{article.title}</ArticleTitle>
-            <AuthorRow>
-              <Avatar $src={AUTHOR_AVATAR} aria-hidden />
-              <AuthorTextBlock>
-                <AuthorLine>Written by {AUTHOR_NAME}</AuthorLine>
-                <UpdatedLine>Updated recently</UpdatedLine>
-              </AuthorTextBlock>
-            </AuthorRow>
+            <AuthorMeta />
           </ArticleHeader>
 
           <Prose>
@@ -174,18 +164,25 @@ function ArticleView({ article, theme, onThemeChange }) {
           </BelowArticle>
         </div>
 
-        {headings.length > 0 && (
-          <TocSidebar aria-label="Table of contents">
-            <TocTitle>On this page</TocTitle>
-            <TocList>
-              {headings.map(h => (
-                <TocItem key={h.id} style={{ paddingLeft: h.level === 3 ? '0.75rem' : 0 }}>
-                  <TocLink href={`#${h.id}`}>{h.text}</TocLink>
-                </TocItem>
-              ))}
-            </TocList>
-          </TocSidebar>
-        )}
+        <TocSidebar aria-label="Table of contents">
+          <ArticleSearch
+            value={searchInput}
+            onChange={setSearchInput}
+            onSubmit={handleSearchSubmit}
+          />
+          {headings.length > 0 && (
+            <div>
+              <TocTitle>Table of contents</TocTitle>
+              <TocList>
+                {headings.map(h => (
+                  <TocItem key={h.id} style={{ paddingLeft: h.level === 3 ? '0.75rem' : 0 }}>
+                    <TocLink href={`#${h.id}`} data-active={activeId === h.id ? 'true' : undefined}>{h.text}</TocLink>
+                  </TocItem>
+                ))}
+              </TocList>
+            </div>
+          )}
+        </TocSidebar>
       </ArticleLayout>
 
       <Footer theme={theme} onThemeChange={onThemeChange} />

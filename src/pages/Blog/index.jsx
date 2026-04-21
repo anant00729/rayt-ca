@@ -1,15 +1,17 @@
+import { useMemo, useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Footer from '../../components/Footer';
-import { getAllPosts } from '../../lib/posts';
+import ArticleRow from '../../components/docs/ArticleRow';
+import DocSearchBar from '../../components/docs/DocSearchBar';
+import { getBlogGroups, searchPosts } from '../../lib/posts';
 import { formatPostDate } from '../../lib/formatDate';
 import { useDocumentMeta } from '../../lib/seo';
 import { ROUTES } from '../../constants/routes';
 import {
-  Page, Hero, Eyebrow, Heading, Subtitle,
-  Grid, Card, CardDate, CardTitle, CardDescription, CardReadMore,
-  EmptyState,
+  Page, HeroWrap, Container, EmptyState,
+  GroupCard, GroupTitle, GroupHr, RowsWrap,
+  ResultsCard, ResultsHeader, EmptyStateInline,
 } from './style';
-
-const posts = getAllPosts();
 
 export default function Blog({ theme, onThemeChange }) {
   useDocumentMeta({
@@ -18,32 +20,81 @@ export default function Blog({ theme, onThemeChange }) {
     url: 'https://rayt.ca/blog',
   });
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialQuery = searchParams.get('q') ?? '';
+  const [query, setQuery] = useState(initialQuery);
+
+  useEffect(() => {
+    const trimmed = query.trim();
+    const next = new URLSearchParams(searchParams);
+    if (trimmed) next.set('q', trimmed); else next.delete('q');
+    if (next.toString() !== searchParams.toString()) {
+      setSearchParams(next, { replace: true });
+    }
+  }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const groups = useMemo(() => getBlogGroups(), []);
+  const results = useMemo(() => searchPosts(query), [query]);
+  const isSearching = query.trim().length > 0;
+
   return (
     <Page>
-      <Hero>
-        <Eyebrow>RayT Blog</Eyebrow>
-        <Heading>Help &amp; Guides</Heading>
-        <Subtitle>
-          Tips, tutorials, and feature guides for getting the most out of RayT on your Shopify store.
-        </Subtitle>
-      </Hero>
+      <HeroWrap>
+        <DocSearchBar
+          headline="Help & Guides"
+          value={query}
+          onChange={setQuery}
+        />
+      </HeroWrap>
 
-      {posts.length === 0 ? (
+      {groups.length === 0 ? (
         <EmptyState>
           <h2>No articles yet</h2>
           <p>Check back soon — we&apos;re working on guides to help you get more from RayT.</p>
         </EmptyState>
       ) : (
-        <Grid>
-          {posts.map(post => (
-            <Card key={post.slug} to={ROUTES.BLOG_POST(post.slug)}>
-              <CardDate dateTime={post.date}>{formatPostDate(post.date)}</CardDate>
-              <CardTitle>{post.title}</CardTitle>
-              <CardDescription>{post.description}</CardDescription>
-              <CardReadMore>Read article</CardReadMore>
-            </Card>
-          ))}
-        </Grid>
+        <Container>
+          {isSearching ? (
+            <>
+              <ResultsHeader>
+                {results.length === 0
+                  ? `No results for "${query.trim()}"`
+                  : `${results.length} result${results.length === 1 ? '' : 's'} for "${query.trim()}"`}
+              </ResultsHeader>
+              {results.length === 0 ? (
+                <ResultsCard><EmptyStateInline>Try a different search term.</EmptyStateInline></ResultsCard>
+              ) : (
+                <ResultsCard>
+                  {results.map(p => (
+                    <ArticleRow
+                      key={`${p.category}/${p.slug}`}
+                      to={ROUTES.BLOG_POST(p.category, p.slug)}
+                      title={p.title}
+                      meta={p.categoryLabel}
+                    />
+                  ))}
+                </ResultsCard>
+              )}
+            </>
+          ) : (
+            groups.map(group => (
+              <GroupCard key={group.category}>
+                <GroupTitle>{group.label}</GroupTitle>
+                <GroupHr />
+                <RowsWrap>
+                  {group.posts.map(post => (
+                    <ArticleRow
+                      key={post.slug}
+                      to={ROUTES.BLOG_POST(post.category, post.slug)}
+                      title={post.title}
+                      meta={formatPostDate(post.date)}
+                    />
+                  ))}
+                </RowsWrap>
+              </GroupCard>
+            ))
+          )}
+        </Container>
       )}
 
       <Footer theme={theme} onThemeChange={onThemeChange} />

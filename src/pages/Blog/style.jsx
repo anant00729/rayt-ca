@@ -9,48 +9,25 @@ export const Page = styled.div`
   font-family: 'Nunito Sans', sans-serif;
 `;
 
-export const Hero = styled.section`
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 5rem 1.5rem 3.5rem;
-  text-align: center;
+export const HeroWrap = styled.div`
+  background: var(--color-accent);
+  margin-top: -96px;
+  padding-top: 96px;
 `;
 
-export const Eyebrow = styled.span`
-  display: inline-block;
-  color: ${tokens.sky700};
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-`;
-
-export const Heading = styled.h1`
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 900;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: ${tokens.ink900};
-  margin: 0 0 1rem;
-`;
-
-export const Subtitle = styled.p`
-  font-size: 1.05rem;
-  color: ${tokens.ink500};
-  line-height: 1.65;
-  max-width: 520px;
-  margin: 0 auto;
-`;
-
-export const Grid = styled.section`
+export const HeroSubtitle = styled.p`
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem 6rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  padding: 0 1.5rem 0.5rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.05rem;
+  line-height: 1.6;
+`;
+
+export const Container = styled.section`
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
 `;
 
 export const Card = styled(Link)`
@@ -71,47 +48,51 @@ export const Card = styled(Link)`
   }
 `;
 
-export const CardDate = styled.time`
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: ${tokens.sky700};
-  margin-bottom: 0.6rem;
+export const GroupCard = styled.section`
+  border: 1px solid ${tokens.border};
+  border-radius: ${tokens.radius};
+  background: ${tokens.white};
+  padding: 1.75rem 0 0.5rem;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
 `;
 
-export const CardTitle = styled.h2`
-  font-size: 1.15rem;
+export const GroupTitle = styled.h2`
+  font-size: 1.35rem;
   font-weight: 800;
   color: ${tokens.ink900};
-  line-height: 1.3;
-  margin: 0 0 0.65rem;
+  margin: 0 1.75rem 1.25rem;
 `;
 
-export const CardDescription = styled.p`
-  font-size: 0.9rem;
-  color: ${tokens.ink500};
-  line-height: 1.6;
-  flex: 1;
+export const GroupHr = styled.hr`
+  border: none;
+  border-top: 1px solid ${tokens.border};
+  margin: 0 0 0.5rem;
+`;
+
+export const RowsWrap = styled.div`
+  padding: 0 0.5rem 0.5rem;
+`;
+
+export const ResultsCard = styled.div`
+  border: 1px solid ${tokens.border};
+  border-radius: ${tokens.radius};
+  background: ${tokens.white};
+  overflow: hidden;
+`;
+
+export const ResultsHeader = styled.h2`
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: ${tokens.ink900};
   margin: 0 0 1.25rem;
 `;
 
-export const CardReadMore = styled.span`
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: ${tokens.sky700};
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-
-  &::after {
-    content: '→';
-    transition: transform 0.15s;
-  }
-
-  ${Card}:hover &::after {
-    transform: translateX(3px);
-  }
+export const EmptyStateInline = styled.p`
+  color: ${tokens.ink500};
+  padding: 2rem 1.5rem;
+  margin: 0;
+  text-align: center;
 `;
 
 export const EmptyState = styled.div`

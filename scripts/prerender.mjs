@@ -82,7 +82,8 @@ for (const file of mdFiles) {
   const meta = parseFrontmatter(raw);
   if (!meta.slug) continue;
 
-  const slugDir = join(blogDir, meta.slug);
+  const category = meta.category ?? 'product';
+  const slugDir = join(blogDir, category, meta.slug);
   mkdirSync(slugDir, { recursive: true });
   writeFileSync(
     join(slugDir, 'index.html'),
@@ -90,10 +91,10 @@ for (const file of mdFiles) {
       title: meta.title ?? 'Untitled',
       description: meta.description ?? '',
       ogType: 'article',
-      url: `${BASE_URL}/blog/${meta.slug}`,
+      url: `${BASE_URL}/blog/${category}/${meta.slug}`,
     })
   );
-  console.log(`  prerendered: /blog/${meta.slug}`);
+  console.log(`  prerendered: /blog/${category}/${meta.slug}`);
 }
 
 console.log('Prerender complete.');

@@ -1,8 +1,11 @@
+import { useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
 import CollectionIcon from '../../components/docs/CollectionIcon';
 import ArticleRow from '../../components/docs/ArticleRow';
+import ArticleSearch from '../../components/docs/ArticleSearch';
+import HeaderBackdrop from '../../components/docs/HeaderBackdrop';
 import { getCollection } from '../../lib/docs';
 import { useDocumentMeta } from '../../lib/seo';
 import { ROUTES } from '../../constants/routes';
@@ -11,8 +14,9 @@ import {
   NotFoundContainer, NotFoundCode, NotFoundHeading, NotFoundBody,
 } from '../BlogPost/style';
 import {
-  Page, GreenBar, Container, Header, IconTile, Title, Description,
+  Page, Container, Header, IconTile, Title, Description,
   Meta, Avatar, Dot, GroupCard, GroupTitle, GroupHr, RowsWrap,
+  SearchWrap, EmptyRow,
 } from './style';
 
 const AUTHOR_NAME = 'Anant S Awasthy';
@@ -22,7 +26,7 @@ function CollectionNotFound({ theme, onThemeChange }) {
   useDocumentMeta({ title: 'Collection not found', description: 'This collection does not exist.' });
   return (
     <Page>
-      <GreenBar />
+      <HeaderBackdrop $tall />
       <NotFoundContainer>
         <NotFoundCode>404</NotFoundCode>
         <NotFoundHeading>Collection not found</NotFoundHeading>
@@ -44,15 +48,30 @@ export default function DocsCollection({ theme, onThemeChange }) {
 }
 
 function CollectionView({ collection, theme, onThemeChange }) {
+  const [query, setQuery] = useState('');
+
   useDocumentMeta({
     title: `${collection.label} — Rayt Help`,
     description: collection.description,
     canonical: `https://rayt.ca${ROUTES.DOCS_COLLECTION(collection.slug)}`,
   });
 
+  const filteredGroups = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return collection.groups;
+    return collection.groups
+      .map(g => ({
+        ...g,
+        articles: g.articles.filter(a => a.title.toLowerCase().includes(q)),
+      }))
+      .filter(g => g.articles.length > 0);
+  }, [query, collection.groups]);
+
+  const isSearching = query.trim().length > 0;
+
   return (
     <Page>
-      <GreenBar />
+      <HeaderBackdrop $tall />
 
       <Breadcrumb aria-label="Breadcrumb" style={{ maxWidth: 860 }}>
         <Link to={ROUTES.DOCS} style={{ color: 'inherit', textDecoration: 'none' }}>All Collections</Link>
@@ -75,21 +94,35 @@ function CollectionView({ collection, theme, onThemeChange }) {
           </Meta>
         </Header>
 
-        {collection.groups.map(group => (
-          <GroupCard key={group.name}>
-            <GroupTitle>{group.name}</GroupTitle>
-            <GroupHr />
-            <RowsWrap>
-              {group.articles.map(a => (
-                <ArticleRow
-                  key={a.slug}
-                  to={ROUTES.DOCS_ARTICLE(collection.slug, a.slug)}
-                  title={a.title}
-                />
-              ))}
-            </RowsWrap>
+        <SearchWrap>
+          <ArticleSearch
+            value={query}
+            onChange={setQuery}
+            placeholder={`Search ${collection.label}…`}
+          />
+        </SearchWrap>
+
+        {isSearching && filteredGroups.length === 0 ? (
+          <GroupCard>
+            <EmptyRow>No articles match &ldquo;{query.trim()}&rdquo;.</EmptyRow>
           </GroupCard>
-        ))}
+        ) : (
+          filteredGroups.map(group => (
+            <GroupCard key={group.name}>
+              <GroupTitle>{group.name}</GroupTitle>
+              <GroupHr />
+              <RowsWrap>
+                {group.articles.map(a => (
+                  <ArticleRow
+                    key={a.slug}
+                    to={ROUTES.DOCS_ARTICLE(collection.slug, a.slug)}
+                    title={a.title}
+                  />
+                ))}
+              </RowsWrap>
+            </GroupCard>
+          ))
+        )}
       </Container>
 
       <Footer theme={theme} onThemeChange={onThemeChange} />

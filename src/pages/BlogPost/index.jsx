@@ -1,18 +1,22 @@
-import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
-import { getPostBySlug } from '../../lib/posts';
+import ArticleSearch from '../../components/docs/ArticleSearch';
+import HeaderBackdrop from '../../components/docs/HeaderBackdrop';
+import AuthorMeta from '../../components/docs/AuthorMeta';
+import { getPostByCategoryAndSlug } from '../../lib/posts';
 import { formatPostDate } from '../../lib/formatDate';
 import { useDocumentMeta } from '../../lib/seo';
 import { extractHeadings, headingComponents } from '../../lib/markdown';
+import { useActiveHeading } from '../../lib/useActiveHeading';
 import { ROUTES } from '../../constants/routes';
 import {
-  Page, ArticleHeader, ArticleTitle, ArticleMeta, ArticleDate,
-  Divider, Prose,
-  Breadcrumb, BreadcrumbSep, BreadcrumbCurrent,
+  Page, ArticleHeader, ArticleTitle, Prose,
+  Breadcrumb, BreadcrumbSep, BreadcrumbCurrent, BreadcrumbGroupSpan,
   ArticleLayout, TocSidebar, TocTitle, TocList, TocItem, TocLink,
   NotFoundContainer, NotFoundCode, NotFoundHeading, NotFoundBody,
 } from './style';
@@ -21,6 +25,7 @@ function NotFound({ theme, onThemeChange }) {
   useDocumentMeta({ title: 'Article not found', description: 'This article does not exist.' });
   return (
     <Page>
+      <HeaderBackdrop />
       <NotFoundContainer>
         <NotFoundCode>404</NotFoundCode>
         <NotFoundHeading>Article not found</NotFoundHeading>
@@ -33,8 +38,8 @@ function NotFound({ theme, onThemeChange }) {
 }
 
 export default function BlogPost({ theme, onThemeChange }) {
-  const { slug } = useParams();
-  const post = getPostBySlug(slug);
+  const { category, slug } = useParams();
+  const post = getPostByCategoryAndSlug(category, slug);
 
   if (!post) return <NotFound theme={theme} onThemeChange={onThemeChange} />;
 
@@ -42,35 +47,44 @@ export default function BlogPost({ theme, onThemeChange }) {
 }
 
 function PostView({ post, theme, onThemeChange }) {
+  const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState('');
+
   useDocumentMeta({
     title: post.title,
     description: post.description,
     ogType: 'article',
-    url: `https://rayt.ca/blog/${post.slug}`,
+    url: `https://rayt.ca${ROUTES.BLOG_POST(post.category, post.slug)}`,
   });
 
   const headings = extractHeadings(post.body);
+  const activeId = useActiveHeading(headings);
+
+  function handleSearchSubmit(q) {
+    const trimmed = (q ?? '').trim();
+    navigate(trimmed ? `${ROUTES.BLOG}?q=${encodeURIComponent(trimmed)}` : ROUTES.BLOG);
+  }
 
   return (
     <Page>
+      <HeaderBackdrop />
+
       <Breadcrumb aria-label="Breadcrumb">
-        <Button variant="ghostLink" to={ROUTES.BLOG}>Blog</Button>
+        <Link to={ROUTES.BLOG} style={{ color: 'inherit', textDecoration: 'none' }}>Blog</Link>
+        <BreadcrumbSep aria-hidden>›</BreadcrumbSep>
+        <BreadcrumbGroupSpan>{post.categoryLabel}</BreadcrumbGroupSpan>
         <BreadcrumbSep aria-hidden>›</BreadcrumbSep>
         <BreadcrumbCurrent>{post.title}</BreadcrumbCurrent>
       </Breadcrumb>
 
       <ArticleLayout>
         <div>
-          <ArticleHeader style={{ padding: '2.5rem 0 2rem' }}>
+          <ArticleHeader>
             <ArticleTitle>{post.title}</ArticleTitle>
-            <ArticleMeta>
-              <ArticleDate dateTime={post.date}>{formatPostDate(post.date)}</ArticleDate>
-            </ArticleMeta>
+            <AuthorMeta name={post.author} updated={`Updated ${formatPostDate(post.date)}`} />
           </ArticleHeader>
 
-          <Divider style={{ maxWidth: 'none', margin: '0 0' }} />
-
-          <Prose style={{ padding: '2.5rem 0 5rem' }}>
+          <Prose>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
@@ -81,18 +95,25 @@ function PostView({ post, theme, onThemeChange }) {
           </Prose>
         </div>
 
-        {headings.length > 0 && (
-          <TocSidebar aria-label="Table of contents">
-            <TocTitle>On this page</TocTitle>
-            <TocList>
-              {headings.map(h => (
-                <TocItem key={h.id} style={{ paddingLeft: h.level === 3 ? '0.75rem' : 0 }}>
-                  <TocLink href={`#${h.id}`}>{h.text}</TocLink>
-                </TocItem>
-              ))}
-            </TocList>
-          </TocSidebar>
-        )}
+        <TocSidebar aria-label="Table of contents">
+          <ArticleSearch
+            value={searchInput}
+            onChange={setSearchInput}
+            onSubmit={handleSearchSubmit}
+          />
+          {headings.length > 0 && (
+            <div>
+              <TocTitle>Table of contents</TocTitle>
+              <TocList>
+                {headings.map(h => (
+                  <TocItem key={h.id} style={{ paddingLeft: h.level === 3 ? '0.75rem' : 0 }}>
+                    <TocLink href={`#${h.id}`} data-active={activeId === h.id ? 'true' : undefined}>{h.text}</TocLink>
+                  </TocItem>
+                ))}
+              </TocList>
+            </div>
+          )}
+        </TocSidebar>
       </ArticleLayout>
 
       <Footer theme={theme} onThemeChange={onThemeChange} />

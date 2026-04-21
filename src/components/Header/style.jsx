@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { tokens } from '../../styles/tokens';
-import { shimmerBg } from '../../styles/animations';
+import { shimmerBg, twinkle } from '../../styles/animations';
 
 export const spinWithDelay = keyframes`
   0%  { transform: rotate(0deg); }
@@ -338,4 +338,169 @@ export const MobileDropDesc = styled.span`
   color: var(--color-muted);
   line-height: 1.35;
 `;
+
+/* ─────────────────────────────────────────────
+   Resources dropdown — two-tile portal design
+   Inspired by the home Hero's pill + sky→mint gradient
+   ───────────────────────────────────────────── */
+
+export const ResourcesDropdown = styled.div`
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: #fff;
+  border: 1px solid ${tokens.sky100};
+  border-radius: 14px;
+  padding: 1rem;
+  width: 560px;
+  box-shadow: 0 20px 60px color-mix(in srgb, ${tokens.sky700} 18%, transparent);
+  opacity: ${({ $open }) => ($open ? 1 : 0)};
+  visibility: ${({ $open }) => ($open ? 'visible' : 'hidden')};
+  transform: translateY(${({ $open }) => ($open ? '0' : '-8px')});
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  z-index: 200;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 14px;
+    background: #fff;
+    z-index: -1;
+    opacity: 0.55;
+  }
+`;
+
+export const ResourcesEyebrow = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: ${tokens.sky700};
+  padding: 0.35rem 0.75rem;
+  border-radius: ${tokens.radiusPill};
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid ${tokens.sky100};
+  margin: 0.25rem 0.25rem 0.75rem;
+
+  &::before {
+    content: '✦';
+    color: ${tokens.mint500};
+    animation: ${twinkle} 2.4s ease-in-out infinite;
+  }
+`;
+
+export const ResourcesGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+`;
+
+export const ResourceTile = styled(Link)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: ${({ $variant }) => (
+    $variant === 'docs'
+      ? `linear-gradient(150deg, ${tokens.mint100} 0%, #fff 70%)`
+      : `linear-gradient(150deg, ${tokens.sky100} 0%, #fff 70%)`
+  )};
+  border: 1px solid ${({ $variant }) => ($variant === 'docs' ? tokens.mint100 : tokens.sky100)};
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px color-mix(in srgb, ${tokens.sky700} 4%, transparent);
+    border-color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky500)};
+  }
+
+  &:hover .rayt-tile-arrow {
+    transform: translateX(4px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: ${({ $variant }) => (
+      $variant === 'docs'
+        ? `radial-gradient(circle, ${tokens.mint500}33 0%, transparent 70%)`
+        : `radial-gradient(circle, ${tokens.sky500}33 0%, transparent 70%)`
+    )};
+    pointer-events: none;
+  }
+`;
+
+export const ResourceIconWrap = styled.span`
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid ${tokens.sky100};
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky700)};
+  box-shadow: ${tokens.shadowSm};
+  position: relative;
+  z-index: 1;
+`;
+
+export const ResourceTitle = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: ${tokens.ink900};
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+`;
+
+export const ResourceBadge = styled.span`
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: ${tokens.radiusPill};
+  background: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky500)};
+  color: #fff;
+`;
+
+export const ResourceDesc = styled.span`
+  font-size: 0.83rem;
+  color: ${tokens.ink700};
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+`;
+
+export const ResourceArrow = styled.span.attrs({ className: 'rayt-tile-arrow', 'aria-hidden': true })`
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky700)};
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: ' →';
+  }
+`;
+
 

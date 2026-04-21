@@ -13,7 +13,7 @@ export const ROUTES = {
   RESOURCES: '/resources',
   CONTACT: '/contact',
   BLOG: '/blog',
-  BLOG_POST: (slug) => `/blog/${slug}`,
+  BLOG_POST: (category, slug) => `/blog/${category}/${slug}`,
   DOCS: '/docs',
   DOCS_COLLECTION: (col) => `/docs/${col}`,
   DOCS_ARTICLE: (col, slug) => `/docs/${col}/${slug}`,

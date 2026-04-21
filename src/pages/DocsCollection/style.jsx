@@ -103,3 +103,14 @@ export const GroupHr = styled.hr`
 export const RowsWrap = styled.div`
   padding: 0 0.5rem 0.5rem;
 `;
+
+export const SearchWrap = styled.div`
+  margin: 0 0 1.75rem;
+`;
+
+export const EmptyRow = styled.p`
+  padding: 2rem 1.75rem;
+  margin: 0;
+  color: ${tokens.ink500};
+  text-align: center;
+`;

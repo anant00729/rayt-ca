@@ -3,6 +3,9 @@ title: Turn Reviews into Ads with AI Convert
 date: 2026-04-18
 description: Learn how RayT's AI Convert feature automatically transforms your best customer reviews into scroll-stopping social ads for Instagram, TikTok, and more.
 slug: ai-convert-guide
+category: product
+categoryLabel: Product updates
+author: Anant S Awasthy
 ---
 
 Your customers are already writing your best ad copy — they just don't know it. AI Convert takes your highest-rated reviews and turns them into ready-to-post social content in seconds.

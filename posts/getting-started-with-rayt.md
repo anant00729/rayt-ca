@@ -3,6 +3,9 @@ title: Getting Started with RayT
 date: 2026-04-21
 description: Learn how to install RayT on your Shopify store and start collecting product reviews in under 5 minutes.
 slug: getting-started-with-rayt
+category: guides
+categoryLabel: Guides & tutorials
+author: Anant S Awasthy
 ---
 
 RayT makes it easy to collect, manage, and display product reviews on your Shopify store. This guide walks you through installation and your first review campaign.

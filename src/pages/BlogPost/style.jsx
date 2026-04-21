@@ -15,9 +15,7 @@ export const BackBar = styled.div`
 `;
 
 export const ArticleHeader = styled.header`
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 2rem;
+  padding: 2rem 0 1.5rem;
 `;
 
 export const Eyebrow = styled.span`
@@ -60,9 +58,7 @@ export const Divider = styled.hr`
 `;
 
 export const Prose = styled.article`
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 5rem;
+  padding: 2.5rem 0 5rem;
   font-size: 1.05rem;
   line-height: 1.75;
   color: ${tokens.ink700};
@@ -184,9 +180,9 @@ export const Prose = styled.article`
 `;
 
 export const Breadcrumb = styled.nav`
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 0;
+  padding: 2rem 2rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -210,16 +206,16 @@ export const BreadcrumbCurrent = styled.span`
 `;
 
 export const ArticleLayout = styled.div`
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: start;
 
   @media (min-width: 1024px) {
-    grid-template-columns: 740px 1fr;
+    grid-template-columns: 1fr minmax(260px, 340px);
   }
 `;
 
@@ -227,18 +223,20 @@ export const TocSidebar = styled.aside`
   display: none;
 
   @media (min-width: 1024px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     position: sticky;
     top: 2rem;
   }
 `;
 
 export const TocTitle = styled.p`
-  font-size: 0.72rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${tokens.ink400};
+  letter-spacing: 0;
+  text-transform: none;
+  color: ${tokens.ink900};
   margin: 0 0 0.75rem;
 `;
 
@@ -246,7 +244,6 @@ export const TocList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  border-left: 2px solid ${tokens.border};
 `;
 
 export const TocItem = styled.li`
@@ -255,18 +252,22 @@ export const TocItem = styled.li`
 
 export const TocLink = styled.a`
   display: block;
-  padding: 0.35rem 0 0.35rem 1rem;
+  padding: 0.6rem 1rem;
   font-size: 0.875rem;
-  color: ${tokens.ink500};
+  color: var(--color-accent);
   text-decoration: none;
   line-height: 1.4;
-  transition: color 0.15s, border-color 0.15s;
-  border-left: 2px solid transparent;
-  margin-left: -2px;
+  border-radius: ${tokens.radius};
+  transition: background 0.15s, color 0.15s;
 
   &:hover {
-    color: ${tokens.sky700};
-    border-left-color: ${tokens.sky700};
+    background: color-mix(in srgb, var(--color-muted) 40%, transparent);
+  }
+
+  &[data-active='true'] {
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    color: var(--color-accent);
+    font-weight: 700;
   }
 `;
 
@@ -295,4 +296,8 @@ export const NotFoundHeading = styled.h1`
 export const NotFoundBody = styled.p`
   color: ${tokens.ink500};
   margin: 0 0 2rem;
+`;
+
+export const BreadcrumbGroupSpan = styled.span`
+  color: ${tokens.ink500};
 `;
