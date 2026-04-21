@@ -12,7 +12,7 @@ import {
   Playground, SettingsPane, StageWrap, StageFrame, WidgetScroll,
   MobileToggle, PrimerCard, PrimerKicker, PrimerBody,
   FeatureMatrixWrap, FMHeader, FMRow, FMKey, FMValue,
-  NotFoundWrap, PreviewToolbar, ViewToggleGroup, ViewToggleBtn,
+  NotFoundWrap, TaglineRow, ViewToggleGroup, ViewToggleBtn, PreviewStage,
 } from './style';
 
 const SHOWCASES = {
@@ -64,9 +64,34 @@ export default function WidgetDetail({ theme, onThemeChange }) {
       <StageWrap>
         <Container style={{ position: 'relative', zIndex: 2 }}>
           <Eyebrow>Widget · Review Display</Eyebrow>
-          <Tagline>
-            A live playground. Every knob, every color "try it here!""
-          </Tagline>
+          <TaglineRow>
+            <Tagline>
+              A live playground. Every knob, every color "try it here!""
+            </Tagline>
+            <ViewToggleGroup>
+              <ViewToggleBtn
+                $active={previewMode === 'desktop'}
+                onClick={() => setPreviewMode('desktop')}
+                title="Webview"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </ViewToggleBtn>
+              <ViewToggleBtn
+                $active={previewMode === 'mobile'}
+                $last
+                onClick={() => setPreviewMode('mobile')}
+                title="Mobile view"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="5" y="2" width="14" height="20" rx="2" />
+                  <circle cx="12" cy="18" r="0.5" fill="currentColor" />
+                </svg>
+              </ViewToggleBtn>
+            </ViewToggleGroup>
+          </TaglineRow>
 
           <MetricStrip>
             <MetricPill>~90s install</MetricPill>
@@ -101,37 +126,13 @@ export default function WidgetDetail({ theme, onThemeChange }) {
                 </PrimerBody>
               </PrimerCard>
 
-              <PreviewToolbar>
-                <ViewToggleGroup>
-                  <ViewToggleBtn
-                    $active={previewMode === 'desktop'}
-                    onClick={() => setPreviewMode('desktop')}
-                    title="Webview"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <rect x="2" y="3" width="20" height="14" rx="2" />
-                      <path d="M8 21h8M12 17v4" />
-                    </svg>
-                  </ViewToggleBtn>
-                  <ViewToggleBtn
-                    $active={previewMode === 'mobile'}
-                    $last
-                    onClick={() => setPreviewMode('mobile')}
-                    title="Mobile view"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <rect x="5" y="2" width="14" height="20" rx="2" />
-                      <circle cx="12" cy="18" r="0.5" fill="currentColor" />
-                    </svg>
-                  </ViewToggleBtn>
-                </ViewToggleGroup>
-              </PreviewToolbar>
-
-              <StageFrame style={previewMode === 'mobile' ? { maxWidth: 390, margin: '24px auto', alignSelf: 'center', width: '100%' } : {}}>
-                <WidgetScroll>
-                  <ReviewsList settings={settings} reviews={showcase.reviews} isMobile={previewMode === 'mobile'} />
-                </WidgetScroll>
-              </StageFrame>
+              <PreviewStage>
+                <StageFrame style={previewMode === 'mobile' ? { maxWidth: 390, margin: '0 auto', width: '100%' } : {}}>
+                  <WidgetScroll>
+                    <ReviewsList settings={settings} reviews={showcase.reviews} isMobile={previewMode === 'mobile'} />
+                  </WidgetScroll>
+                </StageFrame>
+              </PreviewStage>
             </StageWrap>
           </Playground>
 

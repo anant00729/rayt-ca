@@ -56,6 +56,14 @@ export const Eyebrow = styled.span`
   }
 `;
 
+export const TaglineRow = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 1.25rem;
+`;
+
 export const Tagline = styled.h1`
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 800;
@@ -63,7 +71,7 @@ export const Tagline = styled.h1`
   line-height: 1.18;
   letter-spacing: -0.015em;
   color: ${tokens.ink900};
-  margin: 0rem 0 1.25rem;
+  margin: 0;
   max-width: 32ch;
 `;
 
@@ -181,6 +189,8 @@ export const SettingsPane = styled.aside`
   align-self: start;
   max-height: calc(100vh - 120px);
   overflow: visible;
+  min-width: 0;
+  overflow-x: hidden;
 
   @media (max-width: 1099px) {
     position: static;
@@ -189,36 +199,31 @@ export const SettingsPane = styled.aside`
   }
 `;
 
+export const PreviewStage = styled.div`
+  border-radius: 18px;
+  background-color: #daeaf6;
+  background-image: radial-gradient(circle, #b8ccd8 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: 24px;
+  overflow: hidden;
+`;
+
 export const StageFrame = styled.div`
-  position: relative;
-  border-radius: 26px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.74) 0%,
-      rgba(234, 244, 253, 0.52) 40%,
-      rgba(234, 248, 241, 0.42) 75%,
-      rgba(243, 241, 252, 0.5) 100%
-    );
-  backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
-  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
-    1px 0 0 0 rgba(255, 255, 255, 0.5) inset,
-    0 8px 32px rgba(14, 27, 43, 0.08),
-    0 32px 80px rgba(18, 52, 88, 0.12);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(30, 27, 46, 0.12), 0 2px 8px rgba(30, 27, 46, 0.06);
+  transition: max-width 0.25s ease, margin 0.25s ease;
 
   @media (max-width: 600px) {
-    border-radius: 18px;
+    border-radius: 12px;
   }
 `;
 
 export const WidgetScroll = styled.div`
   max-height: 720px;
   overflow-y: auto;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.6);
 
   &::-webkit-scrollbar { width: 5px; }
   &::-webkit-scrollbar-track { background: transparent; }
@@ -337,9 +342,9 @@ export const ViewToggleBtn = styled.button`
   height: 32px;
   border: none;
   border-right: ${(p) => (p.$last ? 'none' : '1px solid #e2e2e2')};
-  background: ${(p) => (p.$active ? '#eef2ff' : '#ffffff')};
+  background: ${(p) => (p.$active ? '#daeaf6' : '#ffffff')};
   cursor: pointer;
-  color: ${(p) => (p.$active ? '#4f46e5' : '#888888')};
+  color: ${(p) => (p.$active ? '#5c8ccc' : '#888888')};
   transition: background 0.1s, color 0.1s;
   padding: 0;
 

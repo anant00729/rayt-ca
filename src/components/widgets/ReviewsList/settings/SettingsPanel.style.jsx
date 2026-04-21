@@ -83,6 +83,7 @@ export const TabBtn = styled.button`
 export const PanelBody = styled.div`
   max-height: 640px;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-bottom: 6px;
 
   &::-webkit-scrollbar { width: 5px; }
@@ -143,6 +144,7 @@ export const FieldGroup = styled.div`
   flex-direction: column;
   gap: 6px;
   margin-bottom: 12px;
+  min-width: 0;
 `;
 
 export const FieldLabel = styled.label`
@@ -155,6 +157,7 @@ export const NestedGroup = styled.div`
   margin-left: 14px;
   padding-left: 10px;
   border-left: 2px solid rgba(188, 216, 240, 0.55);
+  min-width: 0;
 `;
 
 export const StyledInput = styled.input`
@@ -193,10 +196,13 @@ export const SliderRow = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 `;
 
 export const SliderTrack = styled.input`
   flex: 1;
+  min-width: 0;
+  width: 0;
   height: 4px;
   accent-color: ${tokens.sky700};
   cursor: pointer;

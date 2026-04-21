@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "eyebrow": "Simple, honest pricing",
+    "headline": {
+      "before": "Pricing that",
+      "highlight": "undercuts",
+      "after": "the giants."
+    },
+    "subtitle": "No order caps. No per-review fees. Every plan unlocks unlimited orders and a 14-day trial on every paid tier.",
+    "trustLine": "From $19/mo · Others start at $29 · Cancel anytime"
+  },
+  "toggle": {
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "savingsLabel": "Save 20%"
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "tagline": "Solo stores testing the waters.",
+      "price": { "monthly": 0, "yearly": 0 },
+      "priceSuffix": "Forever",
+      "ctaText": "Start free",
+      "ctaVariant": "secondary",
+      "badge": null,
+      "features": [
+        "Unlimited orders",
+        "Email review requests",
+        "Product page widgets",
+        "Rich snippets for SEO",
+        "Photo reviews"
+      ]
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "tagline": "Small stores wanting real reviews.",
+      "price": { "monthly": 19, "yearly": 15 },
+      "priceSuffix": "/ month",
+      "ctaText": "Start 14-day trial",
+      "ctaVariant": "secondary",
+      "badge": null,
+      "features": [
+        "Everything in Starter",
+        "Video reviews",
+        "Review replies",
+        "Incentives & discounts",
+        "Product grouping",
+        "Priority chat support"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "tagline": "Scaling stores that need AI and integrations.",
+      "price": { "monthly": 49, "yearly": 39 },
+      "priceSuffix": "/ month",
+      "ctaText": "Start 14-day trial",
+      "ctaVariant": "primary",
+      "badge": "Most popular",
+      "features": [
+        "Everything in Core",
+        "AI review summaries",
+        "AI auto-translation",
+        "AI sorting & highlights",
+        "Google, Meta & TikTok shops",
+        "Klaviyo + Postscript",
+        "Referrals & upsells"
+      ]
+    },
+    {
+      "id": "scale",
+      "name": "Scale",
+      "tagline": "Multi-store brands & agencies.",
+      "price": { "monthly": 129, "yearly": 103 },
+      "priceSuffix": "/ month",
+      "ctaText": "Start 14-day trial",
+      "ctaVariant": "secondary",
+      "badge": null,
+      "features": [
+        "Everything in Growth",
+        "Multi-store management",
+        "AI sales agent",
+        "API & custom apps",
+        "Dedicated onboarding",
+        "SLA support"
+      ]
+    }
+  ],
+  "trustNote": "All plans billed in USD. No per-order fees. No hidden charges. Cancel anytime.",
+  "faq": {
+    "eyebrow": "Frequently asked",
+    "headline": {
+      "before": "Everything you want to",
+      "highlight": "know",
+      "after": ", before you switch."
+    },
+    "items": [
+      {
+        "q": "Is there really a free plan?",
+        "a": "Yes. Starter is free forever with unlimited orders, email requests, and product widgets. No card required."
+      },
+      {
+        "q": "How does the trial work?",
+        "a": "Every paid plan comes with a 14-day free trial. After it ends, you auto-drop to Starter unless you choose to continue."
+      },
+      {
+        "q": "Do you charge per order or per review?",
+        "a": "Never. Every tier has unlimited orders and unlimited reviews. You pay one flat price, period."
+      },
+      {
+        "q": "Can I switch plans later?",
+        "a": "Anytime. Upgrade or downgrade in a click — charges are prorated to the day."
+      },
+      {
+        "q": "Can I import reviews from Junip, Judge.me or Loox?",
+        "a": "Yes. One-click CSV import plus direct API migration — your social proof moves with you."
+      },
+      {
+        "q": "Is yearly billing a better deal?",
+        "a": "Yep. Pick yearly and every paid tier drops 20% — basically two months free."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Ready when you are",
+    "headline": {
+      "before": "Pick a plan, or",
+      "highlight": "start free",
+      "after": "— you're minutes away."
+    },
+    "subtitle": "Install in one click, bring your existing reviews, and watch your storefront feel a little more alive by tomorrow.",
+    "ctaPrimary": "Start free",
+    "ctaSecondary": "Talk to sales"
+  }
+}

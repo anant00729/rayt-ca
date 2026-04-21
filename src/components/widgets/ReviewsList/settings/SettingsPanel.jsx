@@ -87,7 +87,7 @@ export default function SettingsPanel({ settings, onChange, onReset }) {
                     min={16}
                     max={80}
                     step={2}
-                    defaultValue={48}
+                    defaultValue={28}
                   />
                   <FieldGroup>
                     <FieldLabel>Title weight</FieldLabel>
@@ -326,7 +326,7 @@ export default function SettingsPanel({ settings, onChange, onReset }) {
                 min={0}
                 max={80}
                 step={4}
-                defaultValue={32}
+                defaultValue={20}
               />
             </Section>
 

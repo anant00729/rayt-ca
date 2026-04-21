@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { tokens } from '../../styles/tokens';
 
 export const Page = styled.div`
   min-height: 100vh;
-  background: var(--color-primary);
+  background: transparent;
+  color: ${tokens.ink900};
+  font-family: 'Nunito Sans', sans-serif;
 `;
 
 export const Content = styled.main`
-  max-width: 1350px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-  color: var(--color-secondary);
+  position: relative;
+  z-index: 1;
 `;
