@@ -129,68 +129,6 @@ export const DropdownArrow = styled.svg`
   transform: ${({ $open }) => $open ? 'rotate(180deg)' : 'rotate(0)'};
 `;
 
-export const Dropdown = styled.div`
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-primary);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 0.5rem;
-  min-width: 340px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-  opacity: ${({ $open }) => $open ? 1 : 0};
-  visibility: ${({ $open }) => $open ? 'visible' : 'hidden'};
-  transform: translateX(-50%) translateY(${({ $open }) => $open ? '0' : '-8px'});
-  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-  z-index: 200;
-`;
-
-export const DropdownItem = styled(Link)`
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.15s;
-
-  &:hover {
-    background: color-mix(in srgb, var(--color-border) 30%, transparent);
-  }
-`;
-
-export const DropdownIcon = styled.span`
-  width: 40px;
-  height: 40px;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--color-border) 40%, transparent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--color-accent);
-`;
-
-export const DropdownText = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-`;
-
-export const DropdownTitle = styled.span`
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-secondary);
-`;
-
-export const DropdownDesc = styled.span`
-  font-size: 0.78rem;
-  color: var(--color-muted);
-  line-height: 1.4;
-`;
-
 export const NavLink = styled(Link)`
   color: var(--color-secondary);
   text-decoration: none;
@@ -344,15 +282,25 @@ export const MobileDropDesc = styled.span`
    Inspired by the home Hero's pill + sky→mint gradient
    ───────────────────────────────────────────── */
 
+/* Variant → [tint100, accent500, ink700] used across Product + Resources tiles */
+const VARIANT_TINT = {
+  blog:      [tokens.sky100,  tokens.sky500,   tokens.sky700],
+  docs:      [tokens.mint100, tokens.mint500,  tokens.mint500],
+  reviews:   [tokens.sky100,  tokens.sky500,   tokens.sky700],
+  referrals: [tokens.mint100, tokens.mint500,  tokens.mint500],
+  ai:        [tokens.lilac100, tokens.lilacDeep, tokens.lilacDeep],
+};
+const tint = (v, i) => (VARIANT_TINT[v] ?? VARIANT_TINT.blog)[i];
+
 export const ResourcesDropdown = styled.div`
   position: absolute;
   top: calc(100% + 12px);
-  right: 0;
+  ${({ $align }) => ($align === 'left' ? 'left: 0; right: auto;' : 'right: 0; left: auto;')}
   background: #fff;
   border: 1px solid ${tokens.sky100};
   border-radius: 14px;
   padding: 1rem;
-  width: 560px;
+  width: ${({ $wide }) => ($wide ? '720px' : '560px')};
   box-shadow: 0 20px 60px color-mix(in srgb, ${tokens.sky700} 18%, transparent);
   opacity: ${({ $open }) => ($open ? 1 : 0)};
   visibility: ${({ $open }) => ($open ? 'visible' : 'hidden')};
@@ -395,7 +343,7 @@ export const ResourcesEyebrow = styled.span`
 
 export const ResourcesGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(${({ $cols }) => $cols ?? 2}, 1fr);
   gap: 0.75rem;
 `;
 
@@ -407,19 +355,14 @@ export const ResourceTile = styled(Link)`
   padding: 1.25rem;
   border-radius: 12px;
   text-decoration: none;
-  background: ${({ $variant }) => (
-    $variant === 'docs'
-      ? `linear-gradient(150deg, ${tokens.mint100} 0%, #fff 70%)`
-      : `linear-gradient(150deg, ${tokens.sky100} 0%, #fff 70%)`
-  )};
-  border: 1px solid ${({ $variant }) => ($variant === 'docs' ? tokens.mint100 : tokens.sky100)};
+  background: ${({ $variant }) => `linear-gradient(150deg, ${tint($variant, 0)} 0%, #fff 70%)`};
+  border: 1px solid ${({ $variant }) => tint($variant, 0)};
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
 
   &:hover {
     transform: translateY(-3px);
-    // box-shadow: 0 12px 28px color-mix(in srgb, ${tokens.sky700} 4%, transparent);
-    border-color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky500)};
+    border-color: ${({ $variant }) => tint($variant, 1)};
   }
 
   &:hover .rayt-tile-arrow {
@@ -434,11 +377,7 @@ export const ResourceTile = styled(Link)`
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    background: ${({ $variant }) => (
-      $variant === 'docs'
-        ? `radial-gradient(circle, ${tokens.mint500}33 0%, transparent 70%)`
-        : `radial-gradient(circle, ${tokens.sky500}33 0%, transparent 70%)`
-    )};
+    background: ${({ $variant }) => `radial-gradient(circle, ${tint($variant, 1)}33 0%, transparent 70%)`};
     pointer-events: none;
   }
 `;
@@ -452,7 +391,7 @@ export const ResourceIconWrap = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky700)};
+  color: ${({ $variant }) => tint($variant, 2)};
   box-shadow: ${tokens.shadowSm};
   position: relative;
   z-index: 1;
@@ -477,7 +416,7 @@ export const ResourceBadge = styled.span`
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
   border-radius: ${tokens.radiusPill};
-  background: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky500)};
+  background: ${({ $variant }) => tint($variant, 1)};
   color: #fff;
 `;
 
@@ -493,7 +432,7 @@ export const ResourceArrow = styled.span.attrs({ className: 'rayt-tile-arrow', '
   margin-top: 0.25rem;
   font-size: 0.8rem;
   font-weight: 700;
-  color: ${({ $variant }) => ($variant === 'docs' ? tokens.mint500 : tokens.sky700)};
+  color: ${({ $variant }) => tint($variant, 2)};
   transition: transform 0.2s ease;
   position: relative;
   z-index: 1;

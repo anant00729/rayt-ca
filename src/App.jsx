@@ -6,6 +6,7 @@ import { tokens } from './styles/tokens';
 
 import Header from './components/Header';
 import ScrollToTop from './components/ScrollToTop';
+import ChatWidget from './components/ChatWidget';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import ProductReviews from './pages/ProductReviews';
@@ -74,6 +75,7 @@ export default function App() {
     <>
       <ThemeVars $colors={theme.colors} />
       <ScrollToTop />
+      <ChatWidget />
       <GlobalBg />
       <Header floating />
       <PageBody>

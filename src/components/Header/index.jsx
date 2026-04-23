@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 import { EXTERNAL } from '../../constants/routes';
 import {
   HeaderBar, Container, StarIcon, Logo, Nav, NavLink, NavItem,
-  DropdownTrigger, DropdownArrow, Dropdown, DropdownItem, DropdownIcon, DropdownText, DropdownTitle, DropdownDesc,
+  DropdownTrigger, DropdownArrow,
   Actions, DesktopCTAHolder, Hamburger, MobileMenu, MobileNavLink,
   MobileDropdownItems, MobileDropItem, MobileDropIcon, MobileDropText, MobileDropTitle, MobileDropDesc,
   ResourcesDropdown, ResourcesEyebrow, ResourcesGrid, ResourceTile,
@@ -13,8 +13,9 @@ import {
 
 const PRODUCT_ITEMS = [
   {
+    variant: 'reviews',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
@@ -23,8 +24,9 @@ const PRODUCT_ITEMS = [
     path: '/product-reviews',
   },
   {
+    variant: 'referrals',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -36,8 +38,10 @@ const PRODUCT_ITEMS = [
     path: '/customer-referrals',
   },
   {
+    variant: 'ai',
+    badge: 'New',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l1.09 3.41L16.5 6l-2.59 2.59L14.5 12 12 10.41 9.5 12l.59-3.41L7.5 6l3.41-.59z" />
         <path d="M5 19l1.5-4.5L3 12l4.5-.5L9 7" />
         <path d="M19 19l-1.5-4.5L21 12l-4.5-.5L15 7" />
@@ -143,17 +147,27 @@ export default function Header({ floating = false, announcementVisible = false, 
                 <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
               </DropdownArrow>
             </DropdownTrigger>
-            <Dropdown $open={dropdownOpen}>
-              {PRODUCT_ITEMS.map(item => (
-                <DropdownItem key={item.path} to={item.path} onClick={() => setDropdownOpen(false)}>
-                  <DropdownIcon>{item.icon}</DropdownIcon>
-                  <DropdownText>
-                    <DropdownTitle>{item.title}</DropdownTitle>
-                    <DropdownDesc>{item.desc}</DropdownDesc>
-                  </DropdownText>
-                </DropdownItem>
-              ))}
-            </Dropdown>
+            <ResourcesDropdown $open={dropdownOpen} $align="left" $wide role="menu">
+              <ResourcesEyebrow>Explore RayT</ResourcesEyebrow>
+              <ResourcesGrid $cols={3}>
+                {PRODUCT_ITEMS.map(item => (
+                  <ResourceTile
+                    key={item.path}
+                    to={item.path}
+                    $variant={item.variant}
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    <ResourceIconWrap $variant={item.variant}>{item.icon}</ResourceIconWrap>
+                    <ResourceTitle>
+                      {item.title}
+                      {item.badge && <ResourceBadge $variant={item.variant}>{item.badge}</ResourceBadge>}
+                    </ResourceTitle>
+                    <ResourceDesc>{item.desc}</ResourceDesc>
+                    <ResourceArrow $variant={item.variant}>Open</ResourceArrow>
+                  </ResourceTile>
+                ))}
+              </ResourcesGrid>
+            </ResourcesDropdown>
           </NavItem>
           {SIMPLE_NAV.map(({ label, path }) => (
             <NavLink key={path} to={path}>{label}</NavLink>
