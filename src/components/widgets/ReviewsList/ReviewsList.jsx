@@ -140,6 +140,7 @@ export default function ReviewsList({ settings = {}, reviews = [], isMobile = fa
                 {s.showFilterSort && (
                   <FilterSortBtn
                     $color={s.filterSortBtnColor}
+                    $radius={s.selectRadius}
                     onClick={() => setFilterPanelOpen(o => !o)}
                     aria-expanded={filterPanelOpen}
                   >
@@ -197,6 +198,7 @@ export default function ReviewsList({ settings = {}, reviews = [], isMobile = fa
               )}
             </FilterChipsRow>
             <SortSelect
+              $radius={s.selectRadius}
               value={sortBy}
               onChange={e => { setSortBy(e.target.value); setVisibleCount(s.reviewsPerPage || 10); }}
             >

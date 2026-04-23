@@ -181,11 +181,13 @@ export const StyledSelect = styled.select`
   width: 100%;
   padding: 7px 10px;
   border: 1px solid ${tokens.borderStrong};
-  border-radius: 8px;
+  border-radius: ${({ $radius }) => ($radius !== undefined ? $radius : 8)}px;
   background: rgba(255, 255, 255, 0.85);
   font-size: 0.82rem;
   color: ${tokens.ink900};
   cursor: pointer;
+  transition: border-radius 420ms ease;
+  @media (prefers-reduced-motion: reduce) { transition: none; }
   &:focus {
     outline: none;
     border-color: ${tokens.sky500};

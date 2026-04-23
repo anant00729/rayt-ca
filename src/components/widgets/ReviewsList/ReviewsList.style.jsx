@@ -1,5 +1,21 @@
 import styled, { css } from 'styled-components';
 
+const themeTransition = css`
+  transition:
+    background-color 420ms ease,
+    color 280ms ease,
+    border-color 420ms ease,
+    border-radius 420ms ease,
+    padding 320ms ease,
+    box-shadow 420ms ease,
+    width 320ms ease,
+    height 320ms ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+`;
+
 export const Widget = styled.div`
   display: grid;
   grid-template-columns: ${({ $layout, $isMobile }) =>
@@ -7,6 +23,7 @@ export const Widget = styled.div`
   gap: 2rem;
   background: ${({ $bg }) => $bg || '#fff'};
   padding: ${({ $padding }) => $padding || 32}px;
+  ${themeTransition}
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
@@ -107,6 +124,7 @@ export const WriteReviewBtn = styled.button`
   border-radius: ${({ $radius }) => $radius || 6}px;
   cursor: default;
   opacity: 0.6;
+  ${themeTransition}
 `;
 
 export const FilterSortBtn = styled.button`
@@ -119,9 +137,9 @@ export const FilterSortBtn = styled.button`
   background: none;
   border: 1.5px solid ${({ $color }) => $color || '#1a1a1a'};
   color: ${({ $color }) => $color || '#1a1a1a'};
-  border-radius: 6px;
+  border-radius: ${({ $radius }) => $radius || 6}px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  ${themeTransition}
 
   &:hover { opacity: 0.7; }
 `;
@@ -254,10 +272,11 @@ export const SortSelect = styled.select`
   padding: 5px 10px;
   font-size: 0.8rem;
   border: 1.5px solid #ddd;
-  border-radius: 6px;
+  border-radius: ${({ $radius }) => ($radius !== undefined ? $radius : 6)}px;
   background: #fff;
   cursor: pointer;
   color: #333;
+  ${themeTransition}
 
   &:focus { outline: none; border-color: #aaa; }
 `;
@@ -278,6 +297,7 @@ export const ReviewRowItem = styled.div`
     $border ? `${$borderWidth || 1}px solid ${$borderColor || '#e3e3e3'}` : 'none'};
   padding: ${({ $padding }) => $padding || 16}px;
   box-shadow: ${({ $shadow }) => $shadow || 'none'};
+  ${themeTransition}
 `;
 
 export const MediaCol = styled.div`

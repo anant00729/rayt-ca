@@ -7,6 +7,8 @@ import reviewsListSettings from '../../data/widgetConfigs/reviewsList.json';
 import dummyReviews from '../../components/widgets/ReviewsList/dummyReviews';
 import { SettingsPanel, useSettings } from '../../components/widgets/ReviewsList/settings';
 import { ROUTES } from '../../constants/routes';
+import InspirationTabs from '../../components/InspirationTabs/InspirationTabs';
+import { INSPIRATION_PRESETS, INSPIRATION_TAB_ORDER } from '../../data/inspirationPresets';
 import {
   Page, Container, Breadcrumb, Eyebrow, Tagline, MetricStrip, MetricPill,
   Playground, SettingsPane, StageWrap, StageFrame, WidgetScroll,
@@ -40,9 +42,24 @@ export default function WidgetDetail({ theme, onThemeChange }) {
   const widgetMeta = widgets.find((w) => w.slug === slug);
   const showcase = SHOWCASES[slug];
 
-  const { settings, update, reset } = useSettings(showcase?.settings || reviewsListSettings);
+  const isReviewsList = slug === 'reviews-list';
+  const [activeTab, setActiveTab] = useState('photography');
+  const initialSettings = isReviewsList
+    ? INSPIRATION_PRESETS.photography.settings
+    : (showcase?.settings || reviewsListSettings);
+  const { settings, update, reset, replace } = useSettings(initialSettings);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [previewMode, setPreviewMode] = useState('desktop');
+
+  const tabList = INSPIRATION_TAB_ORDER.map((k) => INSPIRATION_PRESETS[k]);
+  const activeReviews = isReviewsList
+    ? INSPIRATION_PRESETS[activeTab].reviews
+    : showcase?.reviews;
+
+  const handleTabSelect = (k) => {
+    setActiveTab(k);
+    replace(INSPIRATION_PRESETS[k].settings);
+  };
 
   if (!widgetMeta || !showcase) {
     return (
@@ -93,6 +110,14 @@ export default function WidgetDetail({ theme, onThemeChange }) {
             </ViewToggleGroup>
           </TaglineRow>
 
+          {isReviewsList && (
+            <InspirationTabs
+              tabs={tabList}
+              activeKey={activeTab}
+              onSelect={handleTabSelect}
+            />
+          )}
+
           <MetricStrip>
             <MetricPill>~90s install</MetricPill>
             <MetricPill $accent="mint">Shopify native</MetricPill>
@@ -129,7 +154,7 @@ export default function WidgetDetail({ theme, onThemeChange }) {
               <PreviewStage>
                 <StageFrame style={previewMode === 'mobile' ? { maxWidth: 390, margin: '0 auto', width: '100%' } : {}}>
                   <WidgetScroll>
-                    <ReviewsList settings={settings} reviews={showcase.reviews} isMobile={previewMode === 'mobile'} />
+                    <ReviewsList settings={settings} reviews={activeReviews} isMobile={previewMode === 'mobile'} />
                   </WidgetScroll>
                 </StageFrame>
               </PreviewStage>

@@ -71,7 +71,7 @@ export function ColorField({ fieldKey, label, value, onChange }) {
 export function Opts({ list, settingKey, settings, set }) {
   if (!list) return null;
   return (
-    <StyledSelect value={settings[settingKey]} onChange={(e) => set(settingKey, e.target.value)}>
+    <StyledSelect $radius={settings.selectRadius} value={settings[settingKey]} onChange={(e) => set(settingKey, e.target.value)}>
       {list.map((o) => (
         <option key={o.value} value={o.value}>{o.label}</option>
       ))}

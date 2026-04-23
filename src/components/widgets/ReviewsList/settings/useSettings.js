@@ -6,6 +6,8 @@ function reducer(state, action) {
       return { ...state, [action.key]: action.value };
     case 'reset':
       return { ...action.defaults };
+    case 'replace':
+      return { ...action.next };
     default:
       return state;
   }
@@ -23,5 +25,10 @@ export default function useSettings(initial) {
     dispatch({ type: 'reset', defaults: defaultsRef.current });
   }, []);
 
-  return { settings, update, reset };
+  const replace = useCallback((next) => {
+    defaultsRef.current = next;
+    dispatch({ type: 'replace', next });
+  }, []);
+
+  return { settings, update, reset, replace };
 }
