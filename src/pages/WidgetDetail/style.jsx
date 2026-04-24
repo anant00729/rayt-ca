@@ -204,7 +204,7 @@ export const PreviewStage = styled.div`
   background-color: #daeaf6;
   background-image: radial-gradient(circle, #b8ccd8 1px, transparent 1px);
   background-size: 20px 20px;
-  padding: 24px;
+  padding: 0px;
   overflow: hidden;
 `;
 

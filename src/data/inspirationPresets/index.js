@@ -31,5 +31,5 @@ export const INSPIRATION_PRESETS = {
 };
 
 export const INSPIRATION_TAB_ORDER = [
-  'photography', 'plants', 'jewelry', 'drinks', 'coffee' ,'tech', 'pets', 'beauty', 'furniture' 
+  'photography', 'plants', 'jewelry', 'tech', 'beauty' ,'coffee' , 'pets', 'furniture' , 'drinks'
 ];
