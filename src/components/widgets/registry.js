@@ -11,8 +11,15 @@ import {
 } from './ReviewsCompact/settings';
 import reviewsCompactDefaults from '../../data/widgetConfigs/reviewsCompact.json';
 
+import ReviewsGrid from './ReviewsGrid/ReviewsGrid';
+import {
+  SettingsPanel as ReviewsGridSettingsPanel,
+} from './ReviewsGrid/settings';
+import reviewsGridDefaults from '../../data/widgetConfigs/reviewsGrid.json';
+
 import { INSPIRATION_PRESETS_LIST } from '../../data/inspirationPresets/list';
 import { INSPIRATION_PRESETS_COMPACT } from '../../data/inspirationPresets/compact';
+import { INSPIRATION_PRESETS_GRID } from '../../data/inspirationPresets/grid';
 
 const REVIEWS_LIST_MATRIX = [
   { key: 'Layout',       value: '2 layouts · media left/right · responsive stack at 700px' },
@@ -38,6 +45,18 @@ const REVIEWS_COMPACT_MATRIX = [
   { key: 'Load more',    value: 'Initial rows × columns · button bg/text/border/radius' },
 ];
 
+const REVIEWS_GRID_MATRIX = [
+  { key: 'Layout',         value: 'Masonry · 1–4 desktop columns · 1–2 mobile columns' },
+  { key: 'Grid',           value: 'Adjustable gap 0–48px · responsive collapse' },
+  { key: 'Card',           value: 'Background, radius, padding, 3 shadows, toggleable border' },
+  { key: 'Media',          value: 'Full-width images at natural aspect ratio for staggered look' },
+  { key: 'Rating summary', value: 'Average number + 5-bar breakdown with click-to-filter' },
+  { key: 'Top bar',        value: 'Star + count + write-review CTA (filled or outlined)' },
+  { key: 'Filter & sort',  value: '5-star chips · sort select · 7 sort modes' },
+  { key: 'Text',           value: 'Review title + body · truncate to N lines' },
+  { key: 'Load more',      value: 'Initial rows × columns · button bg/text/border/radius' },
+];
+
 export const WIDGETS = {
   'reviews-list': {
     Component: ReviewsList,
@@ -58,5 +77,15 @@ export const WIDGETS = {
     usesInspiration: true,
     initialPresetKey: 'photography',
     featureMatrix: REVIEWS_COMPACT_MATRIX,
+  },
+  'reviews-grid': {
+    Component: ReviewsGrid,
+    SettingsPanel: ReviewsGridSettingsPanel,
+    defaultSettings: reviewsGridDefaults,
+    reviews: dummyReviews,
+    presets: INSPIRATION_PRESETS_GRID,
+    usesInspiration: true,
+    initialPresetKey: 'photography',
+    featureMatrix: REVIEWS_GRID_MATRIX,
   },
 };

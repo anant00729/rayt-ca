@@ -1,0 +1,93 @@
+{
+  "showSectionHeader": false,
+  "sectionTitleText": "Reviews",
+  "sectionTitleColor": "#1a1a1a",
+  "sectionTitleSize": 40,
+  "sectionTitleWeight": "700",
+
+  "showRatingBreakdown": true,
+  "breakdownBarColor": "#1a1a1a",
+  "breakdownBarBgColor": "#e5e7eb",
+  "breakdownTextColor": "#6d6d6d",
+  "showAvgRating": true,
+  "avgRatingColor": "#1a1a1a",
+  "avgRatingSize": 48,
+
+  "showTopBar": true,
+  "topBarStarSize": 18,
+  "topBarCountColor": "#1a1a1a",
+  "topBarCountSize": 14,
+
+  "showWriteReviewBtn": true,
+  "writeReviewBtnText": "Write a review",
+  "writeReviewBtnStyle": "outlined",
+  "writeReviewBtnBgColor": "transparent",
+  "writeReviewBtnTextColor": "#1a1a1a",
+  "writeReviewBtnBorderColor": "#1a1a1a",
+  "writeReviewBtnRadius": 6,
+
+  "showFilterSort": true,
+  "filterSortIconColor": "#1a1a1a",
+  "defaultSort": "recent",
+
+  "containerBgColor": "#ffffff",
+  "containerPadding": 32,
+  "containerMaxWidth": 1200,
+
+  "desktopColumns": 3,
+  "mobileColumns": 1,
+  "gridGap": 16,
+
+  "cardBgColor": "#ffffff",
+  "cardBorderRadius": 12,
+  "cardBorderWidth": 1,
+  "cardBorderColor": "#e3e3e3",
+  "cardPadding": 16,
+  "cardShadow": "subtle",
+  "showCardBorder": true,
+
+  "reviewerNameColor": "#1a1a1a",
+  "reviewerNameSize": 14,
+  "reviewerNameWeight": "700",
+
+  "showVerifiedBadge": true,
+  "verifiedBadgeColor": "#1a8cff",
+
+  "showDate": true,
+  "dateColor": "#6d6d6d",
+  "dateSize": 12,
+
+  "starColor": "#f5a623",
+  "starSize": 14,
+  "ratingIcon": "star_rounded",
+  "mutedColor": "#d1d5db",
+
+  "showReviewTitle": true,
+  "reviewTitleColor": "#1a1a1a",
+  "reviewTextColor": "#4a4a4a",
+  "reviewTextSize": 14,
+  "truncateText": false,
+  "maxLines": 4,
+
+  "showImages": true,
+  "imageRadius": 8,
+
+  "showItemType": true,
+  "itemTypeColor": "#6d6d6d",
+  "itemTypeSize": 12,
+
+  "showProductInfo": true,
+  "productNameColor": "#6d6d6d",
+  "productImageRadius": 4,
+
+  "showLoadMore": true,
+  "initialRows": 2,
+  "loadMoreBtnText": "Show more reviews",
+  "loadMoreBtnBgColor": "transparent",
+  "loadMoreBtnTextColor": "#1a1a1a",
+  "loadMoreBtnBorderColor": "#1a1a1a",
+  "loadMoreBtnRadius": 6,
+
+  "selectRadius": 6,
+  "customCss": ""
+}
