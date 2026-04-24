@@ -72,12 +72,14 @@ const ghostLinkVariant = css`
 `;
 
 const themedVariant = css`
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  border-radius: 6px;
+  background: ${tokens.ink900};
+  color: #fff;
+  border: 1px solid ${tokens.ink900};
 
   &:hover {
-    background: var(--color-muted);
+    background: ${tokens.ink700};
+    border-color: ${tokens.ink700};
+    transform: translateY(-1px);
   }
 `;
 

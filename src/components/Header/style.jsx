@@ -10,39 +10,37 @@ export const spinWithDelay = keyframes`
 `;
 
 export const HeaderBar = styled.header`
-  background: ${p => p.$whiteBg ? '#fff' : 'color-mix(in srgb, var(--color-primary) 30%, transparent)'};
-  backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
-  box-shadow: 0 1px 0 color-mix(in srgb, white 8%, transparent), 0 4px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  background: transparent;
   z-index: 100;
+  padding: 12px 24px;
 
   ${({ $floating, $announcementVisible, $hidden, $hideDistance }) => $floating ? `
     position: fixed;
-    top: ${$announcementVisible ? '85px' : '16px'};
-    left: 50%;
-    transform: translateX(-50%) translateY(${$hidden ? `calc(-${$hideDistance} - 32px)` : '0'});
-    width: calc(100% - 48px);
-    max-width: 1300px;
-    border-radius: 6px;
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-    transition: top 0.3s ease, transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    top: ${$announcementVisible ? '73px' : '0'};
+    left: 0;
+    right: 0;
+    transform: translateY(${$hidden ? `calc(-${$hideDistance} - 32px)` : '0'});
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   ` : `
     position: sticky;
     top: 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
     transform: translateY(${$hidden ? `-${$hideDistance}` : '0'});
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   `}
 `;
 
 export const Container = styled.div`
-  max-width: 1350px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  height: 64px;
+  height: 58px;
+  background: #fff;
+  border: 1px solid rgba(14, 27, 43, 0.09);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(14, 27, 43, 0.06);
 
   @media (max-width: 1024px) {
     grid-template-columns: auto 1fr auto;
@@ -105,8 +103,8 @@ export const NavItem = styled.div`
 export const DropdownTrigger = styled.button`
   background: none;
   border: none;
-  color: var(--color-secondary);
-  font-size: 1.2rem;
+  color: ${tokens.ink500};
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -117,7 +115,7 @@ export const DropdownTrigger = styled.button`
   transition: color 0.2s;
 
   &:hover {
-    color: var(--color-accent);
+    color: ${tokens.ink900};
   }
 `;
 
@@ -130,14 +128,14 @@ export const DropdownArrow = styled.svg`
 `;
 
 export const NavLink = styled(Link)`
-  color: var(--color-secondary);
+  color: ${tokens.ink500};
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s;
 
   &:hover {
-    color: var(--color-accent);
+    color: ${tokens.ink900};
   }
 `;
 
@@ -196,9 +194,15 @@ export const MobileMenu = styled.div`
   @media (max-width: 1024px) {
     display: ${({ $open }) => ($open ? 'flex' : 'none')};
     flex-direction: column;
-    background: var(--color-primary);
-    border-bottom: 1px solid var(--color-border);
+    background: #fff;
+    border: 1px solid rgba(14, 27, 43, 0.09);
+    border-radius: 16px;
+    margin-top: 8px;
     padding: 1rem 1.5rem 1.5rem;
+    box-shadow: 0 4px 24px rgba(14, 27, 43, 0.08);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
