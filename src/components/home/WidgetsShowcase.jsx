@@ -8,7 +8,7 @@ import {
   WidgetTagline, WidgetDesc,
 } from './WidgetsShowcase.style';
 
-const LINKED_WIDGETS = new Set(['reviews-list', 'reviews-compact']);
+const LINKED_WIDGETS = new Set(['reviews-list', 'reviews-compact', 'reviews-grid']);
 
 function CardContents({ w }) {
   return (

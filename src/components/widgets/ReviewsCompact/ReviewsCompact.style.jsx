@@ -243,16 +243,45 @@ export const Card = styled.div`
     $border ? `${$borderWidth || 1}px solid ${$borderColor || '#e3e3e3'}` : 'none'};
   box-shadow: ${({ $shadow }) => $shadow || 'none'};
   ${themeTransition}
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+`;
+
+export const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex: 1;
+    min-width: 0;
+  }
 `;
 
 export const MediaThumb = styled.div`
-  position: relative;
+  order: -1;
+  width: 100%;
+  height: ${({ $maxH }) => $maxH || 180}px;
   overflow: hidden;
   border-radius: ${({ $radius }) => ($radius ?? 8)}px;
   margin-bottom: 12px;
-  width: 100%;
-  height: ${({ $maxH }) => $maxH || 180}px;
+  position: relative;
   background: #f3f4f6 ${({ $src }) => ($src ? `url("${$src}") center/cover no-repeat` : '')};
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: 768px) {
+    order: 0;
+    width: 40%;
+    flex-shrink: 0;
+    height: auto;
+    min-height: 120px;
+    align-self: stretch;
+    margin-bottom: 0;
+  }
 `;
 
 export const PlayOverlay = styled.span`

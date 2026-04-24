@@ -28,48 +28,48 @@ function buildCompact(brandSettings, extra = {}) {
 // corner radius per tab (kept consistent with the tab's visual language).
 const PRESET_OVERRIDES = {
   photography: {
-    desktopColumns: 2, gridGap: 10,
+    desktopColumns: 1, gridGap: 10,
     cardBorderRadius: 2, cardPadding: 22, cardShadow: 'none',
     imageRadius: 2, imageMaxHeight: 220,
     showSectionHeader: true,
   },
   jewelry: {
-    desktopColumns: 2, gridGap: 20,
+    desktopColumns: 1, gridGap: 20,
     cardBorderRadius: 12, cardPadding: 24, cardShadow: 'subtle',
     imageRadius: 12, imageMaxHeight: 200,
   },
   pets: {
-    desktopColumns: 3, gridGap: 18,
+    desktopColumns: 2, gridGap: 18,
     cardBorderRadius: 18, cardPadding: 18, cardShadow: 'strong',
     imageRadius: 18, imageMaxHeight: 170,
   },
   furniture: {
-    desktopColumns: 2, gridGap: 24,
+    desktopColumns: 1, gridGap: 24,
     cardBorderRadius: 0, cardPadding: 28, cardShadow: 'none',
     imageRadius: 0, imageMaxHeight: 240,
   },
   coffee: {
-    desktopColumns: 2, gridGap: 14,
+    desktopColumns: 1, gridGap: 14,
     cardBorderRadius: 8, cardPadding: 20, cardShadow: 'subtle',
     imageRadius: 8, imageMaxHeight: 180,
   },
   tech: {
-    desktopColumns: 3, gridGap: 12,
+    desktopColumns: 2, gridGap: 12,
     cardBorderRadius: 6, cardPadding: 16, cardShadow: 'subtle',
     imageRadius: 6, imageMaxHeight: 150,
   },
   plants: {
-    desktopColumns: 3, gridGap: 22,
+    desktopColumns: 2, gridGap: 22,
     cardBorderRadius: 20, cardPadding: 22, cardShadow: 'none',
     imageRadius: 20, imageMaxHeight: 200,
   },
   drinks: {
-    desktopColumns: 3, gridGap: 10,
+    desktopColumns: 2, gridGap: 10,
     cardBorderRadius: 14, cardPadding: 14, cardShadow: 'strong',
     imageRadius: 14, imageMaxHeight: 160,
   },
   beauty: {
-    desktopColumns: 2, gridGap: 16,
+    desktopColumns: 1, gridGap: 16,
     cardBorderRadius: 24, cardPadding: 20, cardShadow: 'subtle',
     imageRadius: 24, imageMaxHeight: 190,
   },

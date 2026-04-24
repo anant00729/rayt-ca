@@ -7,7 +7,7 @@ import {
   Widget, SectionTitle, TopBarWrap, TopBar, RatingTrigger, TopBarRight,
   WriteReviewBtn, SettingsWrap, SettingsBtn, SortOverlay, SortOption,
   Breakdown, BreakdownHeader, BreakdownAvg, BreakdownRow, BarTrack, BarFill, BreakdownCount,
-  Grid, Card, MediaThumb, PlayOverlay, NameRow, ReviewerName, DateLine, StarsRow,
+  Grid, Card, CardContent, MediaThumb, PlayOverlay, NameRow, ReviewerName, DateLine, StarsRow,
   ReviewText, ItemType, ProductFooter, ProductLink, ProductThumb, ProductName,
   LoadMoreWrap, LoadMoreBtn, EmptyState,
 } from './ReviewsCompact.style';
@@ -250,76 +250,77 @@ export default function ReviewsCompact({ settings = {}, reviews = [], isMobile =
                 $borderWidth={s.cardBorderWidth}
                 $shadow={shadowVal(s.cardShadow)}
               >
+                <CardContent>
+                  <NameRow>
+                    <ReviewerName
+                      $color={s.reviewerNameColor}
+                      $size={s.reviewerNameSize}
+                      $weight={s.reviewerNameWeight}
+                    >
+                      {review.reviewerName}
+                    </ReviewerName>
+                    {s.showVerifiedBadge && review.verified !== false && (
+                      <VerifiedCircle color={s.verifiedBadgeColor} />
+                    )}
+                  </NameRow>
+
+                  {s.showDate && review.createdAt && (
+                    <DateLine $color={s.dateColor} $size={s.dateSize}>
+                      {formatDate(review.createdAt)}
+                    </DateLine>
+                  )}
+
+                  <StarsRow>
+                    <Stars
+                      rating={review.rating}
+                      count={5}
+                      size={s.starSize || 14}
+                      filled={starColor}
+                      muted={mutedColor}
+                      icon={ratingIcon}
+                    />
+                  </StarsRow>
+
+                  <ReviewText
+                    $color={s.reviewTextColor}
+                    $size={s.reviewTextSize}
+                    $truncate={s.truncateText}
+                    $maxLines={s.maxLines}
+                  >
+                    {review.comment}
+                  </ReviewText>
+
+                  {s.showItemType && review.itemType && (
+                    <ItemType $color={s.itemTypeColor} $size={s.itemTypeSize}>
+                      Item type:<br />{review.itemType}
+                    </ItemType>
+                  )}
+
+                  {s.showProductInfo && review.productTitle && (
+                    <ProductFooter>
+                      <ProductLink>
+                        {review.productImageUrl && (
+                          <ProductThumb
+                            src={review.productImageUrl}
+                            alt={review.productTitle}
+                            $radius={s.productImageRadius}
+                          />
+                        )}
+                        <ProductName $color={s.productNameColor}>
+                          {review.productTitle}
+                        </ProductName>
+                      </ProductLink>
+                    </ProductFooter>
+                  )}
+                </CardContent>
+
                 {hasMedia && (
                   <MediaThumb
                     $src={firstMedia.thumb || firstMedia.src}
                     $radius={s.imageRadius}
-                    $maxH={s.imageMaxHeight}
                   >
                     {isVideo && <PlayOverlay>&#9658;</PlayOverlay>}
                   </MediaThumb>
-                )}
-
-                <NameRow>
-                  <ReviewerName
-                    $color={s.reviewerNameColor}
-                    $size={s.reviewerNameSize}
-                    $weight={s.reviewerNameWeight}
-                  >
-                    {review.reviewerName}
-                  </ReviewerName>
-                  {s.showVerifiedBadge && review.verified !== false && (
-                    <VerifiedCircle color={s.verifiedBadgeColor} />
-                  )}
-                </NameRow>
-
-                {s.showDate && review.createdAt && (
-                  <DateLine $color={s.dateColor} $size={s.dateSize}>
-                    {formatDate(review.createdAt)}
-                  </DateLine>
-                )}
-
-                <StarsRow>
-                  <Stars
-                    rating={review.rating}
-                    count={5}
-                    size={s.starSize || 14}
-                    filled={starColor}
-                    muted={mutedColor}
-                    icon={ratingIcon}
-                  />
-                </StarsRow>
-
-                <ReviewText
-                  $color={s.reviewTextColor}
-                  $size={s.reviewTextSize}
-                  $truncate={s.truncateText}
-                  $maxLines={s.maxLines}
-                >
-                  {review.comment}
-                </ReviewText>
-
-                {s.showItemType && review.itemType && (
-                  <ItemType $color={s.itemTypeColor} $size={s.itemTypeSize}>
-                    Item type:<br />{review.itemType}
-                  </ItemType>
-                )}
-
-                {s.showProductInfo && review.productTitle && (
-                  <ProductFooter>
-                    <ProductLink>
-                      {review.productImageUrl && (
-                        <ProductThumb
-                          src={review.productImageUrl}
-                          alt={review.productTitle}
-                          $radius={s.productImageRadius}
-                        />
-                      )}
-                      <ProductName $color={s.productNameColor}>
-                        {review.productTitle}
-                      </ProductName>
-                    </ProductLink>
-                  </ProductFooter>
                 )}
               </Card>
             );
