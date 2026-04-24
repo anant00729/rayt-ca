@@ -8,6 +8,8 @@ import {
   WidgetTagline, WidgetDesc,
 } from './WidgetsShowcase.style';
 
+const LINKED_WIDGETS = new Set(['reviews-list', 'reviews-compact']);
+
 function CardContents({ w }) {
   return (
     <>
@@ -38,7 +40,7 @@ export default function WidgetsShowcase({ data }) {
 
         <WidgetGrid>
           {widgets.map((w) =>
-            w.slug === 'reviews-list' ? (
+            LINKED_WIDGETS.has(w.slug) ? (
               <WidgetLink key={w.slug} to={ROUTES.WIDGET_DETAIL(w.slug)} $accent={w.accent}>
                 <CardContents w={w} />
               </WidgetLink>

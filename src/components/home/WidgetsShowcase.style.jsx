@@ -105,14 +105,16 @@ export const WidgetPreview = styled.div`
     inset: 0;
     background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.35) 100%);
     pointer-events: none;
+    z-index: 1;
   }
 
   img {
     position: relative;
-    max-width: 88%;
+    width: 88%;
+    height: auto;
     max-height: 88%;
     display: block;
-    z-index: 1;
+    z-index: 2;
   }
 `;
 

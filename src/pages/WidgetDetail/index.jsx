@@ -1,64 +1,55 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
-import ReviewsList from '../../components/widgets/ReviewsList/ReviewsList';
 import widgets from '../../data/widgets.json';
-import reviewsListSettings from '../../data/widgetConfigs/reviewsList.json';
-import dummyReviews from '../../components/widgets/ReviewsList/dummyReviews';
-import { SettingsPanel, useSettings } from '../../components/widgets/ReviewsList/settings';
+import { WIDGETS } from '../../components/widgets/registry';
+import { useSettings } from '../../components/widgets/_shared/settings';
 import { ROUTES } from '../../constants/routes';
 import InspirationTabs from '../../components/InspirationTabs/InspirationTabs';
-import { INSPIRATION_PRESETS, INSPIRATION_TAB_ORDER } from '../../data/inspirationPresets';
+import { INSPIRATION_TAB_ORDER } from '../../data/inspirationPresets';
 import {
-  Page, Container, Breadcrumb, Eyebrow, Tagline, MetricStrip, MetricPill,
+  Page, Container, Eyebrow, Tagline, MetricStrip, MetricPill,
   Playground, SettingsPane, StageWrap, StageFrame, WidgetScroll,
   MobileToggle, PrimerCard, PrimerKicker, PrimerBody,
   FeatureMatrixWrap, FMHeader, FMRow, FMKey, FMValue,
   NotFoundWrap, TaglineRow, ViewToggleGroup, ViewToggleBtn, PreviewStage,
 } from './style';
 
-const SHOWCASES = {
-  'reviews-list': {
-    Component: ReviewsList,
-    settings: reviewsListSettings,
-    reviews: dummyReviews,
-  },
-};
-
-const FEATURE_MATRIX = [
-  { key: 'Layout',       value: '2 layouts · media left/right · responsive stack at 700px' },
-  { key: 'Container',    value: 'Background color + 0–80px padding rhythm' },
-  { key: 'Review card',  value: 'Color, radius, padding, 3 shadows, toggleable border + width' },
-  { key: 'Stars',        value: 'Filled + empty color · 10–24px size' },
-  { key: 'Reviewer',     value: 'Name color/size/weight · verified badge · date toggle' },
-  { key: 'Review text',  value: 'Color, size, truncate-to-lines with a max-lines slider' },
-  { key: 'Images',       value: 'Thumbnail size 60–200px · radius 0–20px · toggle' },
-  { key: 'Top bar',      value: 'Count color, star size, write-review CTA, filter & sort accent' },
-  { key: 'Load more',    value: 'Per-page count, button bg/text, button radius' },
-];
-
 export default function WidgetDetail({ theme, onThemeChange }) {
   const { slug } = useParams();
   const widgetMeta = widgets.find((w) => w.slug === slug);
-  const showcase = SHOWCASES[slug];
+  const showcase = WIDGETS[slug];
 
-  const isReviewsList = slug === 'reviews-list';
-  const [activeTab, setActiveTab] = useState('photography');
-  const initialSettings = isReviewsList
-    ? INSPIRATION_PRESETS.photography.settings
-    : (showcase?.settings || reviewsListSettings);
+  const initialPresetKey = showcase?.initialPresetKey || 'photography';
+  const [activeTab, setActiveTab] = useState(initialPresetKey);
+
+  const initialSettings = showcase?.usesInspiration && showcase?.presets
+    ? showcase.presets[initialPresetKey].settings
+    : showcase?.defaultSettings;
+
   const { settings, update, reset, replace } = useSettings(initialSettings);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [previewMode, setPreviewMode] = useState('desktop');
 
-  const tabList = INSPIRATION_TAB_ORDER.map((k) => INSPIRATION_PRESETS[k]);
-  const activeReviews = isReviewsList
-    ? INSPIRATION_PRESETS[activeTab].reviews
+  const tabList = showcase?.usesInspiration && showcase?.presets
+    ? INSPIRATION_TAB_ORDER.filter((k) => showcase.presets[k]).map((k) => showcase.presets[k])
+    : [];
+
+  const activeReviews = showcase?.usesInspiration && showcase?.presets
+    ? showcase.presets[activeTab].reviews
     : showcase?.reviews;
 
   const handleTabSelect = (k) => {
     setActiveTab(k);
-    replace(INSPIRATION_PRESETS[k].settings);
+    replace(showcase.presets[k].settings);
+  };
+
+  const handleReset = () => {
+    if (showcase?.usesInspiration && showcase?.presets) {
+      replace(showcase.presets[activeTab].settings);
+    } else {
+      reset();
+    }
   };
 
   if (!widgetMeta || !showcase) {
@@ -76,11 +67,13 @@ export default function WidgetDetail({ theme, onThemeChange }) {
     );
   }
 
+  const { Component, SettingsPanel, featureMatrix } = showcase;
+
   return (
     <Page>
       <StageWrap>
         <Container style={{ position: 'relative', zIndex: 2 }}>
-          <Eyebrow>Widget · Review Display</Eyebrow>
+          <Eyebrow>Widget · {widgetMeta.category}</Eyebrow>
           <TaglineRow>
             <Tagline>
               A live playground. Every knob, every color "try it here!""
@@ -110,7 +103,7 @@ export default function WidgetDetail({ theme, onThemeChange }) {
             </ViewToggleGroup>
           </TaglineRow>
 
-          {isReviewsList && (
+          {showcase.usesInspiration && tabList.length > 0 && (
             <InspirationTabs
               tabs={tabList}
               activeKey={activeTab}
@@ -139,7 +132,7 @@ export default function WidgetDetail({ theme, onThemeChange }) {
 
           <Playground>
             <SettingsPane $open={mobileOpen}>
-              <SettingsPanel settings={settings} onChange={update} onReset={reset} />
+              <SettingsPanel settings={settings} onChange={update} onReset={handleReset} />
             </SettingsPane>
 
             <StageWrap as="div" $bare>
@@ -154,22 +147,24 @@ export default function WidgetDetail({ theme, onThemeChange }) {
               <PreviewStage>
                 <StageFrame style={previewMode === 'mobile' ? { maxWidth: 390, margin: '0 auto', width: '100%' } : {}}>
                   <WidgetScroll>
-                    <ReviewsList settings={settings} reviews={activeReviews} isMobile={previewMode === 'mobile'} />
+                    <Component settings={settings} reviews={activeReviews} isMobile={previewMode === 'mobile'} />
                   </WidgetScroll>
                 </StageFrame>
               </PreviewStage>
             </StageWrap>
           </Playground>
 
-          <FeatureMatrixWrap>
-            <FMHeader>What you can control</FMHeader>
-            {FEATURE_MATRIX.map(({ key, value }) => (
-              <FMRow key={key}>
-                <FMKey>{key}</FMKey>
-                <FMValue>{value}</FMValue>
-              </FMRow>
-            ))}
-          </FeatureMatrixWrap>
+          {featureMatrix && featureMatrix.length > 0 && (
+            <FeatureMatrixWrap>
+              <FMHeader>What you can control</FMHeader>
+              {featureMatrix.map(({ key, value }) => (
+                <FMRow key={key}>
+                  <FMKey>{key}</FMKey>
+                  <FMValue>{value}</FMValue>
+                </FMRow>
+              ))}
+            </FeatureMatrixWrap>
+          )}
         </Container>
       </StageWrap>
 
