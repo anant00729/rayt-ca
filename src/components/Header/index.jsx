@@ -55,7 +55,6 @@ const PRODUCT_ITEMS = [
 
 const SIMPLE_NAV = [
   { label: 'Widgets', path: '/widgets' },
-  { label: 'Customers', path: '/customers' },
   { label: 'Pricing', path: '/pricing' },
 ];
 

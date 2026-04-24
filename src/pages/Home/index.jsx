@@ -69,7 +69,7 @@ export default function Home({ theme, onThemeChange }) {
       )}
 
       {/* Hero */}
-      <Hero data={content.hero} />
+      <Hero />
 
       {/* Trust strip */}
       <TrustStrip data={content.trust} />

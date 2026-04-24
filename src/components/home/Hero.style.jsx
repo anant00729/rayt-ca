@@ -1,220 +1,248 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { tokens } from '../../styles/tokens';
-import { levitating, bouncing, rolling, twinkle } from '../../styles/animations';
 
-export const HeroWrap = styled.section`
-  position: relative;
-  padding: 3rem 0 5rem;
-  margin: 0 auto;
-  overflow: hidden;
-
-  @media (max-width: 768px) {
-    padding: 1rem 0 3rem;
-  }
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 `;
 
-export const HeroInner = styled.div`
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+export const HeroSection = styled.section`
+  position: relative;
+  padding: 0 1.75rem 120px;
 `;
 
-export const HeroGrid = styled.div`
-  position: relative;
+/* Hero text is pinned in place — only fades out as the widget scrolls over it. */
+export const HeroText = styled.div`
+  position: sticky;
+  top: 104px;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
-  align-items: center;
-
-  @media (max-width: 1050px) {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-`;
-
-export const HeroLeft = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-
-  @media (max-width: 1050px) {
-    align-items: center;
-  }
+  align-items: center;
+  gap: 1.375rem;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 0 1.5rem;
+  animation: ${fadeUp} 600ms ease;
+  will-change: opacity, filter;
+  pointer-events: auto;
 `;
 
-export const HeroEyebrow = styled.span`
+export const EyebrowPill = styled.span`
   display: inline-flex;
-  align-self: flex-start;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   color: ${tokens.sky700};
-  padding: 0.5rem 1rem;
+  padding: 0.4375rem 0.875rem;
   border-radius: ${tokens.radiusPill};
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid ${tokens.sky100};
   box-shadow: ${tokens.shadowSm};
-
-  &::before {
-    content: '✦';
-    color: ${tokens.mint500};
-    animation: ${twinkle} 2.4s ease-in-out infinite;
-  }
-
-  @media (max-width: 1050px) {
-    align-self: center;
-  }
 `;
 
-export const HeroHeadline = styled.h1`
-  font-family: 'Nunito Sans', sans-serif;
+export const EyebrowStar = styled.span`
+  color: ${tokens.mint500};
+`;
+
+export const HeadlineH1 = styled.h1`
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
-  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
   line-height: 1.02;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   color: ${tokens.ink900};
-  margin: 0;
+  text-wrap: balance;
 `;
 
-export const HeroSubtitle = styled.p`
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  line-height: 1.6;
-  color: ${tokens.ink500};
-  margin: 0;
-  max-width: 540px;
-
-  @media (max-width: 1050px) {
-    margin: 0 auto;
-  }
+export const HeadlineAccent = styled.span`
+  background: linear-gradient(135deg, ${tokens.sky700} 0%, ${tokens.mint500} 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 `;
 
-export const CtaRow = styled.div`
+export const CtaRowWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 0.4rem;
+  gap: 0.875rem;
+  margin-top: 0.375rem;
+  justify-content: center;
+`;
 
-  @media (max-width: 1050px) {
-    justify-content: center;
+export const PrimaryBtn = styled.button`
+  background: ${tokens.ink900};
+  color: #fff;
+  border: none;
+  border-radius: ${tokens.radiusPill};
+  padding: 0.875rem 1.625rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  box-shadow: ${tokens.shadowSky};
+  transition: box-shadow 200ms ease, transform 150ms ease;
+
+  &:hover {
+    box-shadow: 0 18px 44px rgba(46, 111, 176, 0.36);
+    transform: translateY(-1px);
   }
 `;
 
-export const TrustLine = styled.p`
-  font-size: 0.85rem;
-  color: ${tokens.ink500};
-  margin: 0.5rem 0 0;
-  letter-spacing: 0.01em;
+export const SecondaryBtn = styled.button`
+  background: #fff;
+  color: ${tokens.ink900};
+  border: 1px solid ${tokens.borderStrong};
+  border-radius: ${tokens.radiusPill};
+  padding: 0.875rem 1.625rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 150ms ease;
+
+  &:hover {
+    background: ${tokens.paper2};
+  }
 `;
 
-/* ─── Floating widget collage on the right ─── */
-
-export const Collage = styled.div`
+/* Widget scrolls in normal flow. z-index higher than hero text so it visually
+   covers the text as the page scrolls. */
+export const WidgetBlock = styled.div`
   position: relative;
-  min-height: 480px;
+  z-index: 10;
+  width: 100%;
+  max-width: 1080px;
+  margin: 3.5rem auto 0;
+  padding-top: 0.5rem;
+  filter: drop-shadow(0 6px 16px rgba(18, 52, 88, 0.08))
+          drop-shadow(0 2px 6px rgba(18, 52, 88, 0.05));
+`;
 
-  @media (max-width: 900px) {
-    min-height: 360px;
-    max-width: 440px;
-    margin: 0 auto;
-  }
+export const TabBar = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+`;
 
-  @media (max-width: 1050px) {
+export const TabTrack = styled.div`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: ${tokens.radiusPill};
+  box-shadow: 0 1px 4px rgba(18, 52, 88, 0.08), 0 0 0 1px rgba(14, 27, 43, 0.05);
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
     display: none;
   }
 `;
 
-const FloatCard = styled.div`
+export const PillIndicator = styled.div`
   position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
   background: #fff;
-  border-radius: ${tokens.radius};
-  box-shadow: ${tokens.shadowMd};
-  border: 1px solid ${tokens.border};
-  padding: 0.5rem;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: calc(${tokens.radius} - 0.5rem);
-  }
+  border-radius: ${tokens.radiusPill};
+  box-shadow: 0 1px 3px rgba(18, 52, 88, 0.08);
+  transition: transform 420ms cubic-bezier(0.4, 0, 0.2, 1),
+              width 420ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+  pointer-events: none;
 `;
 
-
-export const CollageImg3 = styled(FloatCard)`
-  top: 0%;
-  left: 2%;
-  width: 36%;
-  aspect-ratio: 428 / 832;
-  animation: ${bouncing} 3.8s cubic-bezier(.28,.84,.42,1) infinite;
-  z-index: 4;
-
-  @media (max-width: 900px) {
-    top: 4%;
-    left: 2%;
-    width: 28%;
-  }
-`;
-
-export const CollageImg4 = styled(FloatCard)`
-  top: 14%;
-  left: 34%;
-  width: 52%;
-  aspect-ratio: 844 / 284;
-  animation: ${levitating} 6s ease-in-out infinite;
-  z-index: 5;
-
-  @media (max-width: 900px) {
-    top: 10%;
-    left: 28%;
-    width: 55%;
-  }
-`;
-
-export const CollageImg6 = styled(FloatCard)`
-  bottom: 14%;
-  left: 43%;
-  width: 60%;
-  aspect-ratio: 1126 / 818;
-  animation: ${rolling} 7s ease-in-out infinite;
-  z-index: 3;
-
-  @media (max-width: 900px) {
-    bottom: 8%;
-    left: 30%;
-    width: 52%;
-  }
-`;
-
-export const CollageOrb = styled.div`
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff, ${tokens.lilac100} 60%, ${tokens.sky200} 100%);
-  top: 2%;
-  right: 14%;
-  box-shadow: 0 20px 40px rgba(73, 55, 165, 0.18);
-  animation: ${levitating} 6s ease-in-out infinite;
+export const PillTab = styled.button`
+  position: relative;
   z-index: 1;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: ${p => p.$active ? 700 : 500};
+  color: ${p => p.$active ? tokens.sky700 : tokens.ink500};
+  font-family: inherit;
+  white-space: nowrap;
+  transition: color 180ms ease;
+  line-height: 1;
 `;
 
-export const CollageStar = styled.div`
-  position: absolute;
-  bottom: 10%;
-  right: 6%;
-  width: 60px;
-  height: 60px;
-  color: ${tokens.sky500};
-  font-size: 3.5rem;
-  line-height: 1;
-  animation: ${rolling} 7s ease-in-out infinite;
-  z-index: 5;
+/* Reserves the bold-weight width for each label regardless of active state,
+   so the tab's layout never shifts when the active tab changes. */
+export const TabLabel = styled.span`
+  display: inline-block;
+  position: relative;
+  margin-right: 4px;
+
+  &::after {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
+  }
+`;
+
+export const AutoPill = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid ${tokens.border};
+  border-radius: ${tokens.radiusPill};
+  cursor: pointer;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: ${tokens.ink500};
+  font-family: inherit;
+  backdrop-filter: blur(6px);
+
+  &:hover {
+    background: #fff;
+  }
+`;
+
+export const WidgetInner = styled.div`
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+`;
+
+export const WidgetFade = styled.div`
+  animation: ${fadeUp} 500ms ease;
+`;
+
+export const CaptionRow = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: ${tokens.ink500};
+`;
+
+export const CaptionLeft = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
 `;
