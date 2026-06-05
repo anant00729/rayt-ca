@@ -1,24 +1,25 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const FOOTER_BG = '#0d1421';
+const FOOTER_HEADING = '#4a90d9';
+const FOOTER_LINK = 'rgba(255,255,255,0.82)';
+const FOOTER_MUTED = 'rgba(255,255,255,0.4)';
+const FOOTER_BORDER = 'rgba(255,255,255,0.1)';
+
 export const Wrapper = styled.footer`
-  border-top: 1px solid var(--color-border);
   padding: 4rem 1.5rem 3rem;
-  background: var(--color-primary);
+  background: ${FOOTER_BG};
 `;
 
 export const Inner = styled.div`
   max-width: 1350px;
   margin: 0 auto;
-`;
 
-export const FooterLogo = styled(Link)`
-  font-family: 'Changa One', sans-serif;
-  font-size: 1.4rem;
-  color: var(--color-secondary);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 3rem;
+  /* give the AppLogo its bottom margin within the dark footer */
+  & > a {
+    margin-bottom: 3rem;
+  }
 `;
 
 export const Grid = styled.div`
@@ -38,22 +39,24 @@ export const Grid = styled.div`
 export const Column = styled.div``;
 
 export const ColHeading = styled.p`
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-secondary);
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: ${FOOTER_HEADING};
+  margin-bottom: 1.25rem;
 `;
 
 const colLinkStyles = `
   display: block;
   font-size: 0.9rem;
-  color: var(--color-muted);
+  color: ${FOOTER_LINK};
   text-decoration: none;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
   transition: color 0.15s;
 
   &:hover {
-    color: var(--color-secondary);
+    color: #ffffff;
   }
 `;
 
@@ -64,9 +67,9 @@ export const ColLinkInternal = styled(Link)`${colLinkStyles}`;
 export const Bottom = styled.div`
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid ${FOOTER_BORDER};
   font-size: 0.8rem;
-  color: var(--color-muted);
+  color: ${FOOTER_MUTED};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,25 +80,7 @@ export const Bottom = styled.div`
   }
 `;
 
-export const ThemeSelect = styled.select`
-  background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-secondary);
-  font-family: 'Nunito Sans', sans-serif;
+export const Tagline = styled.span`
   font-size: 0.8rem;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.15s;
-
-  &:hover,
-  &:focus {
-    border-color: var(--color-accent);
-  }
-
-  option {
-    background: var(--color-primary);
-    color: var(--color-secondary);
-  }
+  color: ${FOOTER_MUTED};
 `;

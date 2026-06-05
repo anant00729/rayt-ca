@@ -1,6 +1,7 @@
-import { THEMES } from '../../App';
 import { ROUTES } from '../../constants/routes';
-import { Wrapper, Inner, FooterLogo, Grid, Column, ColHeading, ColLink, ColLinkInternal, Bottom, ThemeSelect } from './style';
+import AppLogo from '../ui/AppLogo';
+import PixelWordmark from './PixelWordmark';
+import { Wrapper, Inner, Grid, Column, ColHeading, ColLink, ColLinkInternal, Bottom, Tagline } from './style';
 
 const COLUMNS = [
   {
@@ -45,11 +46,11 @@ const COLUMNS = [
   },
 ];
 
-export default function Footer({ theme, onThemeChange }) {
+export default function Footer() {
   return (
     <Wrapper>
       <Inner>
-        <FooterLogo to="/">RayT</FooterLogo>
+        <AppLogo dark />
         <Grid>
           {COLUMNS.map(col => (
             <Column key={col.heading}>
@@ -66,16 +67,10 @@ export default function Footer({ theme, onThemeChange }) {
             </Column>
           ))}
         </Grid>
+        <PixelWordmark />
         <Bottom>
           <span>© 2026 RayT. All rights reserved.</span>
-          <ThemeSelect
-            value={theme.name}
-            onChange={e => onThemeChange(THEMES.find(t => t.name === e.target.value))}
-          >
-            {THEMES.map(t => (
-              <option key={t.name} value={t.name}>{t.name}</option>
-            ))}
-          </ThemeSelect>
+          <Tagline>Built for Shopify · Fast by default · Light on the eyes</Tagline>
         </Bottom>
       </Inner>
     </Wrapper>
