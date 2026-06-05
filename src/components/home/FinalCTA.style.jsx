@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { tokens } from '../../styles/tokens';
-import { shimmerBg, twinkle } from '../../styles/animations';
+import { twinkle } from '../../styles/animations';
 
 export const Wrap = styled.section`
   max-width: 1180px;
@@ -10,25 +10,24 @@ export const Wrap = styled.section`
 
 export const Banner = styled.div`
   position: relative;
-  background:
-    radial-gradient(60% 80% at 20% 30%, ${tokens.sky700} 0%, transparent 60%),
-    radial-gradient(60% 80% at 80% 70%, ${tokens.lilacDeep} 0%, transparent 60%),
-    linear-gradient(135deg, ${tokens.ink900}, ${tokens.deepNavy});
-  background-size: 200% 200%;
+  background: linear-gradient(120deg, #0E1B2B 0%, #1C2C52 48%, #4937A5 100%);
   color: #fff;
   border-radius: ${tokens.radiusLg};
-  padding: 4.5rem 2.5rem;
+  padding: 5.5rem 2.5rem;
   text-align: center;
   overflow: hidden;
   box-shadow: ${tokens.shadowLg};
-  animation: ${shimmerBg} 12s ease-in-out infinite;
 
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(40% 60% at 80% 100%, rgba(123, 92, 246, 0.45) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   @media (max-width: 720px) {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
 `;
 
@@ -73,6 +72,13 @@ export const Headline = styled.h2`
     padding: 0 0.2em;
     border-radius: 4px;
   }
+`;
+
+export const Inner = styled.div`
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
 `;
 
 export const Subtitle = styled.p`
